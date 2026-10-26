@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    min-width: 320px;
+    color: #1e293b;
+    background-color: #FCFBF7;
+    overflow-x: hidden;
+  }
+
+  /* Refined Editorial Serif for Titles */
+  h1, h2, h3, h4, .font-serif {
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Crisp tabular figures for currency and quantities */
+  .tabular-nums, .price-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Refined Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F5ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #C2DFD0;
+  border-radius: 9999px;
+  border: 2px solid #F8F5ED;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #27684F;
+}
+
+/* Glassmorphism & luxury aesthetics */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 220, 200, 0.6);
+}
+
+.glass-dark {
+  background: rgba(10, 25, 18, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Golden liquid shimmer keyframes */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FACC15 0%, #EAB308 40%, #CA8A04 70%, #FEF08A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shimmer-card {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+.shimmer-card:hover::after {
+  transform: translateX(100%);
+}
+
+/* Custom styling for print/proforma views */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+
