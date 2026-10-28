@@ -9,15 +9,18 @@ import {
   ArrowRight,
   Factory,
   CheckCircle2,
-  Clock
+  Clock,
+  Activity,
+  Flame
 } from 'lucide-react';
 
 export const AdminDashboardPage: React.FC = () => {
-  const { quotations, products } = useApp();
+  const { quotations, products, visitors } = useApp();
 
   const pendingQuotes = quotations.filter(q => q.status === 'Requested');
   const inProduction = quotations.filter(q => ['Confirmed', 'Processing'].includes(q.status));
   const activeDispatched = quotations.filter(q => q.status === 'Dispatched');
+  const hotLeads = visitors.filter(v => v.leadCategory === 'Hot');
 
   // Total stock calculated from products
   const totalTinsInStock = products.reduce((sum, p) => sum + p.availableStock, 0);
@@ -142,6 +145,37 @@ export const AdminDashboardPage: React.FC = () => {
             className="text-xs font-bold text-forest-900 hover:text-mustard-600 flex items-center gap-1 mt-3"
           >
             <span>Manage Inventory & Rates</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {/* Hot Leads Intelligence Card */}
+        <div className="bg-gradient-to-br from-rose-950 to-forest-950 text-white rounded-2xl p-5 border border-rose-800/60 shadow-md relative overflow-hidden">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1">
+              <Flame className="w-3.5 h-3.5 fill-rose-400 text-rose-400 animate-pulse" />
+              <span>Hot Wholesale Leads</span>
+            </span>
+            <div className="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center font-bold border border-rose-500/30">
+              <Activity className="w-5 h-5" />
+            </div>
+          </div>
+          <div className="flex items-baseline gap-2">
+            <span className="font-serif font-black text-3xl text-rose-400">
+              {hotLeads.length}
+            </span>
+            <span className="text-xs text-rose-200 font-semibold">
+              High Buying Intent
+            </span>
+          </div>
+          <p className="text-[11px] text-slate-300 mt-2">
+            {visitors.length} total tracked visitors across mandis &amp; stockists
+          </p>
+          <Link
+            to="/admin/visitor-analytics"
+            className="text-xs font-bold text-mustard-300 hover:text-white flex items-center gap-1 mt-3"
+          >
+            <span>View Visitor Intelligence</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

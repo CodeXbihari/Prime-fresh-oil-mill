@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { EmptyState } from '../../components/common/EmptyState';
+import { SEOHead } from '../../components/common/SEOHead';
 import {
   Trash2,
   ShoppingCart,
@@ -152,6 +153,12 @@ export const BulkCartPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-cream-50/60 py-10">
+      <SEOHead
+        title="Bulk Order Cart & Wholesale Consignment Request"
+        description="Review wholesale mustard oil line items, packaging, transport preferences, and generate a formal commercial invoice quotation."
+        canonicalPath="/cart"
+        noIndex={true}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">

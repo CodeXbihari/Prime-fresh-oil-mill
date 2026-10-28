@@ -206,7 +206,7 @@ export const SampleKitModal: React.FC<SampleKitModalProps> = ({
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. 98290 12345"
+                      placeholder="e.g. 90572 92529"
                       value={formData.phone}
                       onChange={e => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full pl-9 text-xs p-2.5 rounded-xl border border-cream-300 focus:outline-hidden focus:border-forest-600"

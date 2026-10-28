@@ -159,3 +159,61 @@ export interface UserSession {
   adminName?: string;
 }
 
+// ==========================================
+// IP-Based Visitor Tracking & Hot Leads
+// ==========================================
+
+export type LeadCategory = 'Hot' | 'Warm' | 'Cold';
+
+export type VisitEventType =
+  | 'page_view'
+  | 'bulk_pricing_calc'
+  | 'add_to_cart'
+  | 'quote_started'
+  | 'quote_submitted'
+  | 'kyc_started'
+  | 'kyc_submitted'
+  | 'sample_requested'
+  | 'chat_inquiry';
+
+export interface VisitEvent {
+  id: string;
+  visitorId: string;
+  timestamp: string;
+  pagePath: string;
+  pageTitle: string;
+  eventType: VisitEventType;
+  weight: number;
+  metadata?: Record<string, any>;
+  isBot?: boolean;
+}
+
+export interface VisitorProfile {
+  id: string;
+  visitorHash: string; // Keyed HMAC-SHA256 representation
+  maskedIp: string;    // e.g., "103.211.***.***" or "2405:201:****::"
+  firstSeen: string;
+  lastSeen: string;
+  totalVisits: number;
+  visitsLast7Days: number;
+  visitsLast30Days: number;
+  leadScore: number;   // 0 to 100
+  leadCategory: LeadCategory;
+  mostVisitedPages: { path: string; count: number; title: string }[];
+  events: VisitEvent[];
+
+  // Association with identified business customer
+  associatedCustomer?: {
+    id: string;
+    companyName: string;
+    contactPerson: string;
+    phone: string;
+    email: string;
+    gstin?: string;
+    source: 'Quotation' | 'KYC Application' | 'Account Login';
+    associatedAt: string;
+  };
+  consentGiven: boolean;
+}
+
+

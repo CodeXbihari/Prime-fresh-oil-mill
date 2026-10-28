@@ -296,7 +296,7 @@ export const HeroProductSpotlight: React.FC = () => {
                     <span>Door delivery & ex-mill options available</span>
                   </span>
                   <Link to={`/products/${activeProduct.id}`} className="font-semibold text-mustard-700 hover:underline">
-                    Full Lab Specs & Certificates →
+                    View Full Specifications &amp; Quality Parameters →
                   </Link>
                 </div>
               </div>

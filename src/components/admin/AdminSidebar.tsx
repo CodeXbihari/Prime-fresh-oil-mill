@@ -11,7 +11,9 @@ import {
   ExternalLink,
   ShieldCheck,
   LogOut,
-  ChevronRight
+  ChevronRight,
+  Activity,
+  Flame
 } from 'lucide-react';
 
 interface AdminSidebarProps {
@@ -20,11 +22,12 @@ interface AdminSidebarProps {
 }
 
 export const AdminSidebar: React.FC<AdminSidebarProps> = ({ mobileOpen, onCloseMobile }) => {
-  const { quotations, distributors, user, logout } = useApp();
+  const { quotations, distributors, visitors, user, logout } = useApp();
 
   const pendingQuotesCount = quotations.filter(q => q.status === 'Requested').length;
   const pendingDistributorsCount = distributors.filter(d => d.status === 'Pending').length;
   const activeOrdersCount = quotations.filter(q => ['Confirmed', 'Processing', 'Dispatched'].includes(q.status)).length;
+  const hotLeadsCount = visitors.filter(v => v.leadCategory === 'Hot').length;
 
   const navClass = ({ isActive }: { isActive: boolean }) =>
     `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition ${
@@ -115,6 +118,19 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({ mobileOpen, onCloseM
             <BarChart3 className="w-4 h-4" />
             <span>Sales & Dispatch Reports</span>
           </div>
+        </NavLink>
+
+        <NavLink to="/admin/visitor-analytics" className={navClass} onClick={onCloseMobile}>
+          <div className="flex items-center gap-2.5">
+            <Activity className="w-4 h-4 text-mustard-400" />
+            <span>Visitor & Hot Leads</span>
+          </div>
+          {hotLeadsCount > 0 && (
+            <span className="bg-rose-500 text-white text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-0.5">
+              <Flame className="w-3 h-3 fill-white" />
+              {hotLeadsCount}
+            </span>
+          )}
         </NavLink>
 
         <div className="pt-4 px-3 pb-2 text-[11px] font-bold text-forest-400 uppercase tracking-wider">

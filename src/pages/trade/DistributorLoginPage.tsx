@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
+import { SEOHead } from '../../components/common/SEOHead';
 import { ArrowRight, UserCheck } from 'lucide-react';
 
 export const DistributorLoginPage: React.FC = () => {
@@ -32,6 +33,12 @@ export const DistributorLoginPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-cream-50/60 py-16 px-4 flex items-center justify-center">
+      <SEOHead
+        title="Wholesaler & Distributor Account Login"
+        description="Secure sign-in for registered mustard oil distributors, wholesalers, and institutional buyers of Prime Fresh Oil Mills."
+        canonicalPath="/portal/login"
+        noIndex={true}
+      />
       <div className="max-w-md w-full space-y-6">
         <div className="text-center">
           <img

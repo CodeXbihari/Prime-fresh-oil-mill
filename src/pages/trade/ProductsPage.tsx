@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useApp } from '../../context/AppContext';
 import { ProductCard } from '../../components/trade/ProductCard';
 import { EmptyState } from '../../components/common/EmptyState';
+import { SEOHead } from '../../components/common/SEOHead';
 import { Search, Filter, Info, Bot } from 'lucide-react';
 
 export const ProductsPage: React.FC = () => {
@@ -48,6 +49,12 @@ export const ProductsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-cream-50/60 py-10">
+      <SEOHead
+        title="Wholesale Mustard Oil, Seeds & Khali Catalog | Bulk Packaging"
+        description="Browse our wholesale catalog of Kachi Ghani cold pressed mustard oil, yellow & black mustard seeds, sesame oil, and cattle feed mustard cake (DOC). Available in 15L tins, HDPE drums, and bulk tankers."
+        keywords="mustard oil catalog, 15L tin mustard oil price, bulk mustard oil drum, mustard cake khali, agro commodities wholesale, cold pressed oil distributor"
+        canonicalPath="/products"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Breadcrumb & Title */}
         <div className="mb-8">

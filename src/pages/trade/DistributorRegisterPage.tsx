@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
+import { SEOHead } from '../../components/common/SEOHead';
 import {
   Building2,
   User,
@@ -150,6 +151,12 @@ export const DistributorRegisterPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-cream-50/60 py-12">
+      <SEOHead
+        title="Distributor Registration & Wholesale Onboarding KYC"
+        description="Become an authorized distributor or wholesale partner for Prime Fresh Oil Mills. Direct mill pricing, dedicated credit tiers, priority dispatch, and territory allocation."
+        keywords="mustard oil distributor registration, become edible oil dealer, oil agency dealership, wholesale oil distributorship India"
+        canonicalPath="/portal/register"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="text-xs font-bold text-mustard-600 uppercase tracking-widest block mb-1">

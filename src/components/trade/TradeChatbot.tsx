@@ -427,8 +427,8 @@ export const TradeChatbot: React.FC = () => {
         sender: 'bot',
         text: `**Prime Fresh Oil Mills Commercial & Works Desk:**\n\n` +
           `📞 **Toll-Free Wholesale Inquiry**: 1800-266-9811\n` +
-          `📱 **WhatsApp Mandi Desk**: +91 98290 44551\n` +
-          `✉️ **Commercial Sales**: trade@primefreshoil.com\n` +
+          `📱 **WhatsApp Mandi Desk**: +91 90572 92529\n` +
+          `✉️ **Commercial Sales**: Puneet2garg@gmail.com\n` +
           `🏭 **Works & Expeller Plant**: RIICO Industrial Area, Phase-II, Matsya Industrial Area, Alwar, Rajasthan - 301030\n\n` +
           `Operating Hours: Monday – Saturday (8:00 AM – 7:30 PM IST).`,
         timestamp,

@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { ProductCard } from '../../components/trade/ProductCard';
 import { SampleKitModal } from '../../components/trade/SampleKitModal';
+import { SEOHead } from '../../components/common/SEOHead';
 import {
   ShieldCheck,
   Truck,
@@ -68,6 +69,37 @@ export const ProductDetailPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-cream-50/50 py-10">
+      <SEOHead
+        title={`${product.name} (${product.packaging}) Wholesale`}
+        description={`Buy wholesale ${product.name} direct from mill. ${product.tagline}. Packaging: ${product.packaging}. Minimum Order Quantity: ${product.moq} ${product.unitLabel}. FSSAI certified.`}
+        keywords={`${product.name}, ${product.packaging}, wholesale edible oil, ${product.grade}, B2B mustard oil supply`}
+        canonicalPath={`/products/${product.id}`}
+        ogImage={product.image}
+        ogType="product"
+        structuredData={{
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "name": product.name,
+          "image": product.image,
+          "description": product.tagline,
+          "sku": product.sku,
+          "brand": {
+            "@type": "Brand",
+            "name": "Prime Fresh Oil Mills"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": `https://primefreshoil.com/products/${product.id}`,
+            "priceCurrency": "INR",
+            "price": product.indicativePrice,
+            "availability": product.stockStatus === 'In Stock' ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+            "seller": {
+              "@type": "Organization",
+              "name": "Prime Fresh Oil Mills"
+            }
+          }
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <div className="mb-6">

@@ -34,11 +34,11 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-mustard-400 shrink-0" />
-                <span>Trade Desk: +91 98290 55441 / +91 94140 88200</span>
+                <span>Trade Desk: +91 90572 92529</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-mustard-400 shrink-0" />
-                <span>Wholesale Desk: sales@primefreshoil.com</span>
+                <span>Wholesale Desk: Puneet2garg@gmail.com</span>
               </div>
             </div>
           </div>

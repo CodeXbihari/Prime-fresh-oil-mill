@@ -26,7 +26,7 @@ export const AdminOrdersPage: React.FC = () => {
     new Date(Date.now() + 3 * 24 * 3600 * 1000).toISOString().split('T')[0]
   );
   const [dispatchRemarks, setDispatchRemarks] = useState(
-    'Consignment loaded with security seals. Driver mobile: +91 94140 77221. Transit insurance covered under Mill Policy.'
+    'Consignment loaded with security seals. Driver mobile: +91 90572 92529. Transit insurance covered under Mill Policy.'
   );
   const [millNotes, setMillNotes] = useState('');
 

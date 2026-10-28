@@ -83,7 +83,7 @@ export const MandiRateTicker: React.FC = () => {
     const text = `*Prime Fresh Oil Mills - Official Mandi Gate Rate Card (${todayDate})*\n` +
       `📍 Alwar-Bharatpur Mustard Hub, Rajasthan\n\n` +
       MANDI_RATES.map(r => `• ${r.commodity}: *${r.rate}* ${r.unit} (${r.change})`).join('\n') +
-      `\n\nDirect Mill Trade Desk: +91 98290 55441\nLock rates & order: https://primefreshoil.com`;
+      `\n\nDirect Mill Trade Desk: +91 90572 92529\nLock rates & order: https://primefreshoil.com`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -275,7 +275,7 @@ export const MandiRateTicker: React.FC = () => {
                 </div>
                 <div className="sm:text-right">
                   <span className="font-bold text-forest-900 block">Trading Desk:</span>
-                  <p className="text-slate-600">+91 98290 55441 / trade@primefreshoil.com</p>
+                  <p className="text-slate-600">+91 90572 92529 / Puneet2garg@gmail.com</p>
                   <span className="inline-block mt-1 px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">
                     Valid for Orders Placed Today
                   </span>

@@ -5,9 +5,9 @@ import { ProductCard } from '../../components/trade/ProductCard';
 import { FacilityTourSection } from '../../components/trade/FacilityTourSection';
 import { Hero3DElements } from '../../components/trade/Hero3DElements';
 import { HeroProductSpotlight } from '../../components/trade/HeroProductSpotlight';
-import { LabQualitySection } from '../../components/trade/LabQualitySection';
 import { PrivateLabelSection } from '../../components/trade/PrivateLabelSection';
 import { SampleKitModal } from '../../components/trade/SampleKitModal';
+import { SEOHead } from '../../components/common/SEOHead';
 import {
   Truck,
   Factory,
@@ -47,6 +47,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-cream-50/50">
+      <SEOHead
+        title="Premium Kachi Ghani Mustard Oil B2B Supply & Mandi Rates"
+        description="Direct agro-mill manufacturer of cold pressed Kachi Ghani mustard oil, expeller pressed cooking oil, and wholesale B2B distributor supply. Real-time mandi rates, FSSAI certified, Matsya Industrial Area, Alwar, Rajasthan."
+        keywords="kachi ghani mustard oil, mustard oil manufacturer, wholesale mustard oil, cold pressed mustard oil Alwar, mustard oil mill Rajasthan, B2B cooking oil supplier, sarson ka tel wholesale"
+        canonicalPath="/"
+      />
       {/* 3D Animated Hero Section with Scroll Parallax & Particle Depth */}
       <Hero3DElements />
 
@@ -348,9 +354,6 @@ export const HomePage: React.FC = () => {
 
       {/* Dedicated Mill Facility & Working Style Video Section */}
       <FacilityTourSection />
-
-      {/* Lab Certified Purity & Batch Certificate of Analysis (COA) Viewer */}
-      <LabQualitySection onRequestSample={() => setIsSampleModalOpen(true)} />
 
       {/* Private Label Bottling & OEM Tanker Milling */}
       <PrivateLabelSection />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
+import { SEOHead } from '../../components/common/SEOHead';
 import {
   FileText,
   Building,
@@ -193,6 +194,12 @@ export const QuotationRequestPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-cream-50/60 py-10">
+      <SEOHead
+        title="Request Official Factory Quotation & Freight Rates"
+        description="Submit your bulk order quotation inquiry for cold-pressed Kachi Ghani mustard oil, sesame oil, or cattle feed khali. Fast turnaround from our Alwar mill trade desk."
+        keywords="mustard oil quotation, bulk edible oil rate inquiry, mandi rate quote, wholesale oil proforma invoice, mustard oil freight estimate"
+        canonicalPath="/quotation-request"
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">

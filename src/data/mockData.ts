@@ -378,7 +378,7 @@ export const INITIAL_QUOTATIONS_AND_ORDERS: QuotationOrOrder[] = [
       vehicleNumber: 'RJ-02-GB-4512 (10-Tyre Open Body)',
       dispatchDate: '2026-10-24T14:30:00Z',
       estimatedArrival: '2026-10-27T11:00:00Z',
-      remarks: 'Driver mobile: +91 94140 88991. Transit insurance covered under Mill Master Policy #PFM-INS-891.'
+      remarks: 'Driver mobile: +91 90572 92529. Transit insurance covered under Mill Master Policy #PFM-INS-891.'
     },
     paymentTerms: '50% Advance via RTGS received, Balance on Lorry Receipt delivery',
     clientNotes: 'Urgent delivery required ahead of festive mandi trade rush in Kanpur.',

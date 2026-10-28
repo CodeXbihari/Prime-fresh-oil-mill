@@ -44,9 +44,39 @@ import { AdminDistributorsPage } from './pages/admin/AdminDistributorsPage';
 import { AdminQuotationsPage } from './pages/admin/AdminQuotationsPage';
 import { AdminOrdersPage } from './pages/admin/AdminOrdersPage';
 import { AdminReportsPage } from './pages/admin/AdminReportsPage';
+import { AdminVisitorAnalyticsPage } from './pages/admin/AdminVisitorAnalyticsPage';
+import { PrivacyConsentBanner } from './components/common/PrivacyConsentBanner';
+import { useApp } from './context/AppContext';
 
 // Trade Portal Layout Wrapper
 const TradeLayout: React.FC = () => {
+  const { recordVisitEvent } = useApp();
+  const location = useLocation();
+
+  // Track important page visits automatically
+  useEffect(() => {
+    const titles: Record<string, string> = {
+      '/': 'Home - Mustard Oil Mill & Mandi Rates',
+      '/products': 'Wholesale Products & Pack Sizes',
+      '/cart': 'Bulk Order Cart',
+      '/quotation-request': 'Request Formal Proforma Quotation',
+      '/portal/register': 'Distributor Onboarding KYC Application',
+      '/portal/login': 'Wholesaler Account Sign-In',
+      '/portal/profile': 'Business Profile & GSTIN Settings',
+      '/portal/my-orders': 'My Quotations & Dispatches'
+    };
+
+    let title = titles[location.pathname];
+    if (!title && location.pathname.startsWith('/products/')) {
+      title = 'Product Detail & Packaging Specifications';
+    }
+    if (!title) {
+      title = 'Prime Fresh Oil Mills Portal';
+    }
+
+    recordVisitEvent(location.pathname, title, 'page_view');
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen flex flex-col bg-cream-50 font-sans text-slate-800 w-full relative">
       <DemoBar />
@@ -57,6 +87,8 @@ const TradeLayout: React.FC = () => {
       <Footer />
       {/* 24/7 AI Customer Order & Logistics Chatbot */}
       <TradeChatbot />
+      {/* Privacy-Preserving Consent Banner */}
+      <PrivacyConsentBanner />
     </div>
   );
 };
@@ -83,6 +115,9 @@ const AdminLayout: React.FC = () => {
     }
     if (path.includes('/admin/reports')) {
       return { title: 'Extraction & Sales Reports', subtitle: 'Interstate demand analysis, crushing volume, and packaging format shares' };
+    }
+    if (path.includes('/admin/visitor-analytics')) {
+      return { title: 'Visitor Analytics & Hot Lead Detection', subtitle: 'Privacy-preserving IP tracking, visit frequency, and wholesale buying-intent scoring' };
     }
     return { title: 'Owner & Works Console', subtitle: 'Daily seed crushing, pending quotations, and live inventory overview' };
   };
@@ -147,6 +182,7 @@ export const App: React.FC = () => {
           <Route path="/admin/quotations" element={<AdminQuotationsPage />} />
           <Route path="/admin/orders" element={<AdminOrdersPage />} />
           <Route path="/admin/reports" element={<AdminReportsPage />} />
+          <Route path="/admin/visitor-analytics" element={<AdminVisitorAnalyticsPage />} />
         </Route>
 
         {/* Fallback */}

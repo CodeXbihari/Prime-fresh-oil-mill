@@ -317,7 +317,7 @@ export const MyQuotationsPage: React.FC = () => {
                         Matsya Industrial Area, Alwar, Rajasthan - 301030
                       </p>
                       <p className="text-slate-600">GSTIN: 08AAAFP8901L1ZG | CIN: U15142RJ2018PTC061294</p>
-                      <p className="text-slate-600">Trade Helpline: +91 98290 55441</p>
+                      <p className="text-slate-600">Trade Helpline: +91 90572 92529</p>
                     </div>
                   </div>
 

@@ -1,0 +1,10 @@
+# Prime Fresh Oil Mills - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /portal/profile
+Disallow: /portal/my-orders
+
+# Sitemap
+Sitemap: https://primefreshoil.com/sitemap.xml
+
