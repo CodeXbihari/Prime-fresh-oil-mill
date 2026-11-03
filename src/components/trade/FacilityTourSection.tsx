@@ -76,7 +76,7 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-[#EBE7DD] overflow-hidden shadow-xs hover:border-[#C49A32]/50 hover:shadow-sm transition-all flex flex-col group">
+    <div className="glass-panel glass-panel-hover rounded-3xl overflow-hidden flex flex-col group">
       {/* Video Screen Container */}
       <div
         className="relative aspect-video sm:h-52 md:h-56 w-full bg-[#0A1D15] overflow-hidden cursor-pointer select-none"
@@ -94,11 +94,11 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
 
         {/* Top Badges */}
         <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between z-10 pointer-events-none">
-          <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#102B20]/90 text-[#F5C542] border border-[#E5A000]/30 shadow-xs">
+          <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wider uppercase glass-pill-dark text-[#F5C542]">
             {badge}
           </span>
           {isPlaying && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-700/90 text-white">
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-emerald-700/90 text-white backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Live Footage
             </span>
@@ -111,7 +111,7 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
             <button
               type="button"
               onClick={toggleMute}
-              className="w-7 h-7 rounded-lg bg-[#102B20]/80 hover:bg-[#102B20] text-[#FFF8E8] flex items-center justify-center transition border border-[#102B20] cursor-pointer shadow-xs"
+              className="w-7 h-7 rounded-lg glass-pill-dark hover:bg-black/80 text-[#FFF8E8] flex items-center justify-center transition cursor-pointer"
               title={isMuted ? 'Unmute' : 'Mute'}
             >
               {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
@@ -119,7 +119,7 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
             <button
               type="button"
               onClick={handleFullscreen}
-              className="w-7 h-7 rounded-lg bg-[#102B20]/80 hover:bg-[#102B20] text-[#FFF8E8] flex items-center justify-center transition border border-[#102B20] cursor-pointer shadow-xs hidden sm:flex"
+              className="w-7 h-7 rounded-lg glass-pill-dark hover:bg-black/80 text-[#FFF8E8] flex items-center justify-center transition cursor-pointer hidden sm:flex"
               title="Watch Fullscreen"
             >
               <Maximize2 className="w-3.5 h-3.5" />
@@ -129,18 +129,18 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
 
         {/* Play Overlay when Not Playing */}
         {!isPlaying && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-[#102B20]/40 transition-all">
-            <div className="w-12 h-12 rounded-full bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] flex items-center justify-center shadow-md transition-transform group-hover:scale-105 active:scale-95">
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-black/40 backdrop-blur-xs transition-all">
+            <div className="w-13 h-13 rounded-full bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 active:scale-95 border border-white/40">
               <Play className="w-5 h-5 translate-x-0.5 fill-[#102B20] text-[#102B20]" />
             </div>
-            <span className="mt-2.5 px-3 py-1 rounded-md bg-[#102B20]/90 text-[#FFF8E8] text-[10px] font-semibold tracking-wider uppercase border border-white/10 shadow-xs">
+            <span className="mt-2.5 px-3 py-1 rounded-xl glass-pill-dark text-[#FFF8E8] text-[10px] font-semibold tracking-wider uppercase">
               Click to Play Facility Footage
             </span>
           </div>
         )}
 
         {/* Bottom Title on Video */}
-        <div className="absolute bottom-0 inset-x-0 p-3 sm:p-3.5 text-white z-10 pointer-events-none bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+        <div className="absolute bottom-0 inset-x-0 p-3 sm:p-3.5 text-white z-10 pointer-events-none bg-gradient-to-t from-black/85 via-black/45 to-transparent">
           <div className="flex items-center gap-1.5 text-[#F5C542] text-[10px] font-bold uppercase tracking-wider mb-0.5">
             {icon}
             <span>{tag}</span>
@@ -157,10 +157,10 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
           {description}
         </p>
 
-        {/* Technical Specs Metric Pills */}
-        <div className="grid grid-cols-3 gap-2 pt-2.5 border-t border-[#EBE7DD]">
+        {/* Technical Specs Metric Pills in Frosted Glass */}
+        <div className="grid grid-cols-3 gap-2 pt-2.5 border-t border-white/60">
           {specs.map((s, idx) => (
-            <div key={idx} className="bg-[#FAF8F5] rounded-lg p-2 text-center border border-[#EBE7DD]">
+            <div key={idx} className="bg-white/60 backdrop-blur-xs rounded-xl p-2 text-center border border-white/70 shadow-xs">
               <span className="block text-[9px] text-slate-500 uppercase font-semibold leading-tight">
                 {s.label}
               </span>
@@ -177,11 +177,11 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
 
 export const FacilityTourSection: React.FC = () => {
   return (
-    <section className="bg-[#FAF8F5] py-14 sm:py-20 border-y border-[#EBE7DD] w-full">
+    <section className="py-16 sm:py-24 border-y border-white/50 w-full relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#EBE7DD] text-[#C49A32] text-xs font-semibold tracking-wider uppercase mb-2.5 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-[#C49A32] text-xs font-semibold tracking-wider uppercase mb-2.5">
             <Factory className="w-3.5 h-3.5 text-[#C49A32] shrink-0" />
             <span>Verified Manufacturing Infrastructure</span>
           </div>
@@ -228,21 +228,21 @@ export const FacilityTourSection: React.FC = () => {
           />
         </div>
 
-        {/* Highlights Banner & Direct Action CTA */}
-        <div className="bg-[#102B20] text-[#FFF8E8] rounded-2xl p-6 sm:p-8 border border-[#C49A32]/25 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+        {/* Highlights Banner & Direct Action CTA — Dark Glass */}
+        <div className="glass-dark text-[#FFF8E8] rounded-3xl p-6 sm:p-8 border border-white/20 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
           <div className="space-y-2 text-center md:text-left max-w-lg">
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs text-[#FAF7EF]/90 font-semibold">
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill-dark">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#E5A000] shrink-0" />
                 <span>FSSAI Certified Works</span>
               </span>
               <span>•</span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill-dark">
                 <Scale className="w-3.5 h-3.5 text-[#E5A000] shrink-0" />
                 <span>Digital Weighbridge</span>
               </span>
               <span>•</span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill-dark">
                 <Truck className="w-3.5 h-3.5 text-[#E5A000] shrink-0" />
                 <span>All-India Fleet</span>
               </span>
@@ -258,14 +258,14 @@ export const FacilityTourSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
             <Link
               to="/quotation-request"
-              className="px-5 py-3 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-xs tracking-wide transition shadow-sm flex items-center justify-center gap-2 text-center cursor-pointer"
+              className="px-5 py-3 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-xs tracking-wide transition shadow-md flex items-center justify-center gap-2 text-center cursor-pointer border border-white/20"
             >
               <span>Request Proforma</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <a
               href="tel:9057292529"
-              className="px-4 py-3 rounded-xl bg-[#163628] hover:bg-[#1F4532] text-[#FAF7EF] font-semibold text-xs tracking-wide transition border border-[#C49A32]/30 flex items-center justify-center gap-2 text-center cursor-pointer"
+              className="px-4 py-3 rounded-xl glass-pill-dark hover:bg-black/70 text-[#FAF7EF] font-semibold text-xs tracking-wide transition border border-white/20 flex items-center justify-center gap-2 text-center cursor-pointer"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#E5A000]" />
               <span>Call Mill Desk</span>

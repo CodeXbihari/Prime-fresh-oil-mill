@@ -48,14 +48,14 @@ export const ProductsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] py-10">
+    <div className="min-h-screen ambient-glass-canvas py-10 relative">
       <SEOHead
         title="Wholesale Mustard Oil, Seeds & Khali Catalog | Bulk Packaging"
         description="Browse our wholesale catalog of Kachi Ghani cold pressed mustard oil, yellow & black mustard seeds, sesame oil, and cattle feed mustard cake (DOC). Available in 15L tins, HDPE drums, and bulk tankers."
         keywords="mustard oil catalog, 15L tin mustard oil price, bulk mustard oil drum, mustard cake khali, agro commodities wholesale, cold pressed oil distributor"
         canonicalPath="/products"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Breadcrumb & Title */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
@@ -68,18 +68,18 @@ export const ProductsPage: React.FC = () => {
               <h1 className="font-serif font-black text-3xl sm:text-4xl text-[#102B20]">
                 Wholesale Oilseeds, By-Products &amp; Agro Commodities
               </h1>
-              <p className="text-slate-600 text-sm mt-1 max-w-2xl">
+              <p className="text-slate-600 text-sm mt-1.5 max-w-2xl leading-relaxed">
                 Direct factory gate wholesale pricing for stockists, grain merchants, and bulk institutional buyers. Machine-cleaned sortex purity, verified moisture, and lab certified quality.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2.5 shrink-0">
-              <div className="bg-white border border-[#EBE7DD] rounded-xl px-3.5 py-2 text-xs text-slate-700 flex items-center gap-2 shadow-xs">
+              <div className="glass-panel px-3.5 py-2 text-xs text-slate-700 flex items-center gap-2 rounded-xl shadow-xs">
                 <Info className="w-4 h-4 text-[#C49A32] shrink-0" />
                 <span>Direct mill-gate rates updated daily</span>
               </div>
               <a
                 href="tel:9057292529"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs transition shadow-xs cursor-pointer"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs transition shadow-sm cursor-pointer border border-white/20"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-[#E5A000]" />
                 <span>Trade Desk: +91 90572 92529</span>
@@ -89,7 +89,7 @@ export const ProductsPage: React.FC = () => {
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="bg-white rounded-2xl p-4 sm:p-5 border border-[#EBE7DD] shadow-xs mb-8 space-y-4">
+        <div className="glass-panel rounded-2xl p-4 sm:p-5 shadow-lg mb-8 space-y-4">
           <div className="flex flex-col md:flex-row gap-3">
             {/* Search Input */}
             <div className="relative flex-1">
@@ -99,7 +99,7 @@ export const ProductsPage: React.FC = () => {
                 placeholder="Search by SKU, pack size (e.g. 15L Tin, 1L Pet, Drum), or grade..."
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 bg-[#FAF8F5] text-xs sm:text-sm text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-[#C49A32]"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl glass-input text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden"
               />
               {searchTerm && (
                 <button
@@ -116,10 +116,10 @@ export const ProductsPage: React.FC = () => {
               <select
                 value={selectedGrade}
                 onChange={e => setSelectedGrade(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-[#FAF8F5] text-xs sm:text-sm font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-[#C49A32]"
+                className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs sm:text-sm font-semibold text-slate-800 focus:outline-hidden cursor-pointer"
               >
                 {gradeOptions.map(g => (
-                  <option key={g} value={g}>
+                  <option key={g} value={g} className="bg-white text-slate-900">
                     {g === 'All' ? 'All Oil Grades' : g}
                   </option>
                 ))}
@@ -140,8 +140,8 @@ export const ProductsPage: React.FC = () => {
                 onClick={() => setSelectedPackaging(opt)}
                 className={`px-3 py-1.5 rounded-lg font-semibold transition whitespace-nowrap cursor-pointer text-xs ${
                   selectedPackaging === opt
-                    ? 'bg-[#102B20] text-[#FFF8E8] shadow-xs'
-                    : 'bg-[#FAF8F5] text-slate-600 hover:bg-slate-200/70 border border-[#EBE7DD]'
+                    ? 'bg-[#102B20] text-[#FFF8E8] shadow-sm'
+                    : 'glass-pill text-slate-700 hover:bg-white/80'
                 }`}
               >
                 {opt}

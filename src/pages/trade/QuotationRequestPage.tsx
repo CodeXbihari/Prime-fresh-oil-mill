@@ -136,17 +136,17 @@ export const QuotationRequestPage: React.FC = () => {
 
   if (generatedQuoteNumber) {
     return (
-      <div className="min-h-screen bg-cream-50/60 py-16 px-4">
-        <div className="max-w-2xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-cream-200 shadow-xl text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-inner">
+      <div className="min-h-screen ambient-glass-canvas py-16 px-4 flex items-center justify-center">
+        <div className="max-w-2xl w-full glass-panel rounded-3xl p-8 sm:p-12 shadow-2xl text-center space-y-6">
+          <div className="w-16 h-16 rounded-full bg-emerald-100/90 text-emerald-800 flex items-center justify-center mx-auto shadow-inner border border-emerald-300">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
           <div>
-            <span className="text-xs font-bold text-mustard-600 uppercase tracking-widest block mb-1">
+            <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               Commercial Quotation Requested
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-3xl text-forest-950">
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
               Quotation Ref: {generatedQuoteNumber}
             </h2>
             <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto leading-relaxed">
@@ -154,35 +154,35 @@ export const QuotationRequestPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-cream-100 rounded-2xl p-5 border border-cream-200 text-left text-xs space-y-2">
+          <div className="bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-white/80 text-left text-xs space-y-2 shadow-xs">
             <div className="flex justify-between text-slate-600">
               <span>Wholesale Partner:</span>
-              <strong className="text-forest-950">{companyName}</strong>
+              <strong className="text-[#102B20]">{companyName}</strong>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Destination Market:</span>
-              <span className="font-bold text-forest-950">{destinationCity}, {destinationState}</span>
+              <span className="font-bold text-[#102B20]">{destinationCity}, {destinationState}</span>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Requested SKUs:</span>
-              <span className="font-bold text-forest-950">{quoteItems.length} Product Line(s)</span>
+              <span className="font-bold text-[#102B20]">{quoteItems.length} Product Line(s)</span>
             </div>
-            <div className="flex justify-between text-slate-600 border-t border-cream-300 pt-2 font-bold text-sm">
+            <div className="flex justify-between text-slate-600 border-t border-slate-200/60 pt-2 font-bold text-sm">
               <span>Indicative Quotation Total:</span>
-              <span className="text-mustard-700">₹{grandTotal.toLocaleString('en-IN')}</span>
+              <span className="text-[#C49A32]">₹{grandTotal.toLocaleString('en-IN')}</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Link
               to="/portal/my-orders"
-              className="px-6 py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-sm shadow transition"
+              className="px-6 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm shadow-sm transition border border-white/20"
             >
               View in My Quotations & Orders
             </Link>
             <Link
               to="/products"
-              className="px-6 py-3 rounded-xl bg-cream-200 hover:bg-cream-300 text-forest-950 font-bold text-sm transition"
+              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#102B20] font-bold text-sm transition shadow-xs"
             >
               Browse Full Catalog
             </Link>
@@ -193,37 +193,37 @@ export const QuotationRequestPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-cream-50/60 py-10">
+    <div className="min-h-screen ambient-glass-canvas py-10 relative">
       <SEOHead
         title="Request Official Factory Quotation & Freight Rates"
         description="Submit your bulk order quotation inquiry for cold-pressed Kachi Ghani mustard oil, sesame oil, or cattle feed khali. Fast turnaround from our Alwar mill trade desk."
         keywords="mustard oil quotation, bulk edible oil rate inquiry, mandi rate quote, wholesale oil proforma invoice, mustard oil freight estimate"
         canonicalPath="/quotation-request"
       />
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
             <Link to="/" className="hover:underline">Home</Link>
             <span>/</span>
-            <span className="text-forest-900 font-bold">Request Official Quotation</span>
+            <span className="text-[#102B20] font-bold">Request Official Quotation</span>
           </div>
-          <h1 className="font-serif font-black text-2xl sm:text-4xl text-forest-950">
-            Request Official Factory Quotation & Freight
+          <h1 className="font-serif font-black text-2xl sm:text-4xl text-[#102B20]">
+            Request Official Factory Quotation &amp; Freight
           </h1>
-          <p className="text-slate-600 text-xs sm:text-sm mt-1">
+          <p className="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-3xl">
             Specify desired packaging quantities, destination mandi, and delivery requirements. Our works team reviews daily crushing schedules and responds with a formal proforma quote within 2 working hours.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Section 1: Product Selection & Quantities */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-sm space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-cream-200 pb-4">
+          <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/60 pb-4">
               <div>
-                <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-mustard-600" />
-                  <span>Product Lines & Quantities</span>
+                <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-[#C49A32]" />
+                  <span>Product Lines &amp; Quantities</span>
                 </h3>
                 <p className="text-xs text-slate-500">
                   Select pack sizes and required quantities. Quantities adjust to minimum batch constraints.
@@ -233,9 +233,9 @@ export const QuotationRequestPage: React.FC = () => {
               <button
                 type="button"
                 onClick={addItemRow}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-forest-50 hover:bg-forest-100 text-forest-900 border border-forest-200 text-xs font-bold transition self-start sm:self-auto"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass-panel hover:bg-white text-[#102B20] text-xs font-bold transition shadow-xs self-start sm:self-auto cursor-pointer"
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="w-4 h-4 text-[#C49A32]" />
                 <span>Add Another Pack SKU</span>
               </button>
             </div>
@@ -246,7 +246,7 @@ export const QuotationRequestPage: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-cream-50/70 border border-cream-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+                    className="p-4 rounded-2xl bg-white/60 backdrop-blur-md border border-white/80 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
                   >
                     <div className="flex-1 w-full">
                       <label className="block text-[11px] font-bold text-slate-700 uppercase mb-1">
@@ -255,10 +255,10 @@ export const QuotationRequestPage: React.FC = () => {
                       <select
                         value={item.productId}
                         onChange={e => updateItemRow(idx, { productId: e.target.value })}
-                        className="w-full px-3 py-2 rounded-xl border border-cream-300 bg-white text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                        className="w-full px-3 py-2 rounded-xl glass-input text-xs font-semibold text-slate-800 focus:outline-hidden cursor-pointer"
                       >
                         {products.map(p => (
-                          <option key={p.id} value={p.id}>
+                          <option key={p.id} value={p.id} className="bg-white">
                             {p.name} ({p.packaging}) — MOQ: {p.moq} {p.unitLabel}
                           </option>
                         ))}
@@ -274,14 +274,14 @@ export const QuotationRequestPage: React.FC = () => {
                         min={currentProd.moq}
                         value={item.quantity}
                         onChange={e => updateItemRow(idx, { quantity: parseInt(e.target.value) || currentProd.moq })}
-                        className="w-full px-3 py-2 rounded-xl border border-cream-300 bg-white text-xs font-bold text-forest-950 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                        className="w-full px-3 py-2 rounded-xl glass-input text-xs font-bold text-[#102B20] focus:outline-hidden"
                       />
                     </div>
 
                     <div className="flex items-center justify-between md:justify-end gap-3 w-full md:w-auto pt-2 md:pt-4">
                       <div className="text-right">
                         <span className="text-[10px] text-slate-400 block uppercase">Est. Rate</span>
-                        <span className="font-bold text-forest-950 text-xs">
+                        <span className="font-bold text-[#102B20] text-xs">
                           ₹{currentProd.indicativePrice.toLocaleString('en-IN')}/{currentProd.unitLabel.replace(/s$/, '')}
                         </span>
                       </div>
@@ -289,7 +289,7 @@ export const QuotationRequestPage: React.FC = () => {
                         <button
                           type="button"
                           onClick={() => removeItemRow(idx)}
-                          className="p-2 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-lg transition"
+                          className="p-2 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-xl transition cursor-pointer"
                           title="Remove item"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -303,10 +303,10 @@ export const QuotationRequestPage: React.FC = () => {
           </div>
 
           {/* Section 2: Logistics & Commercial Terms */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-sm space-y-6">
-            <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2 border-b border-cream-200 pb-3">
-              <Truck className="w-5 h-5 text-mustard-600" />
-              <span>Logistics & Freight Requirements</span>
+          <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+              <Truck className="w-5 h-5 text-[#C49A32]" />
+              <span>Logistics &amp; Freight Requirements</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -315,10 +315,10 @@ export const QuotationRequestPage: React.FC = () => {
                 <select
                   value={deliveryType}
                   onChange={e => setDeliveryType(e.target.value as any)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs font-semibold text-slate-800"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs font-semibold text-slate-800 cursor-pointer"
                 >
-                  <option value="Door Delivery (Transporter)">Door Delivery via Mill Commercial Transporter</option>
-                  <option value="Ex-Mill (Pickup from Mill)">Ex-Mill Gate Collection (Customer Arranged Truck)</option>
+                  <option value="Door Delivery (Transporter)" className="bg-white">Door Delivery via Mill Commercial Transporter</option>
+                  <option value="Ex-Mill (Pickup from Mill)" className="bg-white">Ex-Mill Gate Collection (Customer Arranged Truck)</option>
                 </select>
               </div>
 
@@ -327,12 +327,12 @@ export const QuotationRequestPage: React.FC = () => {
                 <select
                   value={deliveryUrgency}
                   onChange={e => setDeliveryUrgency(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs font-semibold text-slate-800"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs font-semibold text-slate-800 cursor-pointer"
                 >
-                  <option value="Immediate Ready Stock (24-48 Hours)">Immediate Ready Stock (24-48 Hours)</option>
-                  <option value="Within 3-5 Working Days">Within 3-5 Working Days</option>
-                  <option value="Planned Next Week Dispatch">Planned Next Week Dispatch</option>
-                  <option value="Monthly Long-Term Contract">Monthly Long-Term Bulk Lifting Contract</option>
+                  <option value="Immediate Ready Stock (24-48 Hours)" className="bg-white">Immediate Ready Stock (24-48 Hours)</option>
+                  <option value="Within 3-5 Working Days" className="bg-white">Within 3-5 Working Days</option>
+                  <option value="Planned Next Week Dispatch" className="bg-white">Planned Next Week Dispatch</option>
+                  <option value="Monthly Long-Term Contract" className="bg-white">Monthly Long-Term Bulk Lifting Contract</option>
                 </select>
               </div>
             </div>
@@ -345,7 +345,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={shippingAddress}
                   onChange={e => setShippingAddress(e.target.value)}
                   placeholder="Plot/Shop address, Wholesale Mandi, Transport Nagar..."
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -357,7 +357,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={destinationCity}
                   onChange={e => setDestinationCity(e.target.value)}
                   placeholder="e.g. Kanpur, Patna, Kolkata"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
               <div>
@@ -368,7 +368,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={destinationState}
                   onChange={e => setDestinationState(e.target.value)}
                   placeholder="e.g. Uttar Pradesh"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
               <div>
@@ -379,7 +379,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={pincode}
                   onChange={e => setPincode(e.target.value)}
                   placeholder="e.g. 208001"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -392,7 +392,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={transportPreference}
                   onChange={e => setTransportPreference(e.target.value)}
                   placeholder="e.g. VRL, TCI Freight, ARC Logistics, Local Mandi Carrier"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
               <div>
@@ -402,16 +402,16 @@ export const QuotationRequestPage: React.FC = () => {
                   value={paymentTerms}
                   onChange={e => setPaymentTerms(e.target.value)}
                   placeholder="e.g. 100% Advance RTGS, 20% Advance + Balance against LR"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
             </div>
           </div>
 
           {/* Section 3: Wholesaler Contact Info */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-sm space-y-4">
-            <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2 border-b border-cream-200 pb-3">
-              <Building className="w-5 h-5 text-mustard-600" />
+          <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
+            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+              <Building className="w-5 h-5 text-[#C49A32]" />
               <span>Wholesaler / Business Profile</span>
             </h3>
 
@@ -424,18 +424,18 @@ export const QuotationRequestPage: React.FC = () => {
                   value={companyName}
                   onChange={e => setCompanyName(e.target.value)}
                   placeholder="e.g. Shree Balaji Agro Traders"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
               <div>
-                <label className="block font-bold text-slate-700 mb-1">Contact Person & Designation *</label>
+                <label className="block font-bold text-slate-700 mb-1">Contact Person &amp; Designation *</label>
                 <input
                   type="text"
                   required
                   value={contactPerson}
                   onChange={e => setContactPerson(e.target.value)}
                   placeholder="e.g. Rajesh Agrawal (Partner)"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
               <div>
@@ -446,7 +446,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
                   placeholder="e.g. +91 98390 12345"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
               <div>
@@ -456,7 +456,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="e.g. rajesh@balajiagrotraders.in"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -466,7 +466,7 @@ export const QuotationRequestPage: React.FC = () => {
                   value={gstin}
                   onChange={e => setGstin(e.target.value.toUpperCase())}
                   placeholder="e.g. 09AAACB2041D1Z4"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -478,33 +478,33 @@ export const QuotationRequestPage: React.FC = () => {
                 value={clientNotes}
                 onChange={e => setClientNotes(e.target.value)}
                 placeholder="Mention any custom brand stenciling, carton markings, high-pungency lab report request, or mandi terms..."
-                className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs text-slate-800 focus:outline-hidden"
               />
             </div>
           </div>
 
           {/* Submission Bar */}
-          <div className="bg-forest-950 text-cream-50 p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="glass-dark text-[#FFF8E8] p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/20 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <span className="text-xs font-bold text-mustard-400 uppercase tracking-wider block">
+              <span className="text-xs font-bold text-[#E5A000] uppercase tracking-wider block">
                 Indicative Estimate
               </span>
-              <div className="flex items-baseline gap-2">
-                <span className="font-serif font-black text-2xl sm:text-3xl text-cream-50">
+              <div className="flex items-baseline gap-2 mt-0.5">
+                <span className="font-serif font-black text-2xl sm:text-3xl text-[#FFF8E8]">
                   ₹{grandTotal.toLocaleString('en-IN')}
                 </span>
                 <span className="text-xs text-slate-300">
                   (Includes ₹{Math.round(gst).toLocaleString('en-IN')} GST + {deliveryType === 'Door Delivery (Transporter)' ? '₹15,000 Freight' : 'Ex-Mill'})
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 mt-1">
+              <p className="text-[11px] text-slate-300 mt-1">
                 Final proforma rate will reflect the official Brassica seed closing index on quote issuance.
               </p>
             </div>
 
             <button
               type="submit"
-              className="px-8 py-4 rounded-xl bg-mustard-500 hover:bg-mustard-400 text-forest-950 font-bold text-sm tracking-wide shadow-lg transition flex items-center gap-2 shrink-0 group"
+              className="px-8 py-4 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-sm tracking-wide shadow-lg transition flex items-center gap-2 shrink-0 group cursor-pointer border border-[#C49A32]/40"
             >
               <span>Transmit Quotation Request</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

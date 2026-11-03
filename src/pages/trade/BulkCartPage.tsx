@@ -79,17 +79,17 @@ export const BulkCartPage: React.FC = () => {
 
   if (submittedQuoteNumber) {
     return (
-      <div className="min-h-screen bg-cream-50/60 py-16 px-4">
-        <div className="max-w-2xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-cream-200 shadow-xl text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-inner">
+      <div className="min-h-screen ambient-glass-canvas py-16 px-4 flex items-center justify-center">
+        <div className="max-w-2xl w-full glass-panel rounded-3xl p-8 sm:p-12 shadow-2xl text-center space-y-6">
+          <div className="w-16 h-16 rounded-full bg-emerald-100/90 text-emerald-800 flex items-center justify-center mx-auto shadow-inner border border-emerald-300">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
           <div>
-            <span className="text-xs font-bold text-mustard-600 uppercase tracking-widest block mb-1">
+            <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               Quotation Request Transmitted
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-3xl text-forest-950">
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
               Quotation Ref: {submittedQuoteNumber}
             </h2>
             <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto leading-relaxed">
@@ -97,35 +97,35 @@ export const BulkCartPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-cream-100 rounded-2xl p-5 border border-cream-200 text-left text-xs space-y-2">
+          <div className="bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-white/80 text-left text-xs space-y-2 shadow-xs">
             <div className="flex justify-between text-slate-600">
               <span>Distributor / Firm:</span>
-              <strong className="text-forest-950">{companyName}</strong>
+              <strong className="text-[#102B20]">{companyName}</strong>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Destination:</span>
-              <span className="font-bold text-forest-950">{destinationCity}, {destinationState}</span>
+              <span className="font-bold text-[#102B20]">{destinationCity}, {destinationState}</span>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Fulfillment Logistics:</span>
-              <span className="font-bold text-forest-950">{deliveryType}</span>
+              <span className="font-bold text-[#102B20]">{deliveryType}</span>
             </div>
-            <div className="flex justify-between text-slate-600 border-t border-cream-300 pt-2 font-bold text-sm">
+            <div className="flex justify-between text-slate-600 border-t border-slate-200/60 pt-2 font-bold text-sm">
               <span>Indicative Amount:</span>
-              <span className="text-mustard-700">₹{grandTotal.toLocaleString('en-IN')}</span>
+              <span className="text-[#C49A32]">₹{grandTotal.toLocaleString('en-IN')}</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Link
               to="/portal/my-orders"
-              className="px-6 py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-sm shadow transition"
+              className="px-6 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm shadow-sm transition border border-white/20"
             >
-              Track in My Orders & Quotations
+              Track in My Orders &amp; Quotations
             </Link>
             <Link
               to="/products"
-              className="px-6 py-3 rounded-xl bg-cream-200 hover:bg-cream-300 text-forest-950 font-bold text-sm transition"
+              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#102B20] font-bold text-sm transition shadow-xs"
             >
               Continue Browsing Products
             </Link>
@@ -137,7 +137,7 @@ export const BulkCartPage: React.FC = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen bg-cream-50/60 py-16 px-4">
+      <div className="min-h-screen ambient-glass-canvas py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <EmptyState
             icon={ShoppingCart}
@@ -152,27 +152,27 @@ export const BulkCartPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-cream-50/60 py-10">
+    <div className="min-h-screen ambient-glass-canvas py-10 relative">
       <SEOHead
         title="Bulk Order Cart & Wholesale Consignment Request"
         description="Review wholesale mustard oil line items, packaging, transport preferences, and generate a formal commercial invoice quotation."
         canonicalPath="/cart"
         noIndex={true}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
-            <h1 className="font-serif font-black text-2xl sm:text-3xl text-forest-950">
+            <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
               Wholesale Bulk Order Cart
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
               Review commercial line items, quantities, and specify delivery destination terms.
             </p>
           </div>
           <button
             onClick={clearCart}
-            className="text-xs font-semibold text-rose-600 hover:text-rose-800 flex items-center gap-1 self-start sm:self-auto"
+            className="text-xs font-semibold text-rose-600 hover:text-rose-800 flex items-center gap-1 self-start sm:self-auto cursor-pointer glass-panel px-3 py-1.5 rounded-lg shadow-xs"
           >
             <Trash2 className="w-3.5 h-3.5" />
             <span>Empty Cart</span>
@@ -184,13 +184,13 @@ export const BulkCartPage: React.FC = () => {
             {/* Left Col: Cart Items Table & Delivery Settings */}
             <div className="lg:col-span-8 space-y-6">
               {/* Items Card */}
-              <div className="bg-white rounded-2xl border border-cream-200 shadow-sm overflow-hidden">
-                <div className="px-6 py-4 bg-cream-100/60 border-b border-cream-200 flex justify-between items-center text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <div className="glass-panel rounded-3xl shadow-xl overflow-hidden">
+                <div className="px-6 py-4 bg-white/40 border-b border-slate-200/60 flex justify-between items-center text-xs font-bold text-[#102B20] uppercase tracking-wider">
                   <span>Selected Wholesale SKUs ({cart.length})</span>
                   <span>Minimum Order Quantity Check</span>
                 </div>
 
-                <div className="divide-y divide-cream-100">
+                <div className="divide-y divide-slate-200/50">
                   {cart.map(item => {
                     const isBelowMoq = item.quantity < item.product.moq;
                     // volume discount check
@@ -204,18 +204,18 @@ export const BulkCartPage: React.FC = () => {
                     const lineSubtotal = unitPrice * item.quantity;
 
                     return (
-                      <div key={item.product.id} className="p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                      <div key={item.product.id} className="p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:bg-white/40 transition">
                         <div className="flex items-center gap-4 flex-1">
                           <img
                             src={item.product.image}
                             alt={item.product.name}
-                            className="w-16 h-16 rounded-xl object-cover bg-cream-100 shrink-0 border border-cream-200"
+                            className="w-16 h-16 rounded-xl object-cover bg-white/60 shrink-0 border border-white/80 shadow-xs"
                           />
                           <div>
-                            <span className="text-[10px] font-bold text-mustard-700 uppercase tracking-wider block">
+                            <span className="text-[10px] font-bold text-[#C49A32] uppercase tracking-wider block">
                               {item.product.packaging}
                             </span>
-                            <h4 className="font-serif font-bold text-sm text-forest-950">
+                            <h4 className="font-serif font-bold text-sm text-[#102B20]">
                               {item.product.name}
                             </h4>
                             <div className="flex items-center gap-2 text-xs text-slate-500 mt-1">
@@ -234,11 +234,11 @@ export const BulkCartPage: React.FC = () => {
 
                         {/* Quantity Counter & Line Subtotal */}
                         <div className="flex items-center justify-between w-full sm:w-auto gap-4">
-                          <div className="flex items-center border border-cream-300 rounded-xl bg-cream-50 overflow-hidden text-xs">
+                          <div className="flex items-center border border-white/80 rounded-xl bg-white/80 backdrop-blur-sm overflow-hidden text-xs shadow-xs">
                             <button
                               type="button"
                               onClick={() => updateCartQuantity(item.product.id, item.quantity - 10)}
-                              className="px-2.5 py-1.5 hover:bg-cream-200 font-bold text-slate-700 transition"
+                              className="px-2.5 py-1.5 hover:bg-slate-100 font-bold text-slate-700 transition cursor-pointer"
                             >
                               -
                             </button>
@@ -247,25 +247,25 @@ export const BulkCartPage: React.FC = () => {
                               min="1"
                               value={item.quantity}
                               onChange={e => updateCartQuantity(item.product.id, parseInt(e.target.value) || 1)}
-                              className="w-16 text-center font-bold text-forest-950 bg-transparent py-1 focus:outline-hidden"
+                              className="w-16 text-center font-bold text-[#102B20] bg-transparent py-1 focus:outline-hidden"
                             />
                             <button
                               type="button"
                               onClick={() => updateCartQuantity(item.product.id, item.quantity + 10)}
-                              className="px-2.5 py-1.5 hover:bg-cream-200 font-bold text-slate-700 transition"
+                              className="px-2.5 py-1.5 hover:bg-slate-100 font-bold text-slate-700 transition cursor-pointer"
                             >
                               +
                             </button>
                           </div>
 
                           <div className="text-right min-w-[100px]">
-                            <span className="text-sm font-bold text-forest-950 block">
+                            <span className="text-sm font-bold text-[#102B20] block">
                               ₹{lineSubtotal.toLocaleString('en-IN')}
                             </span>
                             <button
                               type="button"
                               onClick={() => removeFromCart(item.product.id)}
-                              className="text-[11px] text-rose-500 hover:text-rose-700 hover:underline mt-0.5"
+                              className="text-[11px] text-rose-500 hover:text-rose-700 hover:underline mt-0.5 cursor-pointer"
                             >
                               Remove
                             </button>
@@ -278,19 +278,19 @@ export const BulkCartPage: React.FC = () => {
               </div>
 
               {/* Delivery Logistics & Transporter Details */}
-              <div className="bg-white rounded-2xl border border-cream-200 p-6 shadow-sm space-y-5">
-                <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2">
-                  <Truck className="w-5 h-5 text-mustard-600" />
-                  <span>Logistics & Delivery Destination</span>
+              <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-5">
+                <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2">
+                  <Truck className="w-5 h-5 text-[#C49A32]" />
+                  <span>Logistics &amp; Delivery Destination</span>
                 </h3>
 
                 {/* Delivery Type Option */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <label
-                    className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition ${
+                    className={`flex items-start gap-3 p-4 rounded-2xl border cursor-pointer transition ${
                       deliveryType === 'Door Delivery (Transporter)'
-                        ? 'bg-mustard-50/60 border-mustard-500 ring-1 ring-mustard-400'
-                        : 'bg-white border-cream-200 hover:bg-cream-50'
+                        ? 'bg-white/90 border-[#C49A32] shadow-sm ring-1 ring-[#C49A32]'
+                        : 'bg-white/40 border-white/70 hover:bg-white/60'
                     }`}
                   >
                     <input
@@ -298,10 +298,10 @@ export const BulkCartPage: React.FC = () => {
                       name="deliveryType"
                       checked={deliveryType === 'Door Delivery (Transporter)'}
                       onChange={() => setDeliveryType('Door Delivery (Transporter)')}
-                      className="mt-1 text-mustard-600 focus:ring-mustard-500"
+                      className="mt-1 text-[#C49A32] focus:ring-[#C49A32]"
                     />
                     <div>
-                      <strong className="text-forest-950 text-sm block">Door Delivery via Transporter</strong>
+                      <strong className="text-[#102B20] text-sm block">Door Delivery via Transporter</strong>
                       <p className="text-xs text-slate-500 mt-0.5">
                         Mill arranges dedicated cargo truck or part-load lorry receipt (LR) delivery to your city godown.
                       </p>
@@ -309,10 +309,10 @@ export const BulkCartPage: React.FC = () => {
                   </label>
 
                   <label
-                    className={`flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition ${
+                    className={`flex items-start gap-3 p-4 rounded-2xl border cursor-pointer transition ${
                       deliveryType === 'Ex-Mill (Pickup from Mill)'
-                        ? 'bg-mustard-50/60 border-mustard-500 ring-1 ring-mustard-400'
-                        : 'bg-white border-cream-200 hover:bg-cream-50'
+                        ? 'bg-white/90 border-[#C49A32] shadow-sm ring-1 ring-[#C49A32]'
+                        : 'bg-white/40 border-white/70 hover:bg-white/60'
                     }`}
                   >
                     <input
@@ -320,10 +320,10 @@ export const BulkCartPage: React.FC = () => {
                       name="deliveryType"
                       checked={deliveryType === 'Ex-Mill (Pickup from Mill)'}
                       onChange={() => setDeliveryType('Ex-Mill (Pickup from Mill)')}
-                      className="mt-1 text-mustard-600 focus:ring-mustard-500"
+                      className="mt-1 text-[#C49A32] focus:ring-[#C49A32]"
                     />
                     <div>
-                      <strong className="text-forest-950 text-sm block">Ex-Mill Factory Gate Collection</strong>
+                      <strong className="text-[#102B20] text-sm block">Ex-Mill Factory Gate Collection</strong>
                       <p className="text-xs text-slate-500 mt-0.5">
                         Your own vehicle/transporter collects consignment from our Alwar mill gate. Zero freight added.
                       </p>
@@ -341,7 +341,7 @@ export const BulkCartPage: React.FC = () => {
                       value={destinationCity}
                       onChange={e => setDestinationCity(e.target.value)}
                       placeholder="e.g. Kanpur, Patna, Kolkata"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs text-slate-800 focus:outline-hidden"
                     />
                   </div>
                   <div>
@@ -352,7 +352,7 @@ export const BulkCartPage: React.FC = () => {
                       value={destinationState}
                       onChange={e => setDestinationState(e.target.value)}
                       placeholder="e.g. Uttar Pradesh, Bihar"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs text-slate-800 focus:outline-hidden"
                     />
                   </div>
                   <div>
@@ -363,7 +363,7 @@ export const BulkCartPage: React.FC = () => {
                       value={pincode}
                       onChange={e => setPincode(e.target.value)}
                       placeholder="e.g. 208001"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs text-slate-800 focus:outline-hidden"
                     />
                   </div>
                 </div>
@@ -375,15 +375,15 @@ export const BulkCartPage: React.FC = () => {
                     value={shippingAddress}
                     onChange={e => setShippingAddress(e.target.value)}
                     placeholder="Godown address, Mandi market plot, Transport Nagar location..."
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs text-slate-800 focus:outline-hidden"
                   />
                 </div>
               </div>
 
               {/* Distributor Business Credentials */}
-              <div className="bg-white rounded-2xl border border-cream-200 p-6 shadow-sm space-y-4">
-                <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2">
-                  <Building className="w-5 h-5 text-mustard-600" />
+              <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
+                <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2">
+                  <Building className="w-5 h-5 text-[#C49A32]" />
                   <span>Wholesaler / Business Profile</span>
                 </h3>
 
@@ -396,7 +396,7 @@ export const BulkCartPage: React.FC = () => {
                       value={companyName}
                       onChange={e => setCompanyName(e.target.value)}
                       placeholder="e.g. Shree Balaji Agro Traders"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                   <div>
@@ -407,7 +407,7 @@ export const BulkCartPage: React.FC = () => {
                       value={contactPerson}
                       onChange={e => setContactPerson(e.target.value)}
                       placeholder="e.g. Rajesh Agrawal"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                   <div>
@@ -418,7 +418,7 @@ export const BulkCartPage: React.FC = () => {
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
                       placeholder="e.g. +91 98390 12345"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                   <div>
@@ -428,7 +428,7 @@ export const BulkCartPage: React.FC = () => {
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       placeholder="e.g. trade@distributor.com"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                   <div>
@@ -438,7 +438,7 @@ export const BulkCartPage: React.FC = () => {
                       value={gstin}
                       onChange={e => setGstin(e.target.value.toUpperCase())}
                       placeholder="e.g. 09AAACB2041D1Z4"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                 </div>
@@ -451,7 +451,7 @@ export const BulkCartPage: React.FC = () => {
                       value={transportPreference}
                       onChange={e => setTransportPreference(e.target.value)}
                       placeholder="e.g. VRL Logistics, TCI Express"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                   <div>
@@ -461,7 +461,7 @@ export const BulkCartPage: React.FC = () => {
                       value={paymentTerms}
                       onChange={e => setPaymentTerms(e.target.value)}
                       placeholder="e.g. 50% Advance RTGS, Balance against LR"
-                      className="w-full px-3.5 py-2 rounded-xl border border-cream-300 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                 </div>
@@ -473,7 +473,7 @@ export const BulkCartPage: React.FC = () => {
                     value={clientNotes}
                     onChange={e => setClientNotes(e.target.value)}
                     placeholder="Mention any custom packaging requirements, festive delivery urgency, or preferred local transporter..."
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs text-slate-800 focus:outline-hidden"
                   />
                 </div>
               </div>
@@ -481,15 +481,15 @@ export const BulkCartPage: React.FC = () => {
 
             {/* Right Col: Cost Summary & Action Card */}
             <div className="lg:col-span-4">
-              <div className="bg-white rounded-3xl border border-cream-200 p-6 shadow-md space-y-5 sticky top-28">
-                <h3 className="font-serif font-bold text-lg text-forest-950 pb-3 border-b border-cream-200">
+              <div className="glass-panel rounded-3xl p-6 sm:p-7 shadow-2xl space-y-5 sticky top-28 border border-white/80">
+                <h3 className="font-serif font-bold text-lg text-[#102B20] pb-3 border-b border-slate-200/60">
                   Commercial Quotation Summary
                 </h3>
 
                 <div className="space-y-3 text-xs">
                   <div className="flex justify-between text-slate-600">
                     <span>Base Ex-Mill Subtotal:</span>
-                    <span className="font-bold text-forest-950">
+                    <span className="font-bold text-[#102B20]">
                       ₹{cartSubtotal.toLocaleString('en-IN')}
                     </span>
                   </div>
@@ -503,39 +503,39 @@ export const BulkCartPage: React.FC = () => {
 
                   <div className="flex justify-between text-slate-600">
                     <span>Estimated Transporter Freight:</span>
-                    <span className="font-bold text-forest-950">
+                    <span className="font-bold text-[#102B20]">
                       {freightCharge > 0 ? `₹${freightCharge.toLocaleString('en-IN')}` : 'Ex-Mill (₹0)'}
                     </span>
                   </div>
 
-                  <div className="border-t border-cream-200 pt-3 flex justify-between items-baseline">
+                  <div className="border-t border-slate-200/60 pt-3 flex justify-between items-baseline">
                     <div>
-                      <span className="font-bold text-sm text-forest-950 block">Estimated Proforma Total</span>
+                      <span className="font-bold text-sm text-[#102B20] block">Estimated Proforma Total</span>
                       <span className="text-[10px] text-slate-400">Subject to daily seed mandi index</span>
                     </div>
-                    <span className="font-serif font-black text-2xl text-mustard-700">
+                    <span className="font-serif font-black text-2xl text-[#C49A32]">
                       ₹{Math.round(grandTotal).toLocaleString('en-IN')}
                     </span>
                   </div>
                 </div>
 
-                <div className="bg-cream-50 p-3.5 rounded-xl border border-cream-200 text-[11px] text-slate-600 space-y-1.5">
+                <div className="bg-white/60 backdrop-blur-md p-3.5 rounded-2xl border border-white/80 text-[11px] text-slate-600 space-y-1.5 shadow-xs">
                   <div className="flex items-start gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-forest-800 shrink-0 mt-0.5" />
+                    <ShieldCheck className="w-4 h-4 text-[#102B20] shrink-0 mt-0.5" />
                     <span>Quotation submitted here directly creates an entry in the mill dispatch queue.</span>
                   </div>
                   <div className="flex items-start gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-forest-800 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#102B20] shrink-0 mt-0.5" />
                     <span>Works manager reviews and responds with verified dispatch date.</span>
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2 group"
+                  className="w-full py-4 px-6 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide shadow-lg transition flex items-center justify-center gap-2 group cursor-pointer border border-white/20"
                 >
                   <span>Submit Official Quotation Request</span>
-                  <ArrowRight className="w-4 h-4 text-mustard-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#E5A000] group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <p className="text-[10px] text-center text-slate-500">

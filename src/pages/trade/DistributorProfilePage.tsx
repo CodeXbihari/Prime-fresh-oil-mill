@@ -50,20 +50,20 @@ export const DistributorProfilePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream-50/60 py-10">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen ambient-glass-canvas py-10 relative">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Profile Summary */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-sm mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-forest-900 text-mustard-400 font-serif font-black text-2xl flex items-center justify-center shadow">
+            <div className="w-16 h-16 rounded-2xl bg-[#102B20] text-[#E5A000] font-serif font-black text-2xl flex items-center justify-center shadow-md border border-white/20">
               {companyName ? companyName.charAt(0) : 'P'}
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="font-serif font-black text-2xl text-forest-950">
+                <h1 className="font-serif font-black text-2xl text-[#102B20]">
                   {companyName || 'Distributor Profile'}
                 </h1>
-                <span className="bg-emerald-100 text-emerald-900 text-xs px-2.5 py-0.5 rounded-full font-bold border border-emerald-300">
+                <span className="glass-pill text-emerald-800 text-xs px-2.5 py-0.5 font-bold border-emerald-300">
                   {dist?.status || 'Active Wholesaler'}
                 </span>
               </div>
@@ -73,24 +73,24 @@ export const DistributorProfilePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-cream-100 rounded-2xl p-4 border border-cream-200 text-xs space-y-1">
+          <div className="bg-white/60 backdrop-blur-md rounded-2xl p-4 border border-white/80 text-xs space-y-1 shadow-xs">
             <div className="flex justify-between gap-4">
               <span className="text-slate-500">Approved Credit Line:</span>
-              <strong className="text-forest-950">
+              <strong className="text-[#102B20]">
                 {dist?.creditLimit ? `₹${(dist.creditLimit / 100000).toFixed(1)} Lakhs` : 'Against RTGS / LR'}
               </strong>
             </div>
             <div className="flex justify-between gap-4">
               <span className="text-slate-500">Primary Delivery Corridor:</span>
-              <span className="font-semibold text-forest-950">{state || 'Rajasthan/UP/Bihar'}</span>
+              <span className="font-semibold text-[#102B20]">{state || 'Rajasthan/UP/Bihar'}</span>
             </div>
           </div>
         </div>
 
         {/* Profile Form */}
-        <form onSubmit={handleSave} className="bg-white rounded-3xl p-6 sm:p-10 border border-cream-200 shadow-sm space-y-8">
+        <form onSubmit={handleSave} className="glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8">
           {savedSuccess && (
-            <div className="p-4 rounded-2xl bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-semibold flex items-center gap-2">
+            <div className="p-4 rounded-2xl bg-emerald-50/90 text-emerald-900 border border-emerald-200 text-xs font-semibold flex items-center gap-2">
               <Check className="w-4 h-4 text-emerald-700" />
               <span>Business profile updated and synced successfully.</span>
             </div>
@@ -98,8 +98,8 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Business Entity */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2 border-b border-cream-200 pb-3">
-              <Building2 className="w-5 h-5 text-mustard-600" />
+            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+              <Building2 className="w-5 h-5 text-[#C49A32]" />
               <span>Business Entity Information</span>
             </h3>
 
@@ -111,7 +111,7 @@ export const DistributorProfilePage: React.FC = () => {
                   required
                   value={companyName}
                   onChange={e => setCompanyName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -121,7 +121,7 @@ export const DistributorProfilePage: React.FC = () => {
                   type="text"
                   value={tradeName}
                   onChange={e => setTradeName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -129,8 +129,8 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Contact Details */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2 border-b border-cream-200 pb-3">
-              <User className="w-5 h-5 text-mustard-600" />
+            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+              <User className="w-5 h-5 text-[#C49A32]" />
               <span>Contact Person Details</span>
             </h3>
 
@@ -142,7 +142,7 @@ export const DistributorProfilePage: React.FC = () => {
                   required
                   value={contactPerson}
                   onChange={e => setContactPerson(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -152,7 +152,7 @@ export const DistributorProfilePage: React.FC = () => {
                   type="text"
                   value={designation}
                   onChange={e => setDesignation(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -163,7 +163,7 @@ export const DistributorProfilePage: React.FC = () => {
                   required
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -173,7 +173,7 @@ export const DistributorProfilePage: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -181,9 +181,9 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Business Address & Godown */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2 border-b border-cream-200 pb-3">
-              <MapPin className="w-5 h-5 text-mustard-600" />
-              <span>Registered Godown & Billing Address</span>
+            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+              <MapPin className="w-5 h-5 text-[#C49A32]" />
+              <span>Registered Godown &amp; Billing Address</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
@@ -193,7 +193,7 @@ export const DistributorProfilePage: React.FC = () => {
                   type="text"
                   value={address}
                   onChange={e => setAddress(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -203,7 +203,7 @@ export const DistributorProfilePage: React.FC = () => {
                   type="text"
                   value={city}
                   onChange={e => setCity(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -213,7 +213,7 @@ export const DistributorProfilePage: React.FC = () => {
                   type="text"
                   value={state}
                   onChange={e => setState(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -223,7 +223,7 @@ export const DistributorProfilePage: React.FC = () => {
                   type="text"
                   value={pincode}
                   onChange={e => setPincode(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
 
@@ -234,7 +234,7 @@ export const DistributorProfilePage: React.FC = () => {
                   value={godownCapacity}
                   onChange={e => setGodownCapacity(e.target.value)}
                   placeholder="e.g. 4,000 Tins stacking / 3,000 Sq Ft"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -242,9 +242,9 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Tax Compliance */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2 border-b border-cream-200 pb-3">
-              <FileCheck2 className="w-5 h-5 text-mustard-600" />
-              <span>Tax & Identification Numbers</span>
+            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+              <FileCheck2 className="w-5 h-5 text-[#C49A32]" />
+              <span>Tax &amp; Identification Numbers</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -256,7 +256,7 @@ export const DistributorProfilePage: React.FC = () => {
                   onChange={e => setGstin(e.target.value.toUpperCase())}
                   placeholder="09AAACB2041D1Z4"
                   maxLength={15}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 uppercase focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 uppercase focus:outline-hidden"
                 />
               </div>
 
@@ -268,7 +268,7 @@ export const DistributorProfilePage: React.FC = () => {
                   onChange={e => setPanNumber(e.target.value.toUpperCase())}
                   placeholder="AAACB2041D"
                   maxLength={10}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-slate-800 uppercase focus:ring-2 focus:ring-mustard-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 uppercase focus:outline-hidden"
                 />
               </div>
             </div>
@@ -277,9 +277,9 @@ export const DistributorProfilePage: React.FC = () => {
           <div className="pt-4 flex justify-end">
             <button
               type="submit"
-              className="px-8 py-3.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-sm tracking-wide shadow-md transition flex items-center gap-2"
+              className="px-8 py-3.5 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide shadow-md transition flex items-center gap-2 cursor-pointer border border-white/20"
             >
-              <Check className="w-4 h-4 text-mustard-400" />
+              <Check className="w-4 h-4 text-[#E5A000]" />
               <span>Save Business Profile</span>
             </button>
           </div>

@@ -4,8 +4,12 @@ import { MapPin, Phone, Mail, Shield, CheckCircle2 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0C1E15] text-[#FAF7EF]/90 border-t border-[#1C412E] pt-16 pb-8 no-print">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="glass-dark text-[#FAF7EF]/90 border-t border-white/10 pt-16 pb-8 no-print relative backdrop-blur-2xl">
+      {/* Ambient background light orbs */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#C49A32]/8 rounded-full blur-3xl pointer-events-none -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#1A3D2E]/40 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Col 1: Mill Profile */}
           <div>
@@ -13,7 +17,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/images/logo.jpg"
                 alt="Prime Fresh Oil Mills"
-                className="w-11 h-11 object-contain bg-white rounded-lg p-1 shadow-sm shrink-0"
+                className="w-11 h-11 object-contain bg-white rounded-xl p-1 shadow-md shrink-0 border border-white/30"
               />
               <div>
                 <span className="font-serif font-bold text-base text-[#FAF7EF] block leading-tight">
@@ -45,7 +49,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Wholesale Packs */}
           <div>
-            <h4 className="font-serif font-bold text-sm text-[#FAF7EF] tracking-wide uppercase mb-4 pb-2 border-b border-[#1C412E] text-[#E5A000]">
+            <h4 className="font-serif font-bold text-sm tracking-wide uppercase mb-4 pb-2 border-b border-white/10 text-[#E5A000]">
               Wholesale Packaging
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
@@ -96,7 +100,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Quick Links for Wholesalers */}
           <div>
-            <h4 className="font-serif font-bold text-sm text-[#FAF7EF] tracking-wide uppercase mb-4 pb-2 border-b border-[#1C412E] text-[#E5A000]">
+            <h4 className="font-serif font-bold text-sm tracking-wide uppercase mb-4 pb-2 border-b border-white/10 text-[#E5A000]">
               Distributor Portal
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
@@ -139,11 +143,11 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Quality & Compliance */}
           <div>
-            <h4 className="font-serif font-bold text-sm text-[#FAF7EF] tracking-wide uppercase mb-4 pb-2 border-b border-[#1C412E] text-[#E5A000]">
+            <h4 className="font-serif font-bold text-sm tracking-wide uppercase mb-4 pb-2 border-b border-white/10 text-[#E5A000]">
               Quality &amp; Traceability
             </h4>
             <div className="space-y-3 text-xs text-slate-300">
-              <div className="flex items-start gap-2 bg-[#122A1E] p-2.5 rounded-lg border border-[#1C412E]">
+              <div className="flex items-start gap-2 bg-white/5 backdrop-blur-md p-3 rounded-xl border border-white/10">
                 <CheckCircle2 className="w-4 h-4 text-[#E5A000] shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white block font-medium">Standard Quality Parameters</strong>
@@ -151,7 +155,7 @@ export const Footer: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-2 bg-[#122A1E] p-2.5 rounded-lg border border-[#1C412E]">
+              <div className="flex items-start gap-2 bg-white/5 backdrop-blur-md p-3 rounded-xl border border-white/10">
                 <CheckCircle2 className="w-4 h-4 text-[#E5A000] shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white block font-medium">Tamper-Proof Mill Packaging</strong>
@@ -159,7 +163,7 @@ export const Footer: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-2.5 bg-[#122A1E]/60 rounded-lg text-[11px] text-slate-400 border border-[#1C412E]">
+              <div className="p-2.5 bg-white/5 backdrop-blur-md rounded-xl text-[11px] text-slate-300 border border-white/10">
                 GSTIN: 08AAAFP8901L1ZG | CIN: U15142RJ2018PTC061294
               </div>
             </div>
@@ -167,7 +171,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Regulatory & Volatility Advisory Strip */}
-        <div className="p-4 rounded-xl bg-[#122A1E] border border-[#1C412E] text-xs text-slate-300 mb-8 leading-relaxed">
+        <div className="p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-xs text-slate-300 mb-8 leading-relaxed">
           <p className="font-semibold text-[#FAF7EF] mb-1">
             B2B Mandi Pricing &amp; Dispatch Terms Advisory:
           </p>
@@ -177,7 +181,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 pt-6 border-t border-[#1C412E] gap-3">
+        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 pt-6 border-t border-white/10 gap-3">
           <p>© {new Date().getFullYear()} Prime Fresh Oil Mills. All Rights Reserved.</p>
           <p className="text-slate-400">
             Engineered for Wholesalers, Distributors &amp; Edible Oil Stockists across India.
