@@ -55,12 +55,12 @@ export const DistributorProfilePage: React.FC = () => {
         {/* Header Profile Summary */}
         <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-[#102B20] text-[#E5A000] font-serif font-black text-2xl flex items-center justify-center shadow-md border border-white/20">
+            <div className="w-16 h-16 rounded-2xl bg-[#C49A32] text-white font-serif font-black text-2xl flex items-center justify-center shadow-md border border-white/40">
               {companyName ? companyName.charAt(0) : 'P'}
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="font-serif font-black text-2xl text-[#102B20]">
+                <h1 className="font-serif font-black text-2xl text-[#2D2418]">
                   {companyName || 'Distributor Profile'}
                 </h1>
                 <span className="glass-pill text-emerald-800 text-xs px-2.5 py-0.5 font-bold border-emerald-300">
@@ -76,13 +76,13 @@ export const DistributorProfilePage: React.FC = () => {
           <div className="bg-white/60 backdrop-blur-md rounded-2xl p-4 border border-white/80 text-xs space-y-1 shadow-xs">
             <div className="flex justify-between gap-4">
               <span className="text-slate-500">Approved Credit Line:</span>
-              <strong className="text-[#102B20]">
+              <strong className="text-[#2D2418]">
                 {dist?.creditLimit ? `₹${(dist.creditLimit / 100000).toFixed(1)} Lakhs` : 'Against RTGS / LR'}
               </strong>
             </div>
             <div className="flex justify-between gap-4">
               <span className="text-slate-500">Primary Delivery Corridor:</span>
-              <span className="font-semibold text-[#102B20]">{state || 'Rajasthan/UP/Bihar'}</span>
+              <span className="font-semibold text-[#2D2418]">{state || 'Rajasthan/UP/Bihar'}</span>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Business Entity */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <Building2 className="w-5 h-5 text-[#C49A32]" />
               <span>Business Entity Information</span>
             </h3>
@@ -129,7 +129,7 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Contact Details */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <User className="w-5 h-5 text-[#C49A32]" />
               <span>Contact Person Details</span>
             </h3>
@@ -181,7 +181,7 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Business Address & Godown */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <MapPin className="w-5 h-5 text-[#C49A32]" />
               <span>Registered Godown &amp; Billing Address</span>
             </h3>
@@ -242,7 +242,7 @@ export const DistributorProfilePage: React.FC = () => {
 
           {/* Tax Compliance */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <FileCheck2 className="w-5 h-5 text-[#C49A32]" />
               <span>Tax &amp; Identification Numbers</span>
             </h3>
@@ -277,9 +277,9 @@ export const DistributorProfilePage: React.FC = () => {
           <div className="pt-4 flex justify-end">
             <button
               type="submit"
-              className="px-8 py-3.5 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide shadow-md transition flex items-center gap-2 cursor-pointer border border-white/20"
+              className="px-8 py-3.5 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm tracking-wide shadow-md transition flex items-center gap-2 cursor-pointer border border-white/20"
             >
-              <Check className="w-4 h-4 text-[#E5A000]" />
+              <Check className="w-4 h-4 text-white" />
               <span>Save Business Profile</span>
             </button>
           </div>

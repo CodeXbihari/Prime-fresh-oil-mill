@@ -31,7 +31,7 @@ export const ProductDetailPage: React.FC = () => {
     return (
       <div className="min-h-screen ambient-glass-canvas flex items-center justify-center p-8">
         <div className="glass-panel p-8 rounded-2xl text-center max-w-md shadow-xl">
-          <h2 className="text-2xl font-bold font-serif mb-2 text-[#102B20]">Product Not Found</h2>
+          <h2 className="text-2xl font-bold font-serif mb-2 text-[#2D2418]">Product Not Found</h2>
           <Link to="/products" className="text-[#C49A32] hover:underline text-sm font-semibold">
             Back to Products Catalog
           </Link>
@@ -105,7 +105,7 @@ export const ProductDetailPage: React.FC = () => {
         <div className="mb-6">
           <Link
             to="/products"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#102B20] transition glass-panel px-3.5 py-1.5 rounded-lg shadow-xs"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#2D2418] transition glass-panel px-3.5 py-1.5 rounded-lg shadow-xs"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Wholesale Catalog</span>
@@ -124,22 +124,22 @@ export const ProductDetailPage: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="glass-pill-dark text-xs font-bold px-3 py-1 text-[#F5C542]">
+                  <span className="glass-pill bg-white/90 text-xs font-bold px-3 py-1 text-[#8C6B1B] border-[#C49A32]/30 shadow-xs">
                     {product.grade}
                   </span>
                 </div>
                 <div className="absolute top-3 right-3">
-                  <span className="glass-pill text-xs font-bold px-2.5 py-1 text-emerald-800 border-emerald-300">
+                  <span className="glass-pill text-xs font-bold px-2.5 py-1 text-amber-900 border-amber-300 bg-amber-50/90 shadow-xs">
                     {product.stockStatus}
                   </span>
                 </div>
               </div>
 
               {/* Lab Certification Banner */}
-              <div className="bg-white/60 backdrop-blur-md rounded-2xl p-4 border border-white/80 flex items-start gap-3 text-xs shadow-xs">
-                <ShieldCheck className="w-5 h-5 text-[#102B20] shrink-0 mt-0.5" />
+              <div className="bg-white/70 backdrop-blur-md rounded-2xl p-4 border border-white/80 flex items-start gap-3 text-xs shadow-xs">
+                <ShieldCheck className="w-5 h-5 text-[#C49A32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-[#102B20] block font-serif">
+                  <strong className="text-[#2D2418] block font-serif">
                     Certified Cold Pressed Batch Quality
                   </strong>
                   <p className="text-slate-600 mt-0.5 leading-relaxed">
@@ -155,7 +155,7 @@ export const ProductDetailPage: React.FC = () => {
                 <div className="text-xs font-bold text-[#C49A32] uppercase tracking-widest mb-1.5">
                   SKU: {product.sku} • {product.packaging}
                 </div>
-                <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20] mb-3 leading-snug">
+                <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418] mb-3 leading-snug">
                   {product.name}
                 </h1>
                 <p className="text-sm text-slate-600 leading-relaxed mb-6 font-sans">
@@ -165,7 +165,7 @@ export const ProductDetailPage: React.FC = () => {
                 {/* Bulk Volume Pricing Tier Table */}
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold text-[#102B20] uppercase tracking-wider flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-[#2D2418] uppercase tracking-wider flex items-center gap-1.5">
                       <Layers className="w-4 h-4 text-[#C49A32]" />
                       <span>Wholesale Volume Discount Tiers</span>
                     </span>
@@ -189,7 +189,7 @@ export const ProductDetailPage: React.FC = () => {
                           <span className="text-[11px] text-slate-500 block">
                             {tier.maxQty ? `${tier.minQty} - ${tier.maxQty} units` : `${tier.minQty}+ units`}
                           </span>
-                          <span className="font-serif font-bold text-base text-[#102B20] block mt-1">
+                          <span className="font-serif font-bold text-base text-[#2D2418] block mt-1">
                             ₹{tier.pricePerUnit.toLocaleString('en-IN')}
                           </span>
                           <span className="text-[10px] text-slate-400">per {product.unitLabel.replace(/s$/, '')}</span>
@@ -203,7 +203,7 @@ export const ProductDetailPage: React.FC = () => {
                 <div className="bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-white/80 mb-6 space-y-4 shadow-xs">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
-                      <span className="text-xs font-bold text-[#102B20] block uppercase">
+                      <span className="text-xs font-bold text-[#2D2418] block uppercase">
                         Order Quantity ({product.unitLabel})
                       </span>
                       <span className="text-[11px] text-slate-500">
@@ -255,7 +255,7 @@ export const ProductDetailPage: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-slate-500 block">GST (5% Edible Oil):</span>
-                      <span className="font-bold text-emerald-800 text-sm">
+                      <span className="font-bold text-[#C49A32] text-sm">
                         ₹{Math.round(gst).toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -275,8 +275,8 @@ export const ProductDetailPage: React.FC = () => {
                     onClick={handleAddToCart}
                     className={`flex-1 py-3.5 px-5 rounded-xl font-bold text-sm transition shadow-sm flex items-center justify-center gap-2 cursor-pointer ${
                       added
-                        ? 'bg-emerald-700 text-white'
-                        : 'bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] border border-white/20'
+                        ? 'bg-emerald-600 text-white'
+                        : 'bg-[#C49A32] hover:bg-[#B38927] text-white border border-[#C49A32]/40'
                     }`}
                   >
                     {added ? (
@@ -286,7 +286,7 @@ export const ProductDetailPage: React.FC = () => {
                       </>
                     ) : (
                       <>
-                        <ShoppingCart className="w-5 h-5 text-[#E5A000]" />
+                        <ShoppingCart className="w-5 h-5 text-white" />
                         <span>Add to Bulk Cart ({quantity} {product.unitLabel})</span>
                       </>
                     )}
@@ -295,7 +295,7 @@ export const ProductDetailPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleRequestQuote}
-                    className="py-3.5 px-5 rounded-xl font-bold text-sm bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] transition shadow-sm flex items-center justify-center gap-2 cursor-pointer border border-[#C49A32]/40"
+                    className="py-3.5 px-5 rounded-xl font-bold text-sm bg-[#E5A000] hover:bg-[#F5C542] text-[#241708] transition shadow-sm flex items-center justify-center gap-2 cursor-pointer border border-[#C49A32]/40"
                   >
                     <FileText className="w-5 h-5" />
                     <span>Request Quotation with Freight</span>
@@ -316,11 +316,11 @@ export const ProductDetailPage: React.FC = () => {
               {/* Transit & Dispatch Info */}
               <div className="pt-6 border-t border-slate-200/60 mt-6 grid grid-cols-2 gap-4 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
-                  <Truck className="w-4 h-4 text-[#102B20] shrink-0" />
+                  <Truck className="w-4 h-4 text-[#C49A32] shrink-0" />
                   <span>Ex-Mill Gate loading or Transporter LR dispatch</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[#102B20] shrink-0" />
+                  <Clock className="w-4 h-4 text-[#C49A32] shrink-0" />
                   <span>Dispatch within 24-48 hrs of RTGS realization</span>
                 </div>
               </div>
@@ -330,7 +330,7 @@ export const ProductDetailPage: React.FC = () => {
 
         {/* Technical Specifications Table */}
         <div className="glass-panel rounded-3xl p-6 sm:p-10 shadow-xl mb-12">
-          <h2 className="font-serif font-black text-2xl text-[#102B20] mb-6 pb-3 border-b border-slate-200/60 flex items-center gap-2">
+          <h2 className="font-serif font-black text-2xl text-[#2D2418] mb-6 pb-3 border-b border-slate-200/60 flex items-center gap-2">
             <Scale className="w-5 h-5 text-[#C49A32]" />
             <span>Laboratory Technical Specifications</span>
           </h2>
@@ -339,38 +339,38 @@ export const ProductDetailPage: React.FC = () => {
             <div className="space-y-3">
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Commodity / Grade:</span>
-                <span className="font-bold text-[#102B20]">{product.grade}</span>
+                <span className="font-bold text-[#2D2418]">{product.grade}</span>
               </div>
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Quality &amp; Characteristics:</span>
-                <span className="font-bold text-[#102B20]">{product.specs.pungencyIndex}</span>
+                <span className="font-bold text-[#2D2418]">{product.specs.pungencyIndex}</span>
               </div>
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Acid Value / Grading:</span>
-                <span className="font-bold text-[#102B20]">{product.specs.acidValue}</span>
+                <span className="font-bold text-[#2D2418]">{product.specs.acidValue}</span>
               </div>
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Moisture &amp; Purity Limit:</span>
-                <span className="font-bold text-[#102B20]">{product.specs.moistureContent}</span>
+                <span className="font-bold text-[#2D2418]">{product.specs.moistureContent}</span>
               </div>
             </div>
 
             <div className="space-y-3">
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Standard / Machine Cleaning:</span>
-                <span className="font-bold text-[#102B20]">{product.specs.refractiveIndex}</span>
+                <span className="font-bold text-[#2D2418]">{product.specs.refractiveIndex}</span>
               </div>
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Color &amp; Appearance:</span>
-                <span className="font-bold text-[#102B20]">{product.specs.colorValue}</span>
+                <span className="font-bold text-[#2D2418]">{product.specs.colorValue}</span>
               </div>
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Packaging Material:</span>
-                <span className="font-bold text-[#102B20]">{product.packaging}</span>
+                <span className="font-bold text-[#2D2418]">{product.packaging}</span>
               </div>
               <div className="flex justify-between py-2 border-b border-slate-200/50 text-sm">
                 <span className="text-slate-500 font-medium">Shelf Life:</span>
-                <span className="font-bold text-[#102B20]">{product.specs.shelfLife}</span>
+                <span className="font-bold text-[#2D2418]">{product.specs.shelfLife}</span>
               </div>
             </div>
           </div>
@@ -378,7 +378,7 @@ export const ProductDetailPage: React.FC = () => {
 
         {/* Related Products */}
         <div>
-          <h3 className="font-serif font-black text-xl text-[#102B20] mb-6">
+          <h3 className="font-serif font-black text-xl text-[#2D2418] mb-6">
             Complementary Wholesale SKUs
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -53,22 +53,22 @@ export const HeroProductSpotlight: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-[#0E2419] text-[#FFF8E8] py-16 sm:py-24 border-y border-white/10 overflow-hidden w-full">
-      {/* Ambient background light orbs for glass refraction */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#C49A32]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#27684F]/25 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative bg-[#FAF5E8]/60 backdrop-blur-xl text-[#2D2418] py-16 sm:py-24 border-y border-[#EBE1CF] overflow-hidden w-full">
+      {/* Ambient background light orbs for warm glass refraction */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#C49A32]/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#D9AE45]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill-dark text-[#F5C542] text-xs font-semibold tracking-wider uppercase mb-3.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#E5A000]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-[#8C6B1B] text-xs font-bold tracking-wider uppercase mb-3.5 border-[#C49A32]/30 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#C49A32]" />
             <span>Flagship Manufacturer Brand</span>
           </div>
-          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-[#FAF7EF] tracking-tight leading-tight mb-4 drop-shadow-sm">
+          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-[#2D2418] tracking-tight leading-tight mb-4">
             Prime Fresh Pure Yellow Mustard Oil
           </h2>
-          <p className="text-[#FFF8E8]/80 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             Cold-pressed exclusively from bold Rajasthan Yellow Mustard Seeds (Peeli Sarson). Renowned across Indian FMCG &amp; wholesale mandis for its luminous golden honey clarity, signature pungent bite, and natural digestive aroma.
           </p>
         </div>
@@ -77,7 +77,7 @@ export const HeroProductSpotlight: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Glass Frame Showcase */}
           <div className="lg:col-span-6 flex flex-col items-center">
-            <div className="relative w-full max-w-md sm:max-w-lg rounded-3xl overflow-hidden glass-dark border border-white/20 shadow-2xl p-2.5">
+            <div className="relative w-full max-w-md sm:max-w-lg rounded-3xl overflow-hidden glass-panel border border-white/80 shadow-2xl p-2.5">
               <div className="relative rounded-2xl overflow-hidden">
                 {/* Product Photo */}
                 <img
@@ -93,23 +93,23 @@ export const HeroProductSpotlight: React.FC = () => {
 
                 {/* Glass Badges on Photo */}
                 <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-                  <span className="px-3 py-1 rounded-xl glass-pill-dark text-[#F5C542] text-[11px] font-semibold tracking-wide uppercase shadow-md flex items-center gap-1.5">
-                    <Flame className="w-3.5 h-3.5 text-[#E5A000]" />
+                  <span className="px-3 py-1 rounded-xl glass-pill bg-white/90 text-[#8C6B1B] border-[#C49A32]/30 text-[11px] font-bold tracking-wide uppercase shadow-sm flex items-center gap-1.5">
+                    <Flame className="w-3.5 h-3.5 text-[#C49A32]" />
                     <span>Kachi Ghani Cold-Pressed</span>
                   </span>
-                  <span className="px-3 py-1 rounded-xl glass-pill-dark text-emerald-300 text-[11px] font-semibold tracking-wide uppercase shadow-md flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="px-3 py-1 rounded-xl glass-pill bg-white/90 text-[#2D2418] border-white/80 text-[11px] font-bold tracking-wide uppercase shadow-sm flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#C49A32]" />
                     <span>100% Argemone Free</span>
                   </span>
                 </div>
 
                 {/* Bottom Photo Caption Strip */}
-                <div className="absolute bottom-0 inset-x-0 p-3.5 glass-dark backdrop-blur-md text-white border-t border-white/10">
+                <div className="absolute bottom-0 inset-x-0 p-3.5 bg-white/85 backdrop-blur-md text-[#2D2418] border-t border-white/80">
                   <div className="flex items-center justify-between text-xs font-semibold">
-                    <span className="text-[#F5C542]">
+                    <span className="text-[#C49A32] font-bold">
                       {selectedPackId === tinProduct?.id ? 'Food-Grade 15L Prime Tinplate' : 'Bottled at Alwar Works, Rajasthan'}
                     </span>
-                    <span className="text-slate-300 text-[11px]">Agmark Grade-1 Standard</span>
+                    <span className="text-slate-600 text-[11px]">Agmark Grade-1 Standard</span>
                   </div>
                 </div>
               </div>
@@ -117,17 +117,17 @@ export const HeroProductSpotlight: React.FC = () => {
 
             {/* Feature Glass Badges below image */}
             <div className="grid grid-cols-3 gap-3 w-full max-w-md sm:max-w-lg mt-4 text-center">
-              <div className="glass-dark rounded-2xl p-3 border border-white/15 text-xs shadow-sm">
-                <span className="text-[10px] text-slate-400 uppercase font-semibold block">Pungency (AITC)</span>
-                <span className="font-bold text-[#F5C542] text-sm mt-0.5 block">&gt; 0.32% Natural</span>
+              <div className="glass-panel rounded-2xl p-3 border border-white/80 text-xs shadow-xs">
+                <span className="text-[10px] text-slate-500 uppercase font-semibold block">Pungency (AITC)</span>
+                <span className="font-bold text-[#C49A32] text-sm mt-0.5 block">&gt; 0.32% Natural</span>
               </div>
-              <div className="glass-dark rounded-2xl p-3 border border-white/15 text-xs shadow-sm">
-                <span className="text-[10px] text-slate-400 uppercase font-semibold block">Free Fatty Acids</span>
-                <span className="font-bold text-emerald-400 text-sm mt-0.5 block">&lt; 0.50 mg KOH</span>
+              <div className="glass-panel rounded-2xl p-3 border border-white/80 text-xs shadow-xs">
+                <span className="text-[10px] text-slate-500 uppercase font-semibold block">Free Fatty Acids</span>
+                <span className="font-bold text-[#2D2418] text-sm mt-0.5 block">&lt; 0.50 mg KOH</span>
               </div>
-              <div className="glass-dark rounded-2xl p-3 border border-white/15 text-xs shadow-sm">
-                <span className="text-[10px] text-slate-400 uppercase font-semibold block">Shelf Life</span>
-                <span className="font-bold text-[#FAF7EF] text-sm mt-0.5 block">12 Months</span>
+              <div className="glass-panel rounded-2xl p-3 border border-white/80 text-xs shadow-xs">
+                <span className="text-[10px] text-slate-500 uppercase font-semibold block">Shelf Life</span>
+                <span className="font-bold text-[#2D2418] text-sm mt-0.5 block">12 Months</span>
               </div>
             </div>
           </div>
@@ -141,11 +141,11 @@ export const HeroProductSpotlight: React.FC = () => {
                   <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest">
                     Direct Mill-Gate Wholesale SKU
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-100/80 text-emerald-900 border border-emerald-300/60 text-[11px] font-bold backdrop-blur-xs">
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-300 text-[11px] font-bold">
                     Ready In Godown
                   </span>
                 </div>
-                <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+                <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
                   {activeProduct.name}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
@@ -164,7 +164,7 @@ export const HeroProductSpotlight: React.FC = () => {
                     onClick={() => handlePackChange(bottleProduct.id)}
                     className={`p-3 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer ${
                       selectedPackId === bottleProduct.id
-                        ? 'border-[#C49A32] bg-white/90 ring-2 ring-[#C49A32]/40 shadow-sm'
+                        ? 'border-[#C49A32] bg-white ring-2 ring-[#C49A32]/40 shadow-sm'
                         : 'border-white/70 bg-white/50 hover:bg-white/80'
                     }`}
                   >
@@ -181,7 +181,7 @@ export const HeroProductSpotlight: React.FC = () => {
                       onClick={() => handlePackChange(tinProduct.id)}
                       className={`p-3 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer ${
                         selectedPackId === tinProduct.id
-                          ? 'border-[#C49A32] bg-white/90 ring-2 ring-[#C49A32]/40 shadow-sm'
+                          ? 'border-[#C49A32] bg-white ring-2 ring-[#C49A32]/40 shadow-sm'
                           : 'border-white/70 bg-white/50 hover:bg-white/80'
                       }`}
                     >
@@ -217,14 +217,14 @@ export const HeroProductSpotlight: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setOrderQty(prev => prev + 50)}
-                      className="px-3 py-2.5 rounded-xl glass-pill hover:bg-white/90 text-xs font-bold text-slate-800 transition cursor-pointer shadow-xs"
+                      className="px-3 py-2.5 rounded-xl glass-pill hover:bg-white text-xs font-bold text-slate-800 transition cursor-pointer shadow-xs"
                     >
                       +50
                     </button>
                     <button
                       type="button"
                       onClick={() => setOrderQty(prev => prev + 100)}
-                      className="px-3 py-2.5 rounded-xl glass-pill hover:bg-white/90 text-xs font-bold text-slate-800 transition cursor-pointer shadow-xs"
+                      className="px-3 py-2.5 rounded-xl glass-pill hover:bg-white text-xs font-bold text-slate-800 transition cursor-pointer shadow-xs"
                     >
                       +100
                     </button>
@@ -233,7 +233,7 @@ export const HeroProductSpotlight: React.FC = () => {
               </div>
 
               {/* Cost Breakdown in Glass */}
-              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 space-y-2 border border-white/60 text-xs shadow-xs">
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 space-y-2 border border-white/70 text-xs shadow-xs">
                 <div className="flex justify-between items-baseline text-slate-600">
                   <span>Ex-Mill Unit Rate:</span>
                   <span className="font-semibold text-slate-900">₹{unitPrice.toLocaleString('en-IN')} per {activeProduct.unitLabel.replace(/s$/, '')}</span>
@@ -244,10 +244,10 @@ export const HeroProductSpotlight: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-baseline text-slate-600">
                   <span>Applicable GST (5% Edible Oil):</span>
-                  <span className="font-semibold text-emerald-800">₹{gst.toLocaleString('en-IN')}</span>
+                  <span className="font-semibold text-[#C49A32]">₹{gst.toLocaleString('en-IN')}</span>
                 </div>
-                <div className="border-t border-white/70 pt-2 flex justify-between items-baseline font-bold">
-                  <span className="text-[#102B20] text-sm">Est. Total (Excl. Freight):</span>
+                <div className="border-t border-slate-200/60 pt-2 flex justify-between items-baseline font-bold">
+                  <span className="text-[#2D2418] text-sm">Est. Total (Excl. Freight):</span>
                   <span className="text-xl font-serif text-[#C49A32]">₹{total.toLocaleString('en-IN')}</span>
                 </div>
               </div>
@@ -258,11 +258,11 @@ export const HeroProductSpotlight: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleAddToCart}
-                    className="w-full py-3.5 px-4 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-sm tracking-wide transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 border border-white/30"
+                    className="w-full py-3.5 px-4 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#241708] font-bold text-sm tracking-wide transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 border border-white/30"
                   >
                     {addedToast ? (
                       <>
-                        <CheckCircle2 className="w-4 h-4 text-[#102B20]" />
+                        <CheckCircle2 className="w-4 h-4 text-[#241708]" />
                         <span>Added {orderQty} Units!</span>
                       </>
                     ) : (
@@ -276,10 +276,10 @@ export const HeroProductSpotlight: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleProceedQuote}
-                    className="w-full py-3.5 px-4 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 border border-white/10"
+                    className="w-full py-3.5 px-4 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm tracking-wide transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 border border-[#C49A32]/40"
                   >
                     <span>Request Proforma</span>
-                    <ArrowRight className="w-4 h-4 text-[#E5A000]" />
+                    <ArrowRight className="w-4 h-4 text-white" />
                   </button>
                 </div>
 
@@ -294,7 +294,7 @@ export const HeroProductSpotlight: React.FC = () => {
 
                 <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
                   <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A32]" />
                     <span>Door delivery &amp; ex-mill options available</span>
                   </span>
                   <Link to={`/products/${activeProduct.id}`} className="font-semibold text-[#C49A32] hover:underline">

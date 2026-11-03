@@ -60,7 +60,7 @@ export const DemoBar: React.FC = () => {
         {isAdminRoute ? (
           <button
             onClick={handleSwitchToTrade}
-            className="flex items-center gap-1 px-2.5 py-0.5 bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-[11px] rounded transition cursor-pointer"
+            className="flex items-center gap-1 px-2.5 py-0.5 bg-[#E5A000] hover:bg-[#F5C542] text-[#2D2418] font-bold text-[11px] rounded transition cursor-pointer"
           >
             <Store className="w-3 h-3" />
             <span>Trade Portal</span>
@@ -68,7 +68,7 @@ export const DemoBar: React.FC = () => {
         ) : (
           <button
             onClick={handleSwitchToAdmin}
-            className="flex items-center gap-1 px-2.5 py-0.5 bg-[#122A1E] hover:bg-[#1A3D2E] text-[#FFF8E8] font-semibold text-[11px] rounded border border-[#1E4431] transition cursor-pointer"
+            className="flex items-center gap-1 px-2.5 py-0.5 bg-[#2D2418] hover:bg-[#3D3222] text-[#FAF7EF] font-semibold text-[11px] rounded border border-[#4D3F2C] transition cursor-pointer"
           >
             <LayoutDashboard className="w-3 h-3 text-[#E5A000]" />
             <span>Owner Admin</span>

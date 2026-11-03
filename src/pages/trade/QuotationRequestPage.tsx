@@ -138,7 +138,7 @@ export const QuotationRequestPage: React.FC = () => {
     return (
       <div className="min-h-screen ambient-glass-canvas py-16 px-4 flex items-center justify-center">
         <div className="max-w-2xl w-full glass-panel rounded-3xl p-8 sm:p-12 shadow-2xl text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-emerald-100/90 text-emerald-800 flex items-center justify-center mx-auto shadow-inner border border-emerald-300">
+          <div className="w-16 h-16 rounded-full bg-amber-100 text-[#C49A32] flex items-center justify-center mx-auto shadow-inner border border-amber-300">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
@@ -146,7 +146,7 @@ export const QuotationRequestPage: React.FC = () => {
             <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               Commercial Quotation Requested
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
               Quotation Ref: {generatedQuoteNumber}
             </h2>
             <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto leading-relaxed">
@@ -154,18 +154,18 @@ export const QuotationRequestPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-white/80 text-left text-xs space-y-2 shadow-xs">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-5 border border-white/80 text-left text-xs space-y-2 shadow-xs">
             <div className="flex justify-between text-slate-600">
               <span>Wholesale Partner:</span>
-              <strong className="text-[#102B20]">{companyName}</strong>
+              <strong className="text-[#2D2418]">{companyName}</strong>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Destination Market:</span>
-              <span className="font-bold text-[#102B20]">{destinationCity}, {destinationState}</span>
+              <span className="font-bold text-[#2D2418]">{destinationCity}, {destinationState}</span>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Requested SKUs:</span>
-              <span className="font-bold text-[#102B20]">{quoteItems.length} Product Line(s)</span>
+              <span className="font-bold text-[#2D2418]">{quoteItems.length} Product Line(s)</span>
             </div>
             <div className="flex justify-between text-slate-600 border-t border-slate-200/60 pt-2 font-bold text-sm">
               <span>Indicative Quotation Total:</span>
@@ -176,13 +176,13 @@ export const QuotationRequestPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Link
               to="/portal/my-orders"
-              className="px-6 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm shadow-sm transition border border-white/20"
+              className="px-6 py-3 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm shadow-md transition border border-[#C49A32]/40"
             >
-              View in My Quotations & Orders
+              View in My Quotations &amp; Orders
             </Link>
             <Link
               to="/products"
-              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#102B20] font-bold text-sm transition shadow-xs"
+              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#2D2418] font-bold text-sm transition shadow-xs border border-[#C49A32]/30"
             >
               Browse Full Catalog
             </Link>
@@ -206,9 +206,9 @@ export const QuotationRequestPage: React.FC = () => {
           <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
             <Link to="/" className="hover:underline">Home</Link>
             <span>/</span>
-            <span className="text-[#102B20] font-bold">Request Official Quotation</span>
+            <span className="text-[#2D2418] font-bold">Request Official Quotation</span>
           </div>
-          <h1 className="font-serif font-black text-2xl sm:text-4xl text-[#102B20]">
+          <h1 className="font-serif font-black text-2xl sm:text-4xl text-[#2D2418]">
             Request Official Factory Quotation &amp; Freight
           </h1>
           <p className="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-3xl">
@@ -221,7 +221,7 @@ export const QuotationRequestPage: React.FC = () => {
           <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/60 pb-4">
               <div>
-                <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2">
+                <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2">
                   <FileText className="w-5 h-5 text-[#C49A32]" />
                   <span>Product Lines &amp; Quantities</span>
                 </h3>
@@ -233,7 +233,7 @@ export const QuotationRequestPage: React.FC = () => {
               <button
                 type="button"
                 onClick={addItemRow}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass-panel hover:bg-white text-[#102B20] text-xs font-bold transition shadow-xs self-start sm:self-auto cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl glass-panel hover:bg-white text-[#2D2418] text-xs font-bold transition shadow-xs self-start sm:self-auto cursor-pointer border border-[#C49A32]/30"
               >
                 <Plus className="w-4 h-4 text-[#C49A32]" />
                 <span>Add Another Pack SKU</span>
@@ -246,7 +246,7 @@ export const QuotationRequestPage: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-white/60 backdrop-blur-md border border-white/80 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+                    className="p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-white/80 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
                   >
                     <div className="flex-1 w-full">
                       <label className="block text-[11px] font-bold text-slate-700 uppercase mb-1">
@@ -274,14 +274,14 @@ export const QuotationRequestPage: React.FC = () => {
                         min={currentProd.moq}
                         value={item.quantity}
                         onChange={e => updateItemRow(idx, { quantity: parseInt(e.target.value) || currentProd.moq })}
-                        className="w-full px-3 py-2 rounded-xl glass-input text-xs font-bold text-[#102B20] focus:outline-hidden"
+                        className="w-full px-3 py-2 rounded-xl glass-input text-xs font-bold text-[#2D2418] focus:outline-hidden"
                       />
                     </div>
 
                     <div className="flex items-center justify-between md:justify-end gap-3 w-full md:w-auto pt-2 md:pt-4">
                       <div className="text-right">
                         <span className="text-[10px] text-slate-400 block uppercase">Est. Rate</span>
-                        <span className="font-bold text-[#102B20] text-xs">
+                        <span className="font-bold text-[#2D2418] text-xs">
                           ₹{currentProd.indicativePrice.toLocaleString('en-IN')}/{currentProd.unitLabel.replace(/s$/, '')}
                         </span>
                       </div>
@@ -304,7 +304,7 @@ export const QuotationRequestPage: React.FC = () => {
 
           {/* Section 2: Logistics & Commercial Terms */}
           <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <Truck className="w-5 h-5 text-[#C49A32]" />
               <span>Logistics &amp; Freight Requirements</span>
             </h3>
@@ -410,7 +410,7 @@ export const QuotationRequestPage: React.FC = () => {
 
           {/* Section 3: Wholesaler Contact Info */}
           <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <Building className="w-5 h-5 text-[#C49A32]" />
               <span>Wholesaler / Business Profile</span>
             </h3>
@@ -483,28 +483,28 @@ export const QuotationRequestPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Submission Bar */}
-          <div className="glass-dark text-[#FFF8E8] p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/20 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Submission Bar — Warm Light Frosted Glass */}
+          <div className="glass-panel text-[#2D2418] p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E5D8BE] bg-gradient-to-r from-white/95 via-[#FAF6ED]/95 to-white/95 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <span className="text-xs font-bold text-[#E5A000] uppercase tracking-wider block">
+              <span className="text-xs font-bold text-[#C49A32] uppercase tracking-wider block">
                 Indicative Estimate
               </span>
               <div className="flex items-baseline gap-2 mt-0.5">
-                <span className="font-serif font-black text-2xl sm:text-3xl text-[#FFF8E8]">
+                <span className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
                   ₹{grandTotal.toLocaleString('en-IN')}
                 </span>
-                <span className="text-xs text-slate-300">
+                <span className="text-xs text-slate-500">
                   (Includes ₹{Math.round(gst).toLocaleString('en-IN')} GST + {deliveryType === 'Door Delivery (Transporter)' ? '₹15,000 Freight' : 'Ex-Mill'})
                 </span>
               </div>
-              <p className="text-[11px] text-slate-300 mt-1">
+              <p className="text-[11px] text-slate-500 mt-1">
                 Final proforma rate will reflect the official Brassica seed closing index on quote issuance.
               </p>
             </div>
 
             <button
               type="submit"
-              className="px-8 py-4 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-sm tracking-wide shadow-lg transition flex items-center gap-2 shrink-0 group cursor-pointer border border-[#C49A32]/40"
+              className="px-8 py-4 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm tracking-wide shadow-md transition flex items-center gap-2 shrink-0 group cursor-pointer border border-[#C49A32]/40"
             >
               <span>Transmit Quotation Request</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

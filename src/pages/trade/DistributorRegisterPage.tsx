@@ -93,7 +93,7 @@ export const DistributorRegisterPage: React.FC = () => {
     return (
       <div className="min-h-screen ambient-glass-canvas py-16 px-4 flex items-center justify-center">
         <div className="max-w-2xl w-full glass-panel rounded-3xl p-8 sm:p-12 shadow-2xl text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-emerald-100/90 text-emerald-800 flex items-center justify-center mx-auto shadow-inner border border-emerald-300">
+          <div className="w-16 h-16 rounded-full bg-amber-100 text-[#C49A32] flex items-center justify-center mx-auto shadow-inner border border-amber-300">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
@@ -101,7 +101,7 @@ export const DistributorRegisterPage: React.FC = () => {
             <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               Distributor Application Received
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
               Welcome, {companyName}
             </h2>
             <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto leading-relaxed">
@@ -109,22 +109,22 @@ export const DistributorRegisterPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-md rounded-2xl p-4 text-xs text-left space-y-1.5 border border-white/80 shadow-xs">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-4 text-xs text-left space-y-1.5 border border-white/80 shadow-xs">
             <div className="flex justify-between">
               <span className="text-slate-600">Company Name:</span>
-              <strong className="text-[#102B20]">{companyName}</strong>
+              <strong className="text-[#2D2418]">{companyName}</strong>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-600">Business Segment:</span>
-              <span className="text-[#102B20] font-semibold">{businessType}</span>
+              <span className="text-[#2D2418] font-semibold">{businessType}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-600">Primary Territory:</span>
-              <span className="text-[#102B20] font-semibold">{city}, {state}</span>
+              <span className="text-[#2D2418] font-semibold">{city}, {state}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-600">Verification Status:</span>
-              <span className="text-amber-800 font-bold bg-amber-100/80 px-2 py-0.5 rounded-md border border-amber-300">
+              <span className="text-[#8C6B1B] font-bold bg-amber-100/90 px-2 py-0.5 rounded-md border border-amber-300">
                 Pending Mill Verification (Can Browse &amp; Request Quotes)
               </span>
             </div>
@@ -133,13 +133,13 @@ export const DistributorRegisterPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Link
               to="/products"
-              className="px-6 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm shadow-sm transition border border-white/20"
+              className="px-6 py-3 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm shadow-md transition border border-[#C49A32]/40"
             >
               Start Ordering Wholesale Packs
             </Link>
             <Link
               to="/portal/profile"
-              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#102B20] font-bold text-sm transition shadow-xs"
+              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#2D2418] font-bold text-sm transition shadow-xs border border-[#C49A32]/30"
             >
               View Business Profile
             </Link>
@@ -162,7 +162,7 @@ export const DistributorRegisterPage: React.FC = () => {
           <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
             Indian Wholesale Distribution Network
           </span>
-          <h1 className="font-serif font-black text-2xl sm:text-4xl text-[#102B20] mb-3">
+          <h1 className="font-serif font-black text-2xl sm:text-4xl text-[#2D2418] mb-3">
             Distributor &amp; Super-Stockist Onboarding
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -173,7 +173,7 @@ export const DistributorRegisterPage: React.FC = () => {
         <form onSubmit={handleSubmit} className="glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8">
           {/* Section 1: Business Identity */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <Building2 className="w-5 h-5 text-[#C49A32]" />
               <span>Commercial Firm &amp; Trade Identity</span>
             </h3>
@@ -235,7 +235,7 @@ export const DistributorRegisterPage: React.FC = () => {
 
           {/* Section 2: Contact Person & Phone OTP */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <User className="w-5 h-5 text-[#C49A32]" />
               <span>Contact Person &amp; Mobile Verification</span>
             </h3>
@@ -280,14 +280,14 @@ export const DistributorRegisterPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleSendOtp}
-                      className="px-4 py-2.5 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold shrink-0 transition cursor-pointer border border-white/20"
+                      className="px-4 py-2.5 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold shrink-0 transition cursor-pointer border border-[#C49A32]/40"
                     >
                       {otpSent ? 'Resend' : 'Send OTP'}
                     </button>
                   )}
                 </div>
                 {otpVerified && (
-                  <span className="text-emerald-700 font-bold flex items-center gap-1 mt-1 text-[11px]">
+                  <span className="text-[#C49A32] font-bold flex items-center gap-1 mt-1 text-[11px]">
                     <CheckCircle2 className="w-3.5 h-3.5" /> Mobile number verified
                   </span>
                 )}
@@ -307,7 +307,7 @@ export const DistributorRegisterPage: React.FC = () => {
               {otpSent && !otpVerified && (
                 <div className="sm:col-span-2 p-3.5 bg-amber-50/80 border border-amber-200 rounded-xl flex items-center gap-3">
                   <div className="text-xs">
-                    <span className="font-bold text-[#102B20] block">Simulated OTP Code: 5842</span>
+                    <span className="font-bold text-[#2D2418] block">Simulated OTP Code: 5842</span>
                     <span className="text-slate-600">Enter the 4-digit verification code below:</span>
                   </div>
                   <input
@@ -321,7 +321,7 @@ export const DistributorRegisterPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleVerifyOtp}
-                    className="px-4 py-1.5 bg-[#E5A000] hover:bg-[#F5C542] font-bold rounded-lg text-[#102B20] text-xs shadow-xs cursor-pointer"
+                    className="px-4 py-1.5 bg-[#C49A32] hover:bg-[#B38927] font-bold rounded-lg text-white text-xs shadow-xs cursor-pointer"
                   >
                     Verify
                   </button>
@@ -332,7 +332,7 @@ export const DistributorRegisterPage: React.FC = () => {
 
           {/* Section 3: Business Address & Godown Storage */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <MapPin className="w-5 h-5 text-[#C49A32]" />
               <span>Business Address &amp; Logistics Infrastructure</span>
             </h3>
@@ -423,7 +423,7 @@ export const DistributorRegisterPage: React.FC = () => {
 
           {/* Section 4: Tax & Compliance */}
           <div className="space-y-4">
-            <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2 border-b border-slate-200/60 pb-3">
+            <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2 border-b border-slate-200/60 pb-3">
               <FileCheck2 className="w-5 h-5 text-[#C49A32]" />
               <span>Tax &amp; Identification Details (Optional at Registration)</span>
             </h3>
@@ -466,17 +466,17 @@ export const DistributorRegisterPage: React.FC = () => {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200/60">
             <div className="text-xs text-slate-500">
               Already registered with our sales department?{' '}
-              <Link to="/portal/login" className="font-bold text-[#102B20] hover:text-[#C49A32] underline">
+              <Link to="/portal/login" className="font-bold text-[#2D2418] hover:text-[#C49A32] underline">
                 Sign In to Trade Account
               </Link>
             </div>
 
             <button
               type="submit"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide shadow-md transition flex items-center justify-center gap-2 cursor-pointer border border-white/20"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm tracking-wide shadow-md transition flex items-center justify-center gap-2 cursor-pointer border border-[#C49A32]/40"
             >
               <span>Submit Dealership Application</span>
-              <ArrowRight className="w-4 h-4 text-[#E5A000]" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </button>
           </div>
         </form>

@@ -25,7 +25,7 @@ export const PrivateLabelSection: React.FC = () => {
               <Factory className="w-3.5 h-3.5 text-[#C49A32]" />
               <span>OEM &amp; Contract Manufacturing</span>
             </div>
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#102B20] tracking-tight">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#2D2418] tracking-tight">
               Private Label Bottling &amp; Bulk Road Tanker Milling
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
@@ -39,7 +39,7 @@ export const PrivateLabelSection: React.FC = () => {
               onClick={() => setSelectedService('oem')}
               className={`px-4 py-2 rounded-xl text-xs font-semibold transition cursor-pointer ${
                 selectedService === 'oem'
-                  ? 'bg-[#102B20] text-[#FFF8E8] shadow-xs'
+                  ? 'bg-[#C49A32] text-white shadow-xs font-bold'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -50,7 +50,7 @@ export const PrivateLabelSection: React.FC = () => {
               onClick={() => setSelectedService('tanker')}
               className={`px-4 py-2 rounded-xl text-xs font-semibold transition cursor-pointer ${
                 selectedService === 'tanker'
-                  ? 'bg-[#102B20] text-[#FFF8E8] shadow-xs'
+                  ? 'bg-[#C49A32] text-white shadow-xs font-bold'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -61,7 +61,7 @@ export const PrivateLabelSection: React.FC = () => {
               onClick={() => setSelectedService('toll')}
               className={`px-4 py-2 rounded-xl text-xs font-semibold transition cursor-pointer ${
                 selectedService === 'toll'
-                  ? 'bg-[#102B20] text-[#FFF8E8] shadow-xs'
+                  ? 'bg-[#C49A32] text-white shadow-xs font-bold'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -77,7 +77,7 @@ export const PrivateLabelSection: React.FC = () => {
               <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block">
                 Turnkey FMCG Retail Solutions
               </span>
-              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
                 Your Brand Name, Our Fresh Mustard Oil Crushing Facility
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -85,9 +85,9 @@ export const PrivateLabelSection: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A32]" />
                     Packaging Formats
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -95,9 +95,9 @@ export const PrivateLabelSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A32]" />
                     Custom Labeling
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -105,9 +105,9 @@ export const PrivateLabelSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A32]" />
                     Flexible MOQs
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -115,9 +115,9 @@ export const PrivateLabelSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A32]" />
                     Regulatory Compliance
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -130,14 +130,14 @@ export const PrivateLabelSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => navigate('/quotation-request?service=private-label')}
-                  className="px-5 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs flex items-center gap-2 transition shadow-md cursor-pointer border border-white/20"
+                  className="px-5 py-3 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-xs flex items-center gap-2 transition shadow-md cursor-pointer border border-[#C49A32]/40"
                 >
-                  <FileSpreadsheet className="w-3.5 h-3.5 text-[#E5A000]" />
+                  <FileSpreadsheet className="w-3.5 h-3.5 text-white" />
                   <span>Request Private Label Quotation</span>
                 </button>
                 <a
                   href="tel:9057292529"
-                  className="px-4 py-3 rounded-xl glass-panel hover:bg-white/90 text-[#102B20] font-semibold text-xs transition flex items-center gap-2 cursor-pointer shadow-xs"
+                  className="px-4 py-3 rounded-xl glass-panel hover:bg-white text-[#2D2418] font-bold text-xs transition flex items-center gap-2 cursor-pointer shadow-xs border border-[#C49A32]/30"
                 >
                   <PhoneCall className="w-3.5 h-3.5 text-[#C49A32]" />
                   <span>Call Contract Desk</span>
@@ -153,7 +153,7 @@ export const PrivateLabelSection: React.FC = () => {
                     alt="Private Label Packaging Example"
                     className="w-full h-80 object-cover"
                   />
-                  <div className="absolute bottom-0 inset-x-0 glass-dark backdrop-blur-md flex flex-col justify-end p-4 text-white border-t border-white/10">
+                  <div className="absolute bottom-0 inset-x-0 bg-[#221A0F]/85 backdrop-blur-md flex flex-col justify-end p-4 text-white border-t border-white/10">
                     <span className="text-[11px] font-bold text-[#F5C542] uppercase">Available in 1L &amp; 15L Formats</span>
                     <p className="text-xs text-slate-200 mt-0.5">Custom cap branding &amp; high-speed automatic carton shrink-wrapping.</p>
                   </div>
@@ -169,7 +169,7 @@ export const PrivateLabelSection: React.FC = () => {
               <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block">
                 Bulk Industrial Crushing
               </span>
-              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
                 20 to 30 Metric Tonne Road Tanker Dispatches
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -177,8 +177,8 @@ export const PrivateLabelSection: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
                     <Truck className="w-3.5 h-3.5 text-[#C49A32]" />
                     Dedicated Tanker Fleet
                   </div>
@@ -187,9 +187,9 @@ export const PrivateLabelSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#C49A32]" />
                     Tare Weight Guarantee
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -202,10 +202,10 @@ export const PrivateLabelSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => navigate('/quotation-request?service=road-tanker')}
-                  className="px-5 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs flex items-center gap-2 transition shadow-md cursor-pointer border border-white/20"
+                  className="px-5 py-3 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-xs flex items-center gap-2 transition shadow-md cursor-pointer border border-[#C49A32]/40"
                 >
                   <span>Request Tanker Spot Rate &amp; Availability</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#E5A000]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </button>
               </div>
             </div>
@@ -218,7 +218,7 @@ export const PrivateLabelSection: React.FC = () => {
                     alt="Industrial Wholesale Packaging"
                     className="w-full h-80 object-cover"
                   />
-                  <div className="absolute bottom-0 inset-x-0 glass-dark backdrop-blur-md flex flex-col justify-end p-4 text-white border-t border-white/10">
+                  <div className="absolute bottom-0 inset-x-0 bg-[#221A0F]/85 backdrop-blur-md flex flex-col justify-end p-4 text-white border-t border-white/10">
                     <span className="text-[11px] font-bold text-[#F5C542] uppercase">20–30 MT Road Tanker Supply</span>
                     <p className="text-xs text-slate-200 mt-0.5">Ex-Mill Alwar or Delivered to Your Factory Weighbridge.</p>
                   </div>
@@ -234,7 +234,7 @@ export const PrivateLabelSection: React.FC = () => {
               <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block">
                 Job Work &amp; Toll Processing
               </span>
-              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
                 Toll Crushing of Your Yellow / Black Mustard Seeds
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -242,8 +242,8 @@ export const PrivateLabelSection: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
                     <Factory className="w-3.5 h-3.5 text-[#C49A32]" />
                     120 MT Crushing Power
                   </div>
@@ -252,8 +252,8 @@ export const PrivateLabelSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white/60 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
-                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                <div className="bg-white/70 backdrop-blur-xs p-3.5 rounded-2xl border border-white/80 shadow-xs">
+                  <div className="font-bold text-xs text-[#2D2418] mb-1 flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-[#C49A32]" />
                     Zero Loss Accounting
                   </div>
@@ -267,10 +267,10 @@ export const PrivateLabelSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => navigate('/quotation-request?service=toll-crushing')}
-                  className="px-5 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs flex items-center gap-2 transition shadow-md cursor-pointer border border-white/20"
+                  className="px-5 py-3 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-xs flex items-center gap-2 transition shadow-md cursor-pointer border border-[#C49A32]/40"
                 >
                   <span>Enquire for Toll Milling Terms</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#E5A000]" />
+                  <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </button>
               </div>
             </div>
@@ -283,7 +283,7 @@ export const PrivateLabelSection: React.FC = () => {
                     alt="Toll Crushing Seed Feedstock"
                     className="w-full h-80 object-cover"
                   />
-                  <div className="absolute bottom-0 inset-x-0 glass-dark backdrop-blur-md flex flex-col justify-end p-4 text-white border-t border-white/10">
+                  <div className="absolute bottom-0 inset-x-0 bg-[#221A0F]/85 backdrop-blur-md flex flex-col justify-end p-4 text-white border-t border-white/10">
                     <span className="text-[11px] font-bold text-[#F5C542] uppercase">Seed In, Pure Oil Out</span>
                     <p className="text-xs text-slate-200 mt-0.5">Crushing charges from ₹180 per quintal with full cake recovery.</p>
                   </div>

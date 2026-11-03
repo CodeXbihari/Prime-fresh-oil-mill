@@ -28,8 +28,8 @@ export const Navbar: React.FC = () => {
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `font-semibold text-[13px] tracking-wide transition-all px-3 py-1.5 rounded-lg whitespace-nowrap ${
       isActive
-        ? 'text-[#102B20] bg-white/80 shadow-xs border border-white/70 font-bold'
-        : 'text-slate-600 hover:text-[#102B20] hover:bg-white/50'
+        ? 'text-[#2D2418] bg-white/80 shadow-xs border border-white/70 font-bold'
+        : 'text-slate-600 hover:text-[#2D2418] hover:bg-white/50'
     }`;
 
   return (
@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
               />
             </div>
             <div className="leading-tight">
-              <div className="font-serif font-extrabold text-[17px] tracking-tight text-[#102B20] whitespace-nowrap flex items-baseline gap-1.5">
+              <div className="font-serif font-extrabold text-[17px] tracking-tight text-[#2D2418] whitespace-nowrap flex items-baseline gap-1.5">
                 PRIME FRESH
                 <span className="font-sans font-bold text-[11px] text-[#C49A32] tracking-wider">
                   OIL MILLS
@@ -84,20 +84,20 @@ export const Navbar: React.FC = () => {
             {/* Bulk Cart Button */}
             <Link
               to="/cart"
-              className="relative flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/60 hover:bg-white/90 backdrop-blur-md text-[#102B20] font-semibold text-sm transition-all border border-white/80 hover:border-[#C49A32]/40 shadow-xs"
+              className="relative flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/60 hover:bg-white/90 backdrop-blur-md text-[#2D2418] font-semibold text-sm transition-all border border-white/80 hover:border-[#C49A32]/40 shadow-xs"
               title="Bulk Order Cart"
             >
               <div className="relative">
                 <ShoppingCart className="w-4 h-4 text-[#C49A32]" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-[#E5A000] text-[#102B20] text-[10px] font-black rounded-full h-4 min-w-4 px-1 flex items-center justify-center shadow-xs">
+                  <span className="absolute -top-2 -right-2 bg-[#C49A32] text-white text-[10px] font-black rounded-full h-4 min-w-4 px-1 flex items-center justify-center shadow-xs">
                     {cartCount}
                   </span>
                 )}
               </div>
               <div className="text-left leading-tight">
                 <span className="text-[9px] text-slate-400 uppercase tracking-wider font-bold block">Bulk Cart</span>
-                <span className="font-bold text-[#102B20] text-xs">
+                <span className="font-bold text-[#2D2418] text-xs">
                   ₹{cartSubtotal.toLocaleString('en-IN')}
                 </span>
               </div>
@@ -109,9 +109,9 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
                   title={user.distributorInfo?.companyName || 'My Business'}
-                  className="flex items-center gap-1.5 p-1 pr-2.5 rounded-xl bg-white/60 hover:bg-white/90 backdrop-blur-md border border-white/80 text-[#102B20] transition cursor-pointer"
+                  className="flex items-center gap-1.5 p-1 pr-2.5 rounded-xl bg-white/60 hover:bg-white/90 backdrop-blur-md border border-white/80 text-[#2D2418] transition cursor-pointer"
                 >
-                  <span className="w-8 h-8 rounded-lg bg-[#102B20] text-[#FFF8E8] flex items-center justify-center text-[11px] font-black tracking-tight shrink-0 uppercase shadow-xs">
+                  <span className="w-8 h-8 rounded-lg bg-[#C49A32] text-white flex items-center justify-center text-[11px] font-black tracking-tight shrink-0 uppercase shadow-xs">
                     {(user.distributorInfo?.companyName || 'MB')
                       .split(' ')
                       .slice(0, 2)
@@ -125,7 +125,7 @@ export const Navbar: React.FC = () => {
                   <div className="absolute right-0 mt-2 w-64 bg-white/85 backdrop-blur-xl rounded-2xl shadow-xl border border-white/80 py-2 z-50">
                     <div className="px-4 py-3 border-b border-slate-100/80">
                       <p className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Wholesale Partner</p>
-                      <p className="text-sm font-bold text-[#102B20] mt-0.5 truncate">
+                      <p className="text-sm font-bold text-[#2D2418] mt-0.5 truncate">
                         {user.distributorInfo?.companyName}
                       </p>
                       <p className="text-xs text-slate-500 mt-0.5">
@@ -167,13 +167,13 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Link
                   to="/portal/login"
-                  className="px-3.5 py-1.5 rounded-lg text-slate-700 hover:text-[#102B20] text-xs font-semibold hover:bg-white/60 transition whitespace-nowrap"
+                  className="px-3.5 py-1.5 rounded-lg text-slate-700 hover:text-[#2D2418] text-xs font-semibold hover:bg-white/60 transition whitespace-nowrap"
                 >
                   Sign In
                 </Link>
                 <button
                   onClick={() => loginAsDistributor()}
-                  className="px-3.5 py-1.5 rounded-lg bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] text-xs font-semibold shadow-xs transition whitespace-nowrap cursor-pointer"
+                  className="px-3.5 py-1.5 rounded-lg bg-[#C49A32] hover:bg-[#B38927] text-white text-xs font-semibold shadow-xs transition whitespace-nowrap cursor-pointer"
                 >
                   Demo Login
                 </button>
@@ -185,11 +185,11 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               to="/cart"
-              className="relative p-2 rounded-lg bg-white/60 backdrop-blur-md border border-white/80 text-[#102B20] transition"
+              className="relative p-2 rounded-lg bg-white/60 backdrop-blur-md border border-white/80 text-[#2D2418] transition"
             >
               <ShoppingCart className="w-5 h-5 text-[#C49A32]" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#E5A000] text-[#102B20] text-[10px] font-black rounded-full h-4 min-w-4 px-1 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-[#C49A32] text-white text-[10px] font-black rounded-full h-4 min-w-4 px-1 flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
@@ -258,7 +258,7 @@ export const Navbar: React.FC = () => {
                 setMobileMenuOpen(false);
                 window.dispatchEvent(new CustomEvent('open-trade-chatbot'));
               }}
-              className="px-3 py-2.5 rounded-lg text-[#102B20] font-semibold bg-white/60 backdrop-blur-md border border-white/80 flex items-center justify-between text-xs transition"
+              className="px-3 py-2.5 rounded-lg text-[#2D2418] font-semibold bg-white/60 backdrop-blur-md border border-white/80 flex items-center justify-between text-xs transition"
             >
               <div className="flex items-center gap-2">
                 <HelpCircle className="w-4 h-4 text-[#C49A32]" />
@@ -271,7 +271,7 @@ export const Navbar: React.FC = () => {
           <div className="pt-3 border-t border-white/60 flex flex-col gap-2">
             {user.isLoggedIn ? (
               <div className="flex items-center justify-between bg-white/70 p-3 rounded-xl border border-white/80">
-                <span className="text-xs font-bold text-[#102B20] truncate max-w-[200px]">
+                <span className="text-xs font-bold text-[#2D2418] truncate max-w-[200px]">
                   {user.distributorInfo?.companyName}
                 </span>
                 <button
@@ -295,7 +295,7 @@ export const Navbar: React.FC = () => {
                     loginAsDistributor();
                     setMobileMenuOpen(false);
                   }}
-                  className="py-2 px-3 bg-[#102B20] text-[#FFF8E8] rounded-lg text-xs font-semibold cursor-pointer"
+                  className="py-2 px-3 bg-[#C49A32] hover:bg-[#B38927] text-white rounded-lg text-xs font-semibold cursor-pointer"
                 >
                   Demo Login
                 </button>
@@ -304,7 +304,7 @@ export const Navbar: React.FC = () => {
             <Link
               to="/admin/login"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-center py-2 px-3 bg-white/60 hover:bg-white/90 text-[#102B20] border border-white/80 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5"
+              className="text-center py-2 px-3 bg-white/60 hover:bg-white/90 text-[#2D2418] border border-white/80 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5"
             >
               <Shield className="w-3.5 h-3.5 text-[#C49A32]" />
               Owner &amp; Works Admin Console

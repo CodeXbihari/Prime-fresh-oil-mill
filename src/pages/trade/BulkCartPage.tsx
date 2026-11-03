@@ -81,7 +81,7 @@ export const BulkCartPage: React.FC = () => {
     return (
       <div className="min-h-screen ambient-glass-canvas py-16 px-4 flex items-center justify-center">
         <div className="max-w-2xl w-full glass-panel rounded-3xl p-8 sm:p-12 shadow-2xl text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-emerald-100/90 text-emerald-800 flex items-center justify-center mx-auto shadow-inner border border-emerald-300">
+          <div className="w-16 h-16 rounded-full bg-amber-100 text-[#C49A32] flex items-center justify-center mx-auto shadow-inner border border-amber-300">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
@@ -89,7 +89,7 @@ export const BulkCartPage: React.FC = () => {
             <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               Quotation Request Transmitted
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
               Quotation Ref: {submittedQuoteNumber}
             </h2>
             <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto leading-relaxed">
@@ -97,18 +97,18 @@ export const BulkCartPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-md rounded-2xl p-5 border border-white/80 text-left text-xs space-y-2 shadow-xs">
+          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-5 border border-white/80 text-left text-xs space-y-2 shadow-xs">
             <div className="flex justify-between text-slate-600">
               <span>Distributor / Firm:</span>
-              <strong className="text-[#102B20]">{companyName}</strong>
+              <strong className="text-[#2D2418]">{companyName}</strong>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Destination:</span>
-              <span className="font-bold text-[#102B20]">{destinationCity}, {destinationState}</span>
+              <span className="font-bold text-[#2D2418]">{destinationCity}, {destinationState}</span>
             </div>
             <div className="flex justify-between text-slate-600">
               <span>Fulfillment Logistics:</span>
-              <span className="font-bold text-[#102B20]">{deliveryType}</span>
+              <span className="font-bold text-[#2D2418]">{deliveryType}</span>
             </div>
             <div className="flex justify-between text-slate-600 border-t border-slate-200/60 pt-2 font-bold text-sm">
               <span>Indicative Amount:</span>
@@ -119,13 +119,13 @@ export const BulkCartPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Link
               to="/portal/my-orders"
-              className="px-6 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm shadow-sm transition border border-white/20"
+              className="px-6 py-3 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm shadow-md transition border border-[#C49A32]/40"
             >
               Track in My Orders &amp; Quotations
             </Link>
             <Link
               to="/products"
-              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#102B20] font-bold text-sm transition shadow-xs"
+              className="px-6 py-3 rounded-xl glass-panel hover:bg-white text-[#2D2418] font-bold text-sm transition shadow-xs border border-[#C49A32]/30"
             >
               Continue Browsing Products
             </Link>
@@ -163,7 +163,7 @@ export const BulkCartPage: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
-            <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+            <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
               Wholesale Bulk Order Cart
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
@@ -185,7 +185,7 @@ export const BulkCartPage: React.FC = () => {
             <div className="lg:col-span-8 space-y-6">
               {/* Items Card */}
               <div className="glass-panel rounded-3xl shadow-xl overflow-hidden">
-                <div className="px-6 py-4 bg-white/40 border-b border-slate-200/60 flex justify-between items-center text-xs font-bold text-[#102B20] uppercase tracking-wider">
+                <div className="px-6 py-4 bg-white/40 border-b border-slate-200/60 flex justify-between items-center text-xs font-bold text-[#2D2418] uppercase tracking-wider">
                   <span>Selected Wholesale SKUs ({cart.length})</span>
                   <span>Minimum Order Quantity Check</span>
                 </div>
@@ -215,7 +215,7 @@ export const BulkCartPage: React.FC = () => {
                             <span className="text-[10px] font-bold text-[#C49A32] uppercase tracking-wider block">
                               {item.product.packaging}
                             </span>
-                            <h4 className="font-serif font-bold text-sm text-[#102B20]">
+                            <h4 className="font-serif font-bold text-sm text-[#2D2418]">
                               {item.product.name}
                             </h4>
                             <div className="flex items-center gap-2 text-xs text-slate-500 mt-1">
@@ -247,7 +247,7 @@ export const BulkCartPage: React.FC = () => {
                               min="1"
                               value={item.quantity}
                               onChange={e => updateCartQuantity(item.product.id, parseInt(e.target.value) || 1)}
-                              className="w-16 text-center font-bold text-[#102B20] bg-transparent py-1 focus:outline-hidden"
+                              className="w-16 text-center font-bold text-[#2D2418] bg-transparent py-1 focus:outline-hidden"
                             />
                             <button
                               type="button"
@@ -259,7 +259,7 @@ export const BulkCartPage: React.FC = () => {
                           </div>
 
                           <div className="text-right min-w-[100px]">
-                            <span className="text-sm font-bold text-[#102B20] block">
+                            <span className="text-sm font-bold text-[#2D2418] block">
                               ₹{lineSubtotal.toLocaleString('en-IN')}
                             </span>
                             <button
@@ -279,7 +279,7 @@ export const BulkCartPage: React.FC = () => {
 
               {/* Delivery Logistics & Transporter Details */}
               <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-5">
-                <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2">
+                <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2">
                   <Truck className="w-5 h-5 text-[#C49A32]" />
                   <span>Logistics &amp; Delivery Destination</span>
                 </h3>
@@ -301,7 +301,7 @@ export const BulkCartPage: React.FC = () => {
                       className="mt-1 text-[#C49A32] focus:ring-[#C49A32]"
                     />
                     <div>
-                      <strong className="text-[#102B20] text-sm block">Door Delivery via Transporter</strong>
+                      <strong className="text-[#2D2418] text-sm block">Door Delivery via Transporter</strong>
                       <p className="text-xs text-slate-500 mt-0.5">
                         Mill arranges dedicated cargo truck or part-load lorry receipt (LR) delivery to your city godown.
                       </p>
@@ -323,7 +323,7 @@ export const BulkCartPage: React.FC = () => {
                       className="mt-1 text-[#C49A32] focus:ring-[#C49A32]"
                     />
                     <div>
-                      <strong className="text-[#102B20] text-sm block">Ex-Mill Factory Gate Collection</strong>
+                      <strong className="text-[#2D2418] text-sm block">Ex-Mill Factory Gate Collection</strong>
                       <p className="text-xs text-slate-500 mt-0.5">
                         Your own vehicle/transporter collects consignment from our Alwar mill gate. Zero freight added.
                       </p>
@@ -363,7 +363,7 @@ export const BulkCartPage: React.FC = () => {
                       value={pincode}
                       onChange={e => setPincode(e.target.value)}
                       placeholder="e.g. 208001"
-                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs text-slate-800 focus:outline-hidden"
+                      className="w-full px-3.5 py-2.5 rounded-xl glass-input text-slate-800 focus:outline-hidden"
                     />
                   </div>
                 </div>
@@ -382,7 +382,7 @@ export const BulkCartPage: React.FC = () => {
 
               {/* Distributor Business Credentials */}
               <div className="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
-                <h3 className="font-serif font-bold text-lg text-[#102B20] flex items-center gap-2">
+                <h3 className="font-serif font-bold text-lg text-[#2D2418] flex items-center gap-2">
                   <Building className="w-5 h-5 text-[#C49A32]" />
                   <span>Wholesaler / Business Profile</span>
                 </h3>
@@ -482,35 +482,35 @@ export const BulkCartPage: React.FC = () => {
             {/* Right Col: Cost Summary & Action Card */}
             <div className="lg:col-span-4">
               <div className="glass-panel rounded-3xl p-6 sm:p-7 shadow-2xl space-y-5 sticky top-28 border border-white/80">
-                <h3 className="font-serif font-bold text-lg text-[#102B20] pb-3 border-b border-slate-200/60">
+                <h3 className="font-serif font-bold text-lg text-[#2D2418] pb-3 border-b border-slate-200/60">
                   Commercial Quotation Summary
                 </h3>
 
                 <div className="space-y-3 text-xs">
                   <div className="flex justify-between text-slate-600">
                     <span>Base Ex-Mill Subtotal:</span>
-                    <span className="font-bold text-[#102B20]">
+                    <span className="font-bold text-[#2D2418]">
                       ₹{cartSubtotal.toLocaleString('en-IN')}
                     </span>
                   </div>
 
                   <div className="flex justify-between text-slate-600">
                     <span>Applicable GST (5% Edible Oil):</span>
-                    <span className="font-bold text-emerald-800">
+                    <span className="font-bold text-[#C49A32]">
                       ₹{Math.round(cartGstEstimate).toLocaleString('en-IN')}
                     </span>
                   </div>
 
                   <div className="flex justify-between text-slate-600">
                     <span>Estimated Transporter Freight:</span>
-                    <span className="font-bold text-[#102B20]">
+                    <span className="font-bold text-[#2D2418]">
                       {freightCharge > 0 ? `₹${freightCharge.toLocaleString('en-IN')}` : 'Ex-Mill (₹0)'}
                     </span>
                   </div>
 
                   <div className="border-t border-slate-200/60 pt-3 flex justify-between items-baseline">
                     <div>
-                      <span className="font-bold text-sm text-[#102B20] block">Estimated Proforma Total</span>
+                      <span className="font-bold text-sm text-[#2D2418] block">Estimated Proforma Total</span>
                       <span className="text-[10px] text-slate-400">Subject to daily seed mandi index</span>
                     </div>
                     <span className="font-serif font-black text-2xl text-[#C49A32]">
@@ -519,23 +519,23 @@ export const BulkCartPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/60 backdrop-blur-md p-3.5 rounded-2xl border border-white/80 text-[11px] text-slate-600 space-y-1.5 shadow-xs">
+                <div className="bg-white/70 backdrop-blur-md p-3.5 rounded-2xl border border-white/80 text-[11px] text-slate-600 space-y-1.5 shadow-xs">
                   <div className="flex items-start gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#102B20] shrink-0 mt-0.5" />
+                    <ShieldCheck className="w-4 h-4 text-[#C49A32] shrink-0 mt-0.5" />
                     <span>Quotation submitted here directly creates an entry in the mill dispatch queue.</span>
                   </div>
                   <div className="flex items-start gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#102B20] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#C49A32] shrink-0 mt-0.5" />
                     <span>Works manager reviews and responds with verified dispatch date.</span>
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide shadow-lg transition flex items-center justify-center gap-2 group cursor-pointer border border-white/20"
+                  className="w-full py-4 px-6 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm tracking-wide shadow-md transition flex items-center justify-center gap-2 group cursor-pointer border border-[#C49A32]/40"
                 >
                   <span>Submit Official Quotation Request</span>
-                  <ArrowRight className="w-4 h-4 text-[#E5A000] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                 </button>
 
                 <p className="text-[10px] text-center text-slate-500">

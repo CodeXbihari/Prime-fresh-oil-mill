@@ -71,9 +71,9 @@ export const MyQuotationsPage: React.FC = () => {
             <div className="flex items-center gap-2 text-xs text-slate-500 mb-1">
               <span>Distributor Portal</span>
               <span>/</span>
-              <span className="text-[#102B20] font-bold">Consignments &amp; Quotes</span>
+              <span className="text-[#2D2418] font-bold">Consignments &amp; Quotes</span>
             </div>
-            <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+            <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
               My Quotations &amp; Order History
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 mt-1">
@@ -85,7 +85,7 @@ export const MyQuotationsPage: React.FC = () => {
             <Building className="w-4 h-4 text-[#C49A32] shrink-0" />
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-bold">Account</span>
-              <span className="font-bold text-[#102B20]">
+              <span className="font-bold text-[#2D2418]">
                 {user.distributorInfo?.companyName || 'Shree Balaji Agro Traders'}
               </span>
             </div>
@@ -102,14 +102,14 @@ export const MyQuotationsPage: React.FC = () => {
                 onClick={() => setSelectedStatus(status)}
                 className={`px-3.5 py-2 rounded-xl font-bold transition shrink-0 flex items-center gap-1.5 cursor-pointer ${
                   selectedStatus === status
-                    ? 'bg-[#102B20] text-[#FFF8E8] shadow-md border border-white/20'
+                    ? 'bg-[#C49A32] text-white shadow-md border border-white/40'
                     : 'glass-panel hover:bg-white/90 text-slate-700'
                 }`}
               >
                 <span>{status}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                    selectedStatus === status ? 'bg-[#E5A000] text-[#102B20]' : 'bg-slate-200/80 text-slate-700'
+                    selectedStatus === status ? 'bg-white/30 text-white' : 'bg-slate-200/80 text-slate-700'
                   }`}
                 >
                   {count}
@@ -130,11 +130,11 @@ export const MyQuotationsPage: React.FC = () => {
                 {/* Left: Numbers, Date & Status */}
                 <div className="space-y-2 flex-1">
                   <div className="flex items-center gap-3 flex-wrap">
-                    <span className="font-serif font-black text-lg text-[#102B20]">
+                    <span className="font-serif font-black text-lg text-[#2D2418]">
                       {order.quoteNumber}
                     </span>
                     {order.orderNumber && (
-                      <span className="text-xs font-bold text-[#102B20] bg-white/70 px-2 py-0.5 rounded-md border border-white/80 shadow-xs">
+                      <span className="text-xs font-bold text-[#2D2418] bg-white/70 px-2 py-0.5 rounded-md border border-white/80 shadow-xs">
                         Ord: {order.orderNumber}
                       </span>
                     )}
@@ -155,7 +155,7 @@ export const MyQuotationsPage: React.FC = () => {
 
                   {/* Line Item Preview */}
                   <div className="text-xs text-slate-700 pt-1">
-                    <span className="font-semibold text-[#102B20]">
+                    <span className="font-semibold text-[#2D2418]">
                       {order.items.length} Pack Line(s):{' '}
                     </span>
                     <span className="text-slate-600">
@@ -194,7 +194,7 @@ export const MyQuotationsPage: React.FC = () => {
                 <div className="flex items-center justify-between lg:justify-end gap-6 w-full lg:w-auto pt-4 lg:pt-0 border-t lg:border-t-0 border-slate-200/50">
                   <div className="text-left lg:text-right">
                     <span className="text-[10px] text-slate-400 block uppercase font-bold">Total Commercial Value</span>
-                    <span className="font-serif font-black text-xl text-[#102B20] block">
+                    <span className="font-serif font-black text-xl text-[#2D2418] block">
                       ₹{order.totalAmount.toLocaleString('en-IN')}
                     </span>
                     <span className="text-[10px] text-slate-500">
@@ -204,7 +204,7 @@ export const MyQuotationsPage: React.FC = () => {
 
                   <button
                     onClick={() => setActiveModalQuote(order)}
-                    className="px-4 py-2.5 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs transition flex items-center gap-1.5 shadow-sm cursor-pointer border border-white/20"
+                    className="px-4 py-2.5 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-xs transition flex items-center gap-1.5 shadow-sm cursor-pointer border border-white/20"
                   >
                     <Eye className="w-3.5 h-3.5" />
                     <span>View Proforma</span>
@@ -228,7 +228,7 @@ export const MyQuotationsPage: React.FC = () => {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
             <div className="glass-panel rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-white/80 shadow-2xl">
               {/* Modal Header */}
-              <div className="p-6 bg-[#102B20] text-white rounded-t-3xl flex items-center justify-between border-b border-white/10">
+              <div className="p-6 bg-[#2D2418] text-white rounded-t-3xl flex items-center justify-between border-b border-white/10">
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="font-serif font-black text-xl text-[#FFF8E8]">
@@ -282,15 +282,15 @@ export const MyQuotationsPage: React.FC = () => {
                         <div
                           className={`w-6 h-6 rounded-full flex items-center justify-center mb-1 text-[11px] font-bold ${
                             isCurrent
-                              ? 'bg-[#E5A000] text-[#102B20] ring-2 ring-[#102B20]'
+                              ? 'bg-[#C49A32] text-white ring-2 ring-[#C49A32]'
                               : isCompleted
-                              ? 'bg-[#102B20] text-[#FFF8E8]'
+                              ? 'bg-[#2D2418] text-[#FFF8E8]'
                               : 'bg-slate-200 text-slate-400'
                           }`}
                         >
                           {idx + 1}
                         </div>
-                        <span className={`truncate w-full ${isCurrent ? 'font-bold text-[#102B20]' : 'text-slate-500'}`}>
+                        <span className={`truncate w-full ${isCurrent ? 'font-bold text-[#2D2418]' : 'text-slate-500'}`}>
                           {step}
                         </span>
                       </div>
@@ -311,7 +311,7 @@ export const MyQuotationsPage: React.FC = () => {
                     />
                     <div>
                       <span className="text-slate-400 block uppercase font-bold text-[10px]">Manufacturer Mill Gate</span>
-                      <strong className="text-[#102B20] font-serif text-sm block">PRIME FRESH OIL MILLS</strong>
+                      <strong className="text-[#2D2418] font-serif text-sm block">PRIME FRESH OIL MILLS</strong>
                       <p className="text-slate-600 mt-0.5">
                         Matsya Industrial Area, Alwar, Rajasthan - 301030
                       </p>
@@ -322,7 +322,7 @@ export const MyQuotationsPage: React.FC = () => {
 
                   <div>
                     <span className="text-slate-400 block uppercase font-bold text-[10px]">Wholesaler / Consignee</span>
-                    <strong className="text-[#102B20] font-serif text-sm block">{activeModalQuote.companyName}</strong>
+                    <strong className="text-[#2D2418] font-serif text-sm block">{activeModalQuote.companyName}</strong>
                     <p className="text-slate-600 mt-0.5">Contact: {activeModalQuote.contactPerson} ({activeModalQuote.phone})</p>
                     <p className="text-slate-600">Delivery Address: {activeModalQuote.shippingAddress}</p>
                     <p className="text-slate-600">
@@ -334,12 +334,12 @@ export const MyQuotationsPage: React.FC = () => {
 
                 {/* Items Table */}
                 <div>
-                  <h4 className="font-bold text-[#102B20] uppercase tracking-wider mb-2">
+                  <h4 className="font-bold text-[#2D2418] uppercase tracking-wider mb-2">
                     Commercial Mustard Oil SKUs
                   </h4>
                   <div className="border border-white/80 rounded-xl overflow-hidden shadow-xs">
                     <table className="w-full text-left">
-                      <thead className="bg-white/60 text-[#102B20] uppercase text-[10px] font-bold">
+                      <thead className="bg-white/60 text-[#2D2418] uppercase text-[10px] font-bold">
                         <tr>
                           <th className="p-3">Packaging Description</th>
                           <th className="p-3 text-center">Quantity</th>
@@ -355,7 +355,7 @@ export const MyQuotationsPage: React.FC = () => {
                           const lineGst = lineSub * 0.05;
                           return (
                             <tr key={idx} className="hover:bg-white/60">
-                              <td className="p-3 font-semibold text-[#102B20]">
+                              <td className="p-3 font-semibold text-[#2D2418]">
                                 <div>{item.productName}</div>
                                 <span className="text-[10px] text-slate-500">{item.packaging}</span>
                               </td>
@@ -368,7 +368,7 @@ export const MyQuotationsPage: React.FC = () => {
                               <td className="p-3 text-right text-emerald-800">
                                 ₹{Math.round(lineGst).toLocaleString('en-IN')}
                               </td>
-                              <td className="p-3 text-right font-bold text-[#102B20]">
+                              <td className="p-3 text-right font-bold text-[#2D2418]">
                                 ₹{Math.round(lineSub + lineGst).toLocaleString('en-IN')}
                               </td>
                             </tr>
@@ -384,7 +384,7 @@ export const MyQuotationsPage: React.FC = () => {
                   <div className="w-72 space-y-1.5 bg-white/60 p-4 rounded-2xl border border-white/80 shadow-xs">
                     <div className="flex justify-between text-slate-600">
                       <span>Ex-Mill Subtotal:</span>
-                      <span className="font-bold text-[#102B20]">
+                      <span className="font-bold text-[#2D2418]">
                         ₹{activeModalQuote.subtotal.toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -396,14 +396,14 @@ export const MyQuotationsPage: React.FC = () => {
                     </div>
                     <div className="flex justify-between text-slate-600">
                       <span>Transporter Freight:</span>
-                      <span className="font-bold text-[#102B20]">
+                      <span className="font-bold text-[#2D2418]">
                         {activeModalQuote.freightCharges > 0
                           ? `₹${activeModalQuote.freightCharges.toLocaleString('en-IN')}`
                           : 'Ex-Mill Pickup (₹0)'}
                       </span>
                     </div>
                     <div className="border-t border-slate-200/60 pt-2 flex justify-between font-bold text-sm">
-                      <span className="text-[#102B20]">Total Payable:</span>
+                      <span className="text-[#2D2418]">Total Payable:</span>
                       <span className="text-[#C49A32] font-serif font-black text-base">
                         ₹{Math.round(activeModalQuote.totalAmount).toLocaleString('en-IN')}
                       </span>
@@ -421,19 +421,19 @@ export const MyQuotationsPage: React.FC = () => {
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
                       <div>
                         <span className="text-slate-500 block">LR Number:</span>
-                        <strong className="text-[#102B20]">{activeModalQuote.dispatchDetails.lrNumber}</strong>
+                        <strong className="text-[#2D2418]">{activeModalQuote.dispatchDetails.lrNumber}</strong>
                       </div>
                       <div>
                         <span className="text-slate-500 block">Transporter:</span>
-                        <strong className="text-[#102B20]">{activeModalQuote.dispatchDetails.transporterName}</strong>
+                        <strong className="text-[#2D2418]">{activeModalQuote.dispatchDetails.transporterName}</strong>
                       </div>
                       <div>
                         <span className="text-slate-500 block">Vehicle Number:</span>
-                        <strong className="text-[#102B20]">{activeModalQuote.dispatchDetails.vehicleNumber}</strong>
+                        <strong className="text-[#2D2418]">{activeModalQuote.dispatchDetails.vehicleNumber}</strong>
                       </div>
                       <div>
                         <span className="text-slate-500 block">Dispatch Date:</span>
-                        <strong className="text-[#102B20]">
+                        <strong className="text-[#2D2418]">
                           {new Date(activeModalQuote.dispatchDetails.dispatchDate).toLocaleDateString('en-IN')}
                         </strong>
                       </div>
@@ -463,15 +463,15 @@ export const MyQuotationsPage: React.FC = () => {
                     {activeModalQuote.status === 'Quotation Sent' && (
                       <button
                         onClick={() => handleAcceptQuote(activeModalQuote.id)}
-                        className="px-5 py-2.5 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs shadow-sm transition flex items-center gap-1.5 cursor-pointer border border-white/20"
+                        className="px-5 py-2.5 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-xs shadow-sm transition flex items-center gap-1.5 cursor-pointer border border-white/20"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-[#E5A000]" />
+                        <CheckCircle2 className="w-4 h-4 text-white" />
                         <span>Accept &amp; Confirm Production</span>
                       </button>
                     )}
                     <button
                       onClick={() => setActiveModalQuote(null)}
-                      className="px-5 py-2.5 rounded-xl glass-panel hover:bg-white text-[#102B20] font-bold text-xs transition cursor-pointer shadow-xs"
+                      className="px-5 py-2.5 rounded-xl glass-panel hover:bg-white text-[#2D2418] font-bold text-xs transition cursor-pointer shadow-xs"
                     >
                       Close Window
                     </button>

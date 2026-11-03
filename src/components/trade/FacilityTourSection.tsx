@@ -79,7 +79,7 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
     <div className="glass-panel glass-panel-hover rounded-3xl overflow-hidden flex flex-col group">
       {/* Video Screen Container */}
       <div
-        className="relative aspect-video sm:h-52 md:h-56 w-full bg-[#0A1D15] overflow-hidden cursor-pointer select-none"
+        className="relative aspect-video sm:h-52 md:h-56 w-full bg-[#18130B] overflow-hidden cursor-pointer select-none"
         onClick={togglePlay}
       >
         <video
@@ -94,11 +94,11 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
 
         {/* Top Badges */}
         <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between z-10 pointer-events-none">
-          <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wider uppercase glass-pill-dark text-[#F5C542]">
+          <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wider uppercase bg-white/90 text-[#8C6B1B] border border-[#C49A32]/30 shadow-xs">
             {badge}
           </span>
           {isPlaying && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-emerald-700/90 text-white backdrop-blur-md">
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-[#C49A32] text-white backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Live Footage
             </span>
@@ -111,7 +111,7 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
             <button
               type="button"
               onClick={toggleMute}
-              className="w-7 h-7 rounded-lg glass-pill-dark hover:bg-black/80 text-[#FFF8E8] flex items-center justify-center transition cursor-pointer"
+              className="w-7 h-7 rounded-lg bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition cursor-pointer"
               title={isMuted ? 'Unmute' : 'Mute'}
             >
               {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
@@ -119,7 +119,7 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
             <button
               type="button"
               onClick={handleFullscreen}
-              className="w-7 h-7 rounded-lg glass-pill-dark hover:bg-black/80 text-[#FFF8E8] flex items-center justify-center transition cursor-pointer hidden sm:flex"
+              className="w-7 h-7 rounded-lg bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition cursor-pointer hidden sm:flex"
               title="Watch Fullscreen"
             >
               <Maximize2 className="w-3.5 h-3.5" />
@@ -130,10 +130,10 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
         {/* Play Overlay when Not Playing */}
         {!isPlaying && (
           <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-black/40 backdrop-blur-xs transition-all">
-            <div className="w-13 h-13 rounded-full bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 active:scale-95 border border-white/40">
-              <Play className="w-5 h-5 translate-x-0.5 fill-[#102B20] text-[#102B20]" />
+            <div className="w-13 h-13 rounded-full bg-[#E5A000] hover:bg-[#F5C542] text-[#241708] flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 active:scale-95 border border-white/40">
+              <Play className="w-5 h-5 translate-x-0.5 fill-[#241708] text-[#241708]" />
             </div>
-            <span className="mt-2.5 px-3 py-1 rounded-xl glass-pill-dark text-[#FFF8E8] text-[10px] font-semibold tracking-wider uppercase">
+            <span className="mt-2.5 px-3 py-1 rounded-xl bg-white/90 text-[#2D2418] text-[10px] font-bold tracking-wider uppercase border border-white shadow-xs">
               Click to Play Facility Footage
             </span>
           </div>
@@ -158,13 +158,13 @@ const VideoPlayerCard: React.FC<VideoPlayerCardProps> = ({
         </p>
 
         {/* Technical Specs Metric Pills in Frosted Glass */}
-        <div className="grid grid-cols-3 gap-2 pt-2.5 border-t border-white/60">
+        <div className="grid grid-cols-3 gap-2 pt-2.5 border-t border-slate-200/60">
           {specs.map((s, idx) => (
-            <div key={idx} className="bg-white/60 backdrop-blur-xs rounded-xl p-2 text-center border border-white/70 shadow-xs">
+            <div key={idx} className="bg-white/70 backdrop-blur-xs rounded-xl p-2 text-center border border-white/80 shadow-xs">
               <span className="block text-[9px] text-slate-500 uppercase font-semibold leading-tight">
                 {s.label}
               </span>
-              <span className="font-bold text-[#102B20] text-xs block truncate mt-0.5">
+              <span className="font-bold text-[#2D2418] text-xs block truncate mt-0.5">
                 {s.value}
               </span>
             </div>
@@ -185,7 +185,7 @@ export const FacilityTourSection: React.FC = () => {
             <Factory className="w-3.5 h-3.5 text-[#C49A32] shrink-0" />
             <span>Verified Manufacturing Infrastructure</span>
           </div>
-          <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-[#102B20] tracking-tight leading-tight mb-2">
+          <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-[#2D2418] tracking-tight leading-tight mb-2">
             See Our Mill Facility &amp; Working Style in Action
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
@@ -203,7 +203,7 @@ export const FacilityTourSection: React.FC = () => {
             tag="Extraction Machinery"
             title="Industrial Oil Crushing &amp; Expellers"
             description="Our primary crushing plant operates heavy-duty expellers with automated feed screws and enclosed volumetric channels for cold mechanical extraction."
-            icon={<Factory className="w-3.5 h-3.5 text-[#E5A000]" />}
+            icon={<Factory className="w-3.5 h-3.5 text-[#C49A32]" />}
             specs={[
               { label: 'Crushing Scale', value: '120 MT/Day' },
               { label: 'Extraction', value: 'Cold Ghani' },
@@ -219,7 +219,7 @@ export const FacilityTourSection: React.FC = () => {
             tag="Warehouse &amp; Ready Stocks"
             title="Raw Material &amp; Bagged Storage"
             description="Sanitized, moisture-monitored godowns holding thousands of double-stitched 50 kg gunny bags of graded seeds and cattle feed khali."
-            icon={<Warehouse className="w-3.5 h-3.5 text-[#E5A000]" />}
+            icon={<Warehouse className="w-3.5 h-3.5 text-[#C49A32]" />}
             specs={[
               { label: 'Holding Scale', value: '10,000+ Bags' },
               { label: 'Moisture', value: '< 6.5% Max' },
@@ -228,29 +228,29 @@ export const FacilityTourSection: React.FC = () => {
           />
         </div>
 
-        {/* Highlights Banner & Direct Action CTA — Dark Glass */}
-        <div className="glass-dark text-[#FFF8E8] rounded-3xl p-6 sm:p-8 border border-white/20 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+        {/* Highlights Banner & Direct Action CTA — Light Frosted Glass */}
+        <div className="glass-panel text-[#2D2418] rounded-3xl p-6 sm:p-8 border border-[#E5D8BE] shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto bg-gradient-to-r from-white/95 via-[#FAF6ED]/95 to-white/95">
           <div className="space-y-2 text-center md:text-left max-w-lg">
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs text-[#FAF7EF]/90 font-semibold">
-              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill-dark">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#E5A000] shrink-0" />
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-xs text-slate-700 font-semibold">
+              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill text-[#8C6B1B] border-[#C49A32]/30">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#C49A32] shrink-0" />
                 <span>FSSAI Certified Works</span>
               </span>
               <span>•</span>
-              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill-dark">
-                <Scale className="w-3.5 h-3.5 text-[#E5A000] shrink-0" />
+              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill text-[#8C6B1B] border-[#C49A32]/30">
+                <Scale className="w-3.5 h-3.5 text-[#C49A32] shrink-0" />
                 <span>Digital Weighbridge</span>
               </span>
               <span>•</span>
-              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill-dark">
-                <Truck className="w-3.5 h-3.5 text-[#E5A000] shrink-0" />
+              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg glass-pill text-[#8C6B1B] border-[#C49A32]/30">
+                <Truck className="w-3.5 h-3.5 text-[#C49A32] shrink-0" />
                 <span>All-India Fleet</span>
               </span>
             </div>
-            <h3 className="font-serif font-bold text-lg sm:text-xl text-[#FAF7EF]">
+            <h3 className="font-serif font-bold text-lg sm:text-xl text-[#2D2418]">
               Want to Schedule a Mill Inspection or Place a Bulk Order?
             </h3>
-            <p className="text-slate-300 text-xs leading-relaxed">
+            <p className="text-slate-600 text-xs leading-relaxed">
               Distributors and bulk buyers are welcome to tour our Rajasthan mill premises or request batch lab test certificates.
             </p>
           </div>
@@ -258,16 +258,16 @@ export const FacilityTourSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
             <Link
               to="/quotation-request"
-              className="px-5 py-3 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-xs tracking-wide transition shadow-md flex items-center justify-center gap-2 text-center cursor-pointer border border-white/20"
+              className="px-5 py-3 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-xs tracking-wide transition shadow-md flex items-center justify-center gap-2 text-center cursor-pointer border border-[#C49A32]/40"
             >
               <span>Request Proforma</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <a
               href="tel:9057292529"
-              className="px-4 py-3 rounded-xl glass-pill-dark hover:bg-black/70 text-[#FAF7EF] font-semibold text-xs tracking-wide transition border border-white/20 flex items-center justify-center gap-2 text-center cursor-pointer"
+              className="px-4 py-3 rounded-xl glass-panel hover:bg-white text-[#2D2418] font-bold text-xs tracking-wide transition border border-[#C49A32]/30 flex items-center justify-center gap-2 text-center cursor-pointer shadow-xs"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-[#E5A000]" />
+              <PhoneCall className="w-3.5 h-3.5 text-[#C49A32]" />
               <span>Call Mill Desk</span>
             </a>
           </div>

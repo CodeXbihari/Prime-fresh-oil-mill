@@ -61,11 +61,11 @@ export const ProductsPage: React.FC = () => {
           <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
             <span>Wholesale Supply</span>
             <span>/</span>
-            <span className="text-[#102B20] font-bold">Product Catalog</span>
+            <span className="text-[#2D2418] font-bold">Product Catalog</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <h1 className="font-serif font-black text-3xl sm:text-4xl text-[#102B20]">
+              <h1 className="font-serif font-black text-3xl sm:text-4xl text-[#2D2418]">
                 Wholesale Oilseeds, By-Products &amp; Agro Commodities
               </h1>
               <p className="text-slate-600 text-sm mt-1.5 max-w-2xl leading-relaxed">
@@ -79,9 +79,9 @@ export const ProductsPage: React.FC = () => {
               </div>
               <a
                 href="tel:9057292529"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs transition shadow-sm cursor-pointer border border-white/20"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-xs transition shadow-sm cursor-pointer border border-[#C49A32]/40"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#E5A000]" />
+                <PhoneCall className="w-3.5 h-3.5 text-white" />
                 <span>Trade Desk: +91 90572 92529</span>
               </a>
             </div>
@@ -140,7 +140,7 @@ export const ProductsPage: React.FC = () => {
                 onClick={() => setSelectedPackaging(opt)}
                 className={`px-3 py-1.5 rounded-lg font-semibold transition whitespace-nowrap cursor-pointer text-xs ${
                   selectedPackaging === opt
-                    ? 'bg-[#102B20] text-[#FFF8E8] shadow-sm'
+                    ? 'bg-[#C49A32] text-white shadow-xs font-bold'
                     : 'glass-pill text-slate-700 hover:bg-white/80'
                 }`}
               >

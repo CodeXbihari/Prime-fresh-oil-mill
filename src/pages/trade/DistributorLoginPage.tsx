@@ -46,7 +46,7 @@ export const DistributorLoginPage: React.FC = () => {
             alt="Prime Fresh Oil Mills"
             className="w-20 h-20 object-contain bg-white rounded-2xl p-2 mx-auto shadow-lg mb-4 border border-white/80"
           />
-          <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
+          <h2 className="font-serif font-black text-2xl sm:text-3xl text-[#2D2418]">
             Distributor Trade Portal
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -96,10 +96,10 @@ export const DistributorLoginPage: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide shadow-md transition flex items-center justify-center gap-2 cursor-pointer border border-white/20"
+              className="w-full py-3.5 px-4 rounded-xl bg-[#C49A32] hover:bg-[#B38927] text-white font-bold text-sm tracking-wide shadow-md transition flex items-center justify-center gap-2 cursor-pointer border border-white/20"
             >
               <span>Sign In to Distributor Console</span>
-              <ArrowRight className="w-4 h-4 text-[#E5A000]" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </button>
           </form>
 
@@ -117,12 +117,12 @@ export const DistributorLoginPage: React.FC = () => {
                   className="w-full text-left p-2.5 rounded-xl bg-white/60 hover:bg-white/95 border border-white/80 text-xs flex items-center justify-between group transition cursor-pointer shadow-xs"
                 >
                   <div className="overflow-hidden">
-                    <strong className="text-[#102B20] block truncate">{dist.companyName}</strong>
+                    <strong className="text-[#2D2418] block truncate">{dist.companyName}</strong>
                     <span className="text-[10px] text-slate-500 truncate block">
                       {dist.city}, {dist.state} • {dist.assignedTier || 'Wholesaler'}
                     </span>
                   </div>
-                  <UserCheck className="w-4 h-4 text-[#102B20] group-hover:text-[#C49A32] shrink-0" />
+                  <UserCheck className="w-4 h-4 text-[#C49A32] shrink-0" />
                 </button>
               ))}
             </div>
@@ -132,7 +132,7 @@ export const DistributorLoginPage: React.FC = () => {
         <div className="text-center text-xs text-slate-500 space-y-2">
           <div>
             New to Prime Fresh Oil Mills?{' '}
-            <Link to="/portal/register" className="font-bold text-[#102B20] hover:text-[#C49A32] underline">
+            <Link to="/portal/register" className="font-bold text-[#2D2418] hover:text-[#C49A32] underline">
               Apply for Dealership
             </Link>
           </div>
