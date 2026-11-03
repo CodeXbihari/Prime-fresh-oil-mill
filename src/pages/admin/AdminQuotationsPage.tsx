@@ -79,10 +79,10 @@ export const AdminQuotationsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-3xl p-6 border border-cream-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="font-serif font-bold text-xl text-forest-950">
+            <h2 className="font-serif font-bold text-xl text-slate-900">
               Quotation Review & Proforma Generation Desk
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -105,7 +105,7 @@ export const AdminQuotationsPage: React.FC = () => {
               placeholder="Search by quote number (e.g. PFM-QT-2026), company name, city..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 bg-cream-50"
+              className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-slate-50"
             />
           </div>
 
@@ -116,8 +116,8 @@ export const AdminQuotationsPage: React.FC = () => {
                 onClick={() => setSelectedStatus(st)}
                 className={`px-3 py-1.5 rounded-xl font-bold transition whitespace-nowrap ${
                   selectedStatus === st
-                    ? 'bg-forest-900 text-cream-50'
-                    : 'bg-cream-100 hover:bg-cream-200 text-slate-700'
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                 }`}
               >
                 {st}
@@ -128,10 +128,10 @@ export const AdminQuotationsPage: React.FC = () => {
       </div>
 
       {/* Quotations Table */}
-      <div className="bg-white rounded-3xl border border-cream-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-cream-100 text-forest-950 uppercase font-bold text-[10px]">
+            <thead className="bg-slate-100 text-slate-900 uppercase font-bold text-[10px]">
               <tr>
                 <th className="p-4">Quote Number</th>
                 <th className="p-4">Wholesale Distributor</th>
@@ -142,10 +142,10 @@ export const AdminQuotationsPage: React.FC = () => {
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-cream-100">
+            <tbody className="divide-y divide-slate-100">
               {filteredQuotes.map(quote => (
-                <tr key={quote.id} className="hover:bg-cream-50/70 transition">
-                  <td className="p-4 font-bold text-forest-950 font-serif">
+                <tr key={quote.id} className="hover:bg-slate-50/70 transition">
+                  <td className="p-4 font-bold text-slate-900 font-serif">
                     <div>{quote.quoteNumber}</div>
                     <span className="text-[10px] text-slate-400 font-sans font-normal">
                       {new Date(quote.createdAt).toLocaleDateString('en-IN')}
@@ -175,7 +175,7 @@ export const AdminQuotationsPage: React.FC = () => {
                     <StatusBadge status={quote.status} size="sm" />
                   </td>
 
-                  <td className="p-4 text-right font-bold text-forest-950">
+                  <td className="p-4 text-right font-bold text-slate-900">
                     ₹{quote.totalAmount.toLocaleString('en-IN')}
                   </td>
 
@@ -184,8 +184,8 @@ export const AdminQuotationsPage: React.FC = () => {
                       onClick={() => handleOpenPrepare(quote)}
                       className={`px-3 py-1.5 rounded-xl font-bold text-xs transition shadow-xs inline-flex items-center gap-1 ${
                         quote.status === 'Requested'
-                          ? 'bg-mustard-500 hover:bg-mustard-400 text-forest-950 ring-1 ring-mustard-600'
-                          : 'bg-forest-900 hover:bg-forest-800 text-cream-50'
+                          ? 'bg-amber-500 hover:bg-amber-400 text-slate-900 ring-1 ring-amber-600'
+                          : 'bg-slate-900 hover:bg-slate-800 text-white'
                       }`}
                     >
                       <FileText className="w-3.5 h-3.5" />
@@ -202,13 +202,13 @@ export const AdminQuotationsPage: React.FC = () => {
       {/* Prepare Quotation Modal */}
       {activeQuotation && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-cream-200 shadow-2xl space-y-6">
-            <div className="flex justify-between items-start border-b border-cream-200 pb-4">
+          <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6">
+            <div className="flex justify-between items-start border-b border-slate-200 pb-4">
               <div>
-                <span className="text-[10px] font-bold text-mustard-600 uppercase tracking-widest block">
+                <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">
                   Mill Works Proforma Preparation
                 </span>
-                <h3 className="font-serif font-black text-2xl text-forest-950">
+                <h3 className="font-serif font-black text-2xl text-slate-900">
                   Prepare Quotation: {activeQuotation.quoteNumber}
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
@@ -226,13 +226,13 @@ export const AdminQuotationsPage: React.FC = () => {
             <form onSubmit={handleSendQuotation} className="space-y-6 text-xs">
               {/* Product items rate adjustment */}
               <div className="space-y-3">
-                <h4 className="font-bold text-forest-950 uppercase tracking-wider">
+                <h4 className="font-bold text-slate-900 uppercase tracking-wider">
                   Adjust Quoted Unit Ex-Mill Rates
                 </h4>
 
-                <div className="border border-cream-200 rounded-xl overflow-hidden">
+                <div className="border border-slate-200 rounded-xl overflow-hidden">
                   <table className="w-full text-left">
-                    <thead className="bg-cream-100 text-forest-950 uppercase font-bold text-[10px]">
+                    <thead className="bg-slate-100 text-slate-900 uppercase font-bold text-[10px]">
                       <tr>
                         <th className="p-3">Packaging SKU</th>
                         <th className="p-3 text-center">Quantity</th>
@@ -240,13 +240,13 @@ export const AdminQuotationsPage: React.FC = () => {
                         <th className="p-3 text-right">Subtotal</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-cream-100">
+                    <tbody className="divide-y divide-slate-100">
                       {activeQuotation.items.map(item => {
                         const currentRate = quotedRates[item.productId] ?? item.quotedPricePerUnit ?? item.targetPricePerUnit ?? 0;
                         const lineSub = currentRate * item.quantity;
                         return (
-                          <tr key={item.productId} className="hover:bg-cream-50">
-                            <td className="p-3 font-semibold text-forest-950">
+                          <tr key={item.productId} className="hover:bg-slate-50">
+                            <td className="p-3 font-semibold text-slate-900">
                               <div>{item.productName}</div>
                               <span className="text-[10px] text-slate-500">{item.packaging}</span>
                             </td>
@@ -261,10 +261,10 @@ export const AdminQuotationsPage: React.FC = () => {
                                   const val = parseInt(e.target.value) || 0;
                                   setQuotedRates(prev => ({ ...prev, [item.productId]: val }));
                                 }}
-                                className="w-24 px-2 py-1 text-right font-bold border border-cream-300 rounded-lg"
+                                className="w-24 px-2 py-1 text-right font-bold border border-slate-300 rounded-lg"
                               />
                             </td>
-                            <td className="p-3 text-right font-bold text-forest-950">
+                            <td className="p-3 text-right font-bold text-slate-900">
                               ₹{lineSub.toLocaleString('en-IN')}
                             </td>
                           </tr>
@@ -276,7 +276,7 @@ export const AdminQuotationsPage: React.FC = () => {
               </div>
 
               {/* Freight, Validity & Commercial Terms */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-cream-50 p-4 rounded-2xl border border-cream-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
                 <div>
                   <label className="block font-bold text-slate-700 mb-1">
                     Transporter Freight Charge (₹)
@@ -286,7 +286,7 @@ export const AdminQuotationsPage: React.FC = () => {
                     value={freightCharges}
                     onChange={e => setFreightCharges(parseInt(e.target.value) || 0)}
                     placeholder="Enter freight amount"
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold bg-white"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold bg-white"
                   />
                   <span className="text-[10px] text-slate-400 mt-0.5 block">
                     Mode: {activeQuotation.deliveryType}
@@ -300,7 +300,7 @@ export const AdminQuotationsPage: React.FC = () => {
                   <select
                     value={validityDays}
                     onChange={e => setValidityDays(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold bg-white"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold bg-white"
                   >
                     <option value="48 Hours (Mandi Volatility Disclaimer)">48 Hours (Mandi Volatility Disclaimer)</option>
                     <option value="72 Hours Standard Validity">72 Hours Standard Validity</option>
@@ -316,13 +316,13 @@ export const AdminQuotationsPage: React.FC = () => {
                     rows={2}
                     value={millNotes}
                     onChange={e => setMillNotes(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs bg-white"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs bg-white"
                   />
                 </div>
               </div>
 
               {/* Action buttons */}
-              <div className="pt-4 border-t border-cream-200 flex flex-col sm:flex-row justify-between items-center gap-3">
+              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-3">
                 <span className="text-xs text-slate-500">
                   Submitting will mark status as <strong>"Quotation Sent"</strong> in the shared store.
                 </span>
@@ -331,16 +331,16 @@ export const AdminQuotationsPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setActiveQuotation(null)}
-                    className="px-4 py-2.5 rounded-xl bg-cream-200 hover:bg-cream-300 text-forest-950 font-bold"
+                    className="px-4 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-900 font-bold"
                   >
                     Cancel
                   </button>
 
                   <button
                     type="submit"
-                    className="px-6 py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs shadow flex items-center gap-2"
+                    className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow flex items-center gap-2"
                   >
-                    <Send className="w-3.5 h-3.5 text-mustard-400" />
+                    <Send className="w-3.5 h-3.5 text-amber-400" />
                     <span>Send Formal Quotation to Distributor</span>
                   </button>
                 </div>

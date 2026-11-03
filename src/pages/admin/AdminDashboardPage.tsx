@@ -26,33 +26,33 @@ export const AdminDashboardPage: React.FC = () => {
   const totalTinsInStock = products.reduce((sum, p) => sum + p.availableStock, 0);
 
   return (
-    <div className="space-y-8">
-      {/* KPI Cards Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div className="space-y-6">
+      {/* KPI Cards Row — 5 evenly spaced cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-4">
         {/* Pending Quotations */}
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm relative overflow-hidden">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider leading-tight">
               Pending Quotations
             </span>
-            <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shrink-0">
               <FileText className="w-5 h-5" />
             </div>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="font-serif font-black text-3xl text-forest-950">
+            <span className="font-serif font-black text-3xl text-slate-900">
               {pendingQuotes.length}
             </span>
             <span className="text-xs text-amber-700 font-semibold">
               Action Required
             </span>
           </div>
-          <p className="text-[11px] text-slate-500 mt-2">
+          <p className="text-[11px] text-slate-500 mt-2 leading-snug">
             Wholesale requests awaiting mandi rate & freight calculation
           </p>
           <Link
             to="/admin/quotations"
-            className="text-xs font-bold text-forest-900 hover:text-mustard-600 flex items-center gap-1 mt-3"
+            className="text-xs font-bold text-slate-800 hover:text-amber-700 flex items-center gap-1 mt-3"
           >
             <span>Review Requests</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -60,29 +60,29 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* In Production / Processing */}
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm relative overflow-hidden">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider leading-tight">
               In Crushing / Processing
             </span>
-            <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center shrink-0">
               <Factory className="w-5 h-5" />
             </div>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="font-serif font-black text-3xl text-forest-950">
+            <span className="font-serif font-black text-3xl text-slate-900">
               {inProduction.length}
             </span>
             <span className="text-xs text-blue-700 font-semibold">
               Active Orders
             </span>
           </div>
-          <p className="text-[11px] text-slate-500 mt-2">
+          <p className="text-[11px] text-slate-500 mt-2 leading-snug">
             Confirmed wholesale orders queued on packaging lines
           </p>
           <Link
             to="/admin/orders"
-            className="text-xs font-bold text-forest-900 hover:text-mustard-600 flex items-center gap-1 mt-3"
+            className="text-xs font-bold text-slate-800 hover:text-blue-700 flex items-center gap-1 mt-3"
           >
             <span>View Production Queue</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -90,29 +90,29 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* Consignments In Transit */}
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm relative overflow-hidden">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider leading-tight">
               Dispatched In-Transit
             </span>
-            <div className="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-800 flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-800 flex items-center justify-center shrink-0">
               <Truck className="w-5 h-5" />
             </div>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="font-serif font-black text-3xl text-forest-950">
+            <span className="font-serif font-black text-3xl text-slate-900">
               {activeDispatched.length}
             </span>
             <span className="text-xs text-cyan-700 font-semibold">
               LRs Assigned
             </span>
           </div>
-          <p className="text-[11px] text-slate-500 mt-2">
+          <p className="text-[11px] text-slate-500 mt-2 leading-snug">
             Consignments en route via VRL, TCI & road tankers
           </p>
           <Link
             to="/admin/orders"
-            className="text-xs font-bold text-forest-900 hover:text-mustard-600 flex items-center gap-1 mt-3"
+            className="text-xs font-bold text-slate-800 hover:text-cyan-700 flex items-center gap-1 mt-3"
           >
             <span>Track Lorry Receipts</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -120,29 +120,29 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* Finished Goods Inventory */}
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm relative overflow-hidden">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider leading-tight">
               Mill Finished Stock
             </span>
-            <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
               <Package className="w-5 h-5" />
             </div>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="font-serif font-black text-3xl text-forest-950">
+            <span className="font-serif font-black text-3xl text-slate-900">
               {totalTinsInStock.toLocaleString('en-IN')}
             </span>
             <span className="text-xs text-emerald-700 font-semibold">
               Units/Cases
             </span>
           </div>
-          <p className="text-[11px] text-slate-500 mt-2">
+          <p className="text-[11px] text-slate-500 mt-2 leading-snug">
             Across 15L tins, 5L jars, retail bottles & drums
           </p>
           <Link
             to="/admin/products"
-            className="text-xs font-bold text-forest-900 hover:text-mustard-600 flex items-center gap-1 mt-3"
+            className="text-xs font-bold text-slate-800 hover:text-emerald-700 flex items-center gap-1 mt-3"
           >
             <span>Manage Inventory & Rates</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -150,13 +150,13 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* Hot Leads Intelligence Card */}
-        <div className="bg-gradient-to-br from-rose-950 to-forest-950 text-white rounded-2xl p-5 border border-rose-800/60 shadow-md relative overflow-hidden">
+        <div className="bg-gradient-to-br from-rose-950 to-slate-900 text-white rounded-2xl p-5 border border-rose-800/60 shadow-sm flex flex-col justify-between">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1">
+            <span className="text-[11px] font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1 leading-tight">
               <Flame className="w-3.5 h-3.5 fill-rose-400 text-rose-400 animate-pulse" />
               <span>Hot Wholesale Leads</span>
             </span>
-            <div className="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center font-bold border border-rose-500/30">
+            <div className="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center border border-rose-500/30 shrink-0">
               <Activity className="w-5 h-5" />
             </div>
           </div>
@@ -168,12 +168,12 @@ export const AdminDashboardPage: React.FC = () => {
               High Buying Intent
             </span>
           </div>
-          <p className="text-[11px] text-slate-300 mt-2">
+          <p className="text-[11px] text-slate-300 mt-2 leading-snug">
             {visitors.length} total tracked visitors across mandis &amp; stockists
           </p>
           <Link
             to="/admin/visitor-analytics"
-            className="text-xs font-bold text-mustard-300 hover:text-white flex items-center gap-1 mt-3"
+            className="text-xs font-bold text-amber-300 hover:text-white flex items-center gap-1 mt-3"
           >
             <span>View Visitor Intelligence</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -182,22 +182,22 @@ export const AdminDashboardPage: React.FC = () => {
       </div>
 
       {/* Grid: Pending Quotations Action Queue & Live Inventory Summary */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
         {/* Left: Pending Quotations Queue */}
-        <div className="lg:col-span-7 bg-white rounded-3xl border border-cream-200 p-6 sm:p-7 shadow-sm space-y-5">
-          <div className="flex items-center justify-between border-b border-cream-200 pb-4">
-            <div>
-              <h2 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2">
-                <Clock className="w-5 h-5 text-amber-600" />
-                <span>Urgent Quotation Review Queue</span>
+        <div className="xl:col-span-7 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
+          <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+            <div className="min-w-0">
+              <h2 className="font-serif font-bold text-base sm:text-lg text-slate-900 flex items-center gap-2">
+                <Clock className="w-5 h-5 text-amber-600 shrink-0" />
+                <span className="truncate">Urgent Quotation Review Queue</span>
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-[11px] text-slate-500 mt-0.5">
                 Incoming wholesale inquiries requiring verified mandi quotation
               </p>
             </div>
             <Link
               to="/admin/quotations"
-              className="text-xs font-bold text-forest-900 hover:text-mustard-600 flex items-center gap-1"
+              className="text-xs font-bold text-slate-800 hover:text-amber-700 flex items-center gap-1 shrink-0 ml-3"
             >
               <span>View All ({quotations.length})</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -209,18 +209,18 @@ export const AdminDashboardPage: React.FC = () => {
               pendingQuotes.map(quote => (
                 <div
                   key={quote.id}
-                  className="p-4 rounded-2xl bg-amber-50/50 border border-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                  className="p-4 rounded-xl bg-amber-50/60 border border-amber-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
                 >
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-2">
-                      <strong className="text-forest-950 text-sm font-serif">
+                  <div className="space-y-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <strong className="text-slate-900 text-sm font-serif">
                         {quote.quoteNumber}
                       </strong>
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-200 text-amber-900">
                         {quote.status}
                       </span>
                     </div>
-                    <p className="text-xs font-bold text-forest-900">
+                    <p className="text-xs font-bold text-slate-800 truncate">
                       {quote.companyName} ({quote.destinationCity}, {quote.destinationState})
                     </p>
                     <p className="text-[11px] text-slate-600">
@@ -230,7 +230,7 @@ export const AdminDashboardPage: React.FC = () => {
 
                   <Link
                     to={`/admin/quotations?quoteId=${quote.id}`}
-                    className="px-4 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs shadow transition shrink-0"
+                    className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow transition shrink-0"
                   >
                     Prepare Formal Quotation
                   </Link>
@@ -246,42 +246,42 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* Right: Finished Goods Inventory Summary & Alerts */}
-        <div className="lg:col-span-5 bg-white rounded-3xl border border-cream-200 p-6 sm:p-7 shadow-sm space-y-5">
-          <div className="flex items-center justify-between border-b border-cream-200 pb-4">
-            <div>
-              <h2 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2">
-                <Package className="w-5 h-5 text-mustard-600" />
-                <span>Pack Size Stock Availability</span>
+        <div className="xl:col-span-5 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
+          <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+            <div className="min-w-0">
+              <h2 className="font-serif font-bold text-base sm:text-lg text-slate-900 flex items-center gap-2">
+                <Package className="w-5 h-5 text-amber-600 shrink-0" />
+                <span className="truncate">Pack Size Stock Availability</span>
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-[11px] text-slate-500 mt-0.5">
                 Current factory godown levels & wholesale base rates
               </p>
             </div>
             <Link
               to="/admin/products"
-              className="text-xs font-bold text-forest-900 hover:text-mustard-600"
+              className="text-xs font-bold text-slate-800 hover:text-amber-700 shrink-0 ml-3"
             >
               Manage
             </Link>
           </div>
 
-          <div className="divide-y divide-cream-100 text-xs">
+          <div className="divide-y divide-slate-100 text-xs">
             {products.map(prod => (
               <div key={prod.id} className="py-3 flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-cream-100 shrink-0 overflow-hidden border border-cream-200">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-9 h-9 rounded-lg bg-slate-100 shrink-0 overflow-hidden border border-slate-200">
                     <img src={prod.image} alt="" className="w-full h-full object-cover" />
                   </div>
-                  <div>
-                    <span className="font-bold text-forest-950 block truncate max-w-[180px]">
+                  <div className="min-w-0">
+                    <span className="font-bold text-slate-900 block truncate">
                       {prod.name.split('-')[0]}
                     </span>
                     <span className="text-[10px] text-slate-500">{prod.packaging}</span>
                   </div>
                 </div>
 
-                <div className="text-right">
-                  <span className="font-bold text-forest-950 block">
+                <div className="text-right shrink-0">
+                  <span className="font-bold text-slate-900 block">
                     {prod.availableStock} {prod.unitLabel}
                   </span>
                   <span className="text-[10px] text-slate-500">
@@ -295,42 +295,42 @@ export const AdminDashboardPage: React.FC = () => {
       </div>
 
       {/* Recent Dispatches & Consignments */}
-      <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 shadow-sm space-y-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-cream-200 pb-4">
-          <div>
-            <h2 className="font-serif font-bold text-lg text-forest-950 flex items-center gap-2">
-              <Truck className="w-5 h-5 text-forest-800" />
-              <span>Recent Consignment Dispatches & Mandi Deliveries</span>
+      <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+          <div className="min-w-0">
+            <h2 className="font-serif font-bold text-base sm:text-lg text-slate-900 flex items-center gap-2">
+              <Truck className="w-5 h-5 text-slate-700 shrink-0" />
+              <span className="truncate">Recent Consignment Dispatches & Mandi Deliveries</span>
             </h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-[11px] text-slate-500 mt-0.5">
               Live transit status with transporter LR numbers and vehicle allocation
             </p>
           </div>
 
           <Link
             to="/admin/orders"
-            className="text-xs font-bold text-forest-900 hover:text-mustard-600"
+            className="text-xs font-bold text-slate-800 hover:text-amber-700 shrink-0"
           >
             Manage All Orders & Dispatches
           </Link>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-cream-100 text-forest-950 uppercase font-bold text-[10px]">
+        <div className="overflow-x-auto -mx-5 sm:-mx-6 px-5 sm:px-6">
+          <table className="w-full text-left text-xs min-w-[700px]">
+            <thead className="bg-slate-50 text-slate-800 uppercase font-bold text-[10px]">
               <tr>
-                <th className="p-3">Consignment #</th>
+                <th className="p-3 rounded-l-lg">Consignment #</th>
                 <th className="p-3">Distributor Firm</th>
                 <th className="p-3">Destination</th>
                 <th className="p-3">Status</th>
                 <th className="p-3">Transporter & LR Details</th>
-                <th className="p-3 text-right">Value</th>
+                <th className="p-3 text-right rounded-r-lg">Value</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-cream-100">
+            <tbody className="divide-y divide-slate-100">
               {quotations.slice(0, 5).map(q => (
-                <tr key={q.id} className="hover:bg-cream-50">
-                  <td className="p-3 font-bold text-forest-950">
+                <tr key={q.id} className="hover:bg-slate-50/70 transition">
+                  <td className="p-3 font-bold text-slate-900">
                     <div>{q.orderNumber || q.quoteNumber}</div>
                     <span className="text-[10px] text-slate-400 font-normal">
                       {new Date(q.createdAt).toLocaleDateString('en-IN')}
@@ -359,7 +359,7 @@ export const AdminDashboardPage: React.FC = () => {
                       <span className="text-slate-400 italic">Awaiting dispatch slot</span>
                     )}
                   </td>
-                  <td className="p-3 text-right font-bold text-forest-950">
+                  <td className="p-3 text-right font-bold text-slate-900">
                     ₹{q.totalAmount.toLocaleString('en-IN')}
                   </td>
                 </tr>

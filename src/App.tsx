@@ -125,9 +125,9 @@ const AdminLayout: React.FC = () => {
   const { title, subtitle } = getHeaderInfo();
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-100 font-sans text-slate-800">
+    <div className="min-h-screen flex flex-col bg-slate-50 font-sans text-slate-800">
       <DemoBar />
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex min-h-0">
         {/* Admin Sidebar */}
         <AdminSidebar
           mobileOpen={mobileMenuOpen}
@@ -141,7 +141,7 @@ const AdminLayout: React.FC = () => {
             subtitle={subtitle}
             onOpenMobileMenu={() => setMobileMenuOpen(true)}
           />
-          <main className="flex-1 p-4 sm:p-8 max-w-7xl w-full mx-auto">
+          <main className="flex-1 p-4 sm:p-6 lg:p-8 w-full">
             <Outlet />
           </main>
         </div>

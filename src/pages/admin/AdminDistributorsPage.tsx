@@ -54,10 +54,10 @@ export const AdminDistributorsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-3xl p-6 border border-cream-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="font-serif font-bold text-xl text-forest-950">
+            <h2 className="font-serif font-bold text-xl text-slate-900">
               Distributor Onboarding & KYC Review
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -66,7 +66,7 @@ export const AdminDistributorsPage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2 text-xs">
-            <span className="font-bold text-forest-950">
+            <span className="font-bold text-slate-900">
               {distributors.filter(d => d.status === 'Pending').length} Pending KYC
             </span>
           </div>
@@ -81,7 +81,7 @@ export const AdminDistributorsPage: React.FC = () => {
               placeholder="Search by company name, contact, city, or GSTIN..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 bg-cream-50"
+              className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-slate-50"
             />
           </div>
 
@@ -92,8 +92,8 @@ export const AdminDistributorsPage: React.FC = () => {
                 onClick={() => setSelectedStatus(st)}
                 className={`px-3 py-1.5 rounded-xl font-bold transition whitespace-nowrap ${
                   selectedStatus === st
-                    ? 'bg-forest-900 text-cream-50'
-                    : 'bg-cream-100 hover:bg-cream-200 text-slate-700'
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                 }`}
               >
                 {st}
@@ -104,10 +104,10 @@ export const AdminDistributorsPage: React.FC = () => {
       </div>
 
       {/* Distributors Table */}
-      <div className="bg-white rounded-3xl border border-cream-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-cream-100 text-forest-950 uppercase font-bold text-[10px]">
+            <thead className="bg-slate-100 text-slate-900 uppercase font-bold text-[10px]">
               <tr>
                 <th className="p-4">Distributor Entity</th>
                 <th className="p-4">Contact & Mobile</th>
@@ -118,10 +118,10 @@ export const AdminDistributorsPage: React.FC = () => {
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-cream-100">
+            <tbody className="divide-y divide-slate-100">
               {filteredDistributors.map(dist => (
-                <tr key={dist.id} className="hover:bg-cream-50/70 transition">
-                  <td className="p-4 font-bold text-forest-950">
+                <tr key={dist.id} className="hover:bg-slate-50/70 transition">
+                  <td className="p-4 font-bold text-slate-900">
                     <div className="flex items-center gap-2">
                       <span>{dist.companyName}</span>
                     </div>
@@ -133,7 +133,7 @@ export const AdminDistributorsPage: React.FC = () => {
                   </td>
 
                   <td className="p-4 text-slate-700">
-                    <strong className="block text-forest-950">{dist.contactPerson}</strong>
+                    <strong className="block text-slate-900">{dist.contactPerson}</strong>
                     <span className="text-[10px] text-slate-500">{dist.phone}</span>
                   </td>
 
@@ -143,7 +143,7 @@ export const AdminDistributorsPage: React.FC = () => {
                   </td>
 
                   <td className="p-4">
-                    <span className="bg-cream-100 text-forest-950 px-2 py-0.5 rounded font-semibold text-[10px]">
+                    <span className="bg-slate-100 text-slate-900 px-2 py-0.5 rounded font-semibold text-[10px]">
                       {dist.businessType}
                     </span>
                     <div className="text-[10px] text-slate-400 mt-0.5">
@@ -175,7 +175,7 @@ export const AdminDistributorsPage: React.FC = () => {
                   <td className="p-4 text-right">
                     <button
                       onClick={() => handleOpenReview(dist)}
-                      className="px-3 py-1.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs transition shadow-xs inline-flex items-center gap-1"
+                      className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition shadow-xs inline-flex items-center gap-1"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Review KYC</span>
@@ -191,13 +191,13 @@ export const AdminDistributorsPage: React.FC = () => {
       {/* Review KYC Modal */}
       {activeDistributor && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-cream-200 shadow-2xl space-y-6">
-            <div className="flex justify-between items-start border-b border-cream-200 pb-4">
+          <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6">
+            <div className="flex justify-between items-start border-b border-slate-200 pb-4">
               <div>
-                <span className="text-[10px] font-bold text-mustard-600 uppercase tracking-widest block">
+                <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">
                   Distributor Application Dossier
                 </span>
-                <h3 className="font-serif font-black text-2xl text-forest-950">
+                <h3 className="font-serif font-black text-2xl text-slate-900">
                   {activeDistributor.companyName}
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
@@ -213,30 +213,30 @@ export const AdminDistributorsPage: React.FC = () => {
             </div>
 
             {/* KYC Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-cream-50 p-5 rounded-2xl border border-cream-200 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-5 rounded-2xl border border-slate-200 text-xs">
               <div>
                 <span className="text-slate-500 block">Contact Executive:</span>
-                <strong className="text-forest-950 text-sm">{activeDistributor.contactPerson}</strong>
+                <strong className="text-slate-900 text-sm">{activeDistributor.contactPerson}</strong>
                 <span className="text-[11px] text-slate-600 block">{activeDistributor.designation}</span>
                 <span className="text-[11px] text-slate-600 block">{activeDistributor.phone} • {activeDistributor.email}</span>
               </div>
 
               <div>
                 <span className="text-slate-500 block">Godown / Registered Address:</span>
-                <strong className="text-forest-950 block">{activeDistributor.address}</strong>
+                <strong className="text-slate-900 block">{activeDistributor.address}</strong>
                 <span className="text-[11px] text-slate-600 block">{activeDistributor.city}, {activeDistributor.state} - {activeDistributor.pincode}</span>
                 <span className="text-[11px] text-slate-600 block">Godown Storage: {activeDistributor.godownCapacity}</span>
               </div>
 
               <div>
                 <span className="text-slate-500 block">Tax & Banking Identification:</span>
-                <strong className="font-mono text-forest-950 block">GSTIN: {activeDistributor.gstin}</strong>
+                <strong className="font-mono text-slate-900 block">GSTIN: {activeDistributor.gstin}</strong>
                 <strong className="font-mono text-slate-700 block">PAN: {activeDistributor.panNumber}</strong>
               </div>
 
               <div>
                 <span className="text-slate-500 block">Wholesale Profile & Scale:</span>
-                <span className="font-bold text-forest-950 block">{activeDistributor.businessType} ({activeDistributor.yearsInBusiness})</span>
+                <span className="font-bold text-slate-900 block">{activeDistributor.businessType} ({activeDistributor.yearsInBusiness})</span>
                 <span className="text-slate-600 block">Annual Turnover: {activeDistributor.annualTurnover}</span>
                 <span className="text-slate-600 block">Operating States: {activeDistributor.operatingStates?.join(', ') || 'N/A'}</span>
               </div>
@@ -244,7 +244,7 @@ export const AdminDistributorsPage: React.FC = () => {
 
             {/* Admin Commercial Assignment Options */}
             <div className="space-y-4 pt-2">
-              <h4 className="font-serif font-bold text-sm text-forest-950 uppercase tracking-wider">
+              <h4 className="font-serif font-bold text-sm text-slate-900 uppercase tracking-wider">
                 Assign Commercial Terms & Partnership Tier
               </h4>
 
@@ -254,7 +254,7 @@ export const AdminDistributorsPage: React.FC = () => {
                   <select
                     value={assignedTier}
                     onChange={e => setAssignedTier(e.target.value as any)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 font-bold bg-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 font-bold bg-white"
                   >
                     <option value="Tier 1 Prime Partner">Tier 1 Prime Partner (Direct Factory Rate + Max Rebate)</option>
                     <option value="Tier 2 Regional Stockist">Tier 2 Regional Stockist (District Mandi Distributor)</option>
@@ -269,7 +269,7 @@ export const AdminDistributorsPage: React.FC = () => {
                     value={creditLimit}
                     onChange={e => setCreditLimit(parseInt(e.target.value) || 0)}
                     placeholder="e.g. 1000000"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 font-bold bg-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 font-bold bg-white"
                   />
                   <span className="text-[10px] text-slate-400 mt-1 block">
                     Zero indicates strict advance RTGS payment before mill gate truck dispatch.
@@ -283,14 +283,14 @@ export const AdminDistributorsPage: React.FC = () => {
                     value={adminNotes}
                     onChange={e => setAdminNotes(e.target.value)}
                     placeholder="e.g. Verified with local mandi traders in Kanpur. Authorized for 15L tin supply across Central UP..."
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs"
                   />
                 </div>
               </div>
             </div>
 
             {/* Status Change Buttons */}
-            <div className="pt-4 border-t border-cream-200 flex flex-wrap items-center justify-between gap-3">
+            <div className="pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
               <span className="text-xs text-slate-500">
                 Current Status: <strong>{activeDistributor.status}</strong>
               </span>

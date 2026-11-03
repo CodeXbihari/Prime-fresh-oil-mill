@@ -7,7 +7,8 @@ import {
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
-  FileSpreadsheet
+  FileSpreadsheet,
+  PhoneCall
 } from 'lucide-react';
 
 export const PrivateLabelSection: React.FC = () => {
@@ -15,31 +16,31 @@ export const PrivateLabelSection: React.FC = () => {
   const [selectedService, setSelectedService] = useState<'oem' | 'tanker' | 'toll'>('oem');
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-b border-cream-200">
+    <section className="py-16 sm:py-24 bg-white border-b border-[#EBE7DD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-mustard-100 text-mustard-900 border border-mustard-300 text-xs font-bold uppercase tracking-wider mb-3">
-              <Factory className="w-3.5 h-3.5 text-mustard-700" />
-              <span>OEM & Contract Manufacturing</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF8F5] text-[#C49A32] border border-[#EBE7DD] text-xs font-semibold uppercase tracking-wider mb-3">
+              <Factory className="w-3.5 h-3.5 text-[#C49A32]" />
+              <span>OEM &amp; Contract Manufacturing</span>
             </div>
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-forest-950 tracking-tight">
-              Private Label Bottling & Bulk Road Tanker Milling
+            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#102B20] tracking-tight">
+              Private Label Bottling &amp; Bulk Road Tanker Milling
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
               Don't own an oil mill? We serve as the manufacturing backbone for supermarkets, regional FMCG brands, edible oil packers, and institutional food chains across India.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 bg-cream-100 p-1.5 rounded-2xl border border-cream-300 shrink-0">
+          <div className="flex items-center gap-1.5 bg-[#FAF8F5] p-1.5 rounded-xl border border-[#EBE7DD] shrink-0">
             <button
               type="button"
               onClick={() => setSelectedService('oem')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
+              className={`px-3.5 py-2 rounded-lg text-xs font-semibold transition cursor-pointer ${
                 selectedService === 'oem'
-                  ? 'bg-forest-900 text-cream-50 shadow-sm'
-                  : 'text-slate-700 hover:text-forest-950'
+                  ? 'bg-[#102B20] text-[#FFF8E8] shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Private Label Packaging
@@ -47,10 +48,10 @@ export const PrivateLabelSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setSelectedService('tanker')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
+              className={`px-3.5 py-2 rounded-lg text-xs font-semibold transition cursor-pointer ${
                 selectedService === 'tanker'
-                  ? 'bg-forest-900 text-cream-50 shadow-sm'
-                  : 'text-slate-700 hover:text-forest-950'
+                  ? 'bg-[#102B20] text-[#FFF8E8] shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Bulk Road Tankers
@@ -58,10 +59,10 @@ export const PrivateLabelSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setSelectedService('toll')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
+              className={`px-3.5 py-2 rounded-lg text-xs font-semibold transition cursor-pointer ${
                 selectedService === 'toll'
-                  ? 'bg-forest-900 text-cream-50 shadow-sm'
-                  : 'text-slate-700 hover:text-forest-950'
+                  ? 'bg-[#102B20] text-[#FFF8E8] shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Toll Crushing
@@ -71,12 +72,12 @@ export const PrivateLabelSection: React.FC = () => {
 
         {/* Content based on selected tab */}
         {selectedService === 'oem' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-cream-50 rounded-3xl p-6 sm:p-10 border border-cream-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] rounded-2xl p-6 sm:p-10 border border-[#EBE7DD]">
             <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-bold text-mustard-700 uppercase tracking-widest block">
+              <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block">
                 Turnkey FMCG Retail Solutions
               </span>
-              <h3 className="font-serif font-black text-2xl sm:text-3xl text-forest-950">
+              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
                 Your Brand Name, Our Fresh Mustard Oil Crushing Facility
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -84,29 +85,29 @@ export const PrivateLabelSection: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                     Packaging Formats
                   </div>
                   <p className="text-[11px] text-slate-500">
-                    200ml, 500ml, 1 Litre PET bottles, 2L & 5L Jars with handle, 15L prime tinplate.
+                    200ml, 500ml, 1 Litre PET bottles, 2L &amp; 5L Jars with handle, 15L prime tinplate.
                   </p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                     Custom Labeling
                   </div>
                   <p className="text-[11px] text-slate-500">
-                    Multi-color BOPP & metalized labels, EAN-13 barcodes, and your FSSAI marketer number.
+                    Multi-color BOPP &amp; metalized labels, EAN-13 barcodes, and your FSSAI marketer number.
                   </p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                     Flexible MOQs
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -114,9 +115,9 @@ export const PrivateLabelSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                     Regulatory Compliance
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -129,31 +130,31 @@ export const PrivateLabelSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => navigate('/quotation-request?service=private-label')}
-                  className="px-5 py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs flex items-center gap-2 transition shadow-sm"
+                  className="px-5 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs flex items-center gap-2 transition shadow-xs cursor-pointer"
                 >
-                  <FileSpreadsheet className="w-3.5 h-3.5 text-mustard-400" />
+                  <FileSpreadsheet className="w-3.5 h-3.5 text-[#E5A000]" />
                   <span>Request Private Label Quotation</span>
                 </button>
-                <button
-                  type="button"
-                  onClick={() => window.dispatchEvent(new CustomEvent('open-trade-chatbot', { detail: { query: 'Tell me about private label packaging options and MOQs' } }))}
-                  className="px-4 py-3 rounded-xl bg-white hover:bg-cream-100 text-forest-950 font-semibold text-xs border border-cream-300 transition"
+                <a
+                  href="tel:9057292529"
+                  className="px-4 py-3 rounded-xl bg-white hover:bg-slate-50 text-[#102B20] font-semibold text-xs border border-[#EBE7DD] transition flex items-center gap-2 cursor-pointer"
                 >
-                  Ask AI About Contract Packing
-                </button>
+                  <PhoneCall className="w-3.5 h-3.5 text-[#C49A32]" />
+                  <span>Call Contract Desk</span>
+                </a>
               </div>
             </div>
 
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-cream-200">
+              <div className="relative w-full max-w-sm rounded-xl overflow-hidden shadow-md border border-[#EBE7DD] bg-white">
                 <img
                   src="/images/prime-fresh-mustard-oil-bottle.jpg"
                   alt="Private Label Packaging Example"
                   className="w-full h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                  <span className="text-[11px] font-bold text-mustard-300 uppercase">Available in 1L & 15L Formats</span>
-                  <p className="text-xs text-slate-200 mt-0.5">Custom cap branding & high-speed automatic carton shrink-wrapping.</p>
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 text-white">
+                  <span className="text-[11px] font-bold text-[#F5C542] uppercase">Available in 1L &amp; 15L Formats</span>
+                  <p className="text-xs text-slate-200 mt-0.5">Custom cap branding &amp; high-speed automatic carton shrink-wrapping.</p>
                 </div>
               </div>
             </div>
@@ -161,12 +162,12 @@ export const PrivateLabelSection: React.FC = () => {
         )}
 
         {selectedService === 'tanker' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-cream-50 rounded-3xl p-6 sm:p-10 border border-cream-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] rounded-2xl p-6 sm:p-10 border border-[#EBE7DD]">
             <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-bold text-mustard-700 uppercase tracking-widest block">
+              <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block">
                 Bulk Industrial Crushing
               </span>
-              <h3 className="font-serif font-black text-2xl sm:text-3xl text-forest-950">
+              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
                 20 to 30 Metric Tonne Road Tanker Dispatches
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -174,19 +175,19 @@ export const PrivateLabelSection: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <Truck className="w-3.5 h-3.5 text-forest-800" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <Truck className="w-3.5 h-3.5 text-[#C49A32]" />
                     Dedicated Tanker Fleet
                   </div>
                   <p className="text-[11px] text-slate-500">
-                    Clean, food-grade stainless steel & MS road tankers with GPS live tracking.
+                    Clean, food-grade stainless steel &amp; MS road tankers with GPS live tracking.
                   </p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
                     Tare Weight Guarantee
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -199,23 +200,23 @@ export const PrivateLabelSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => navigate('/quotation-request?service=road-tanker')}
-                  className="px-5 py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs flex items-center gap-2 transition shadow-sm"
+                  className="px-5 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs flex items-center gap-2 transition shadow-xs cursor-pointer"
                 >
-                  <span>Request Tanker Spot Rate & Availability</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-mustard-400" />
+                  <span>Request Tanker Spot Rate &amp; Availability</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#E5A000]" />
                 </button>
               </div>
             </div>
 
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-cream-200">
+              <div className="relative w-full max-w-sm rounded-xl overflow-hidden shadow-md border border-[#EBE7DD] bg-white">
                 <img
                   src="/images/prime-fresh-mustard-oil-tin-15l.jpg"
                   alt="Industrial Wholesale Packaging"
                   className="w-full h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                  <span className="text-[11px] font-bold text-mustard-300 uppercase">20–30 MT Road Tanker Supply</span>
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 text-white">
+                  <span className="text-[11px] font-bold text-[#F5C542] uppercase">20–30 MT Road Tanker Supply</span>
                   <p className="text-xs text-slate-200 mt-0.5">Ex-Mill Alwar or Delivered to Your Factory Weighbridge.</p>
                 </div>
               </div>
@@ -224,12 +225,12 @@ export const PrivateLabelSection: React.FC = () => {
         )}
 
         {selectedService === 'toll' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-cream-50 rounded-3xl p-6 sm:p-10 border border-cream-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] rounded-2xl p-6 sm:p-10 border border-[#EBE7DD]">
             <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-bold text-mustard-700 uppercase tracking-widest block">
-                Job Work & Toll Processing
+              <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block">
+                Job Work &amp; Toll Processing
               </span>
-              <h3 className="font-serif font-black text-2xl sm:text-3xl text-forest-950">
+              <h3 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20]">
                 Toll Crushing of Your Yellow / Black Mustard Seeds
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -237,9 +238,9 @@ export const PrivateLabelSection: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <Factory className="w-3.5 h-3.5 text-forest-800" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <Factory className="w-3.5 h-3.5 text-[#C49A32]" />
                     120 MT Crushing Power
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -247,9 +248,9 @@ export const PrivateLabelSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-cream-200">
-                  <div className="font-bold text-xs text-forest-950 mb-1 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-mustard-600" />
+                <div className="bg-white p-3.5 rounded-xl border border-[#EBE7DD] shadow-xs">
+                  <div className="font-bold text-xs text-[#102B20] mb-1 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-[#C49A32]" />
                     Zero Loss Accounting
                   </div>
                   <p className="text-[11px] text-slate-500">
@@ -262,23 +263,23 @@ export const PrivateLabelSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => navigate('/quotation-request?service=toll-crushing')}
-                  className="px-5 py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs flex items-center gap-2 transition shadow-sm"
+                  className="px-5 py-3 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-xs flex items-center gap-2 transition shadow-xs cursor-pointer"
                 >
                   <span>Enquire for Toll Milling Terms</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-mustard-400" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#E5A000]" />
                 </button>
               </div>
             </div>
 
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-cream-200">
+              <div className="relative w-full max-w-sm rounded-xl overflow-hidden shadow-md border border-[#EBE7DD] bg-white">
                 <img
                   src="/images/yellow-mustard-seeds.jpg"
                   alt="Toll Crushing Seed Feedstock"
                   className="w-full h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                  <span className="text-[11px] font-bold text-mustard-300 uppercase">Seed In, Pure Oil Out</span>
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 text-white">
+                  <span className="text-[11px] font-bold text-[#F5C542] uppercase">Seed In, Pure Oil Out</span>
                   <p className="text-xs text-slate-200 mt-0.5">Crushing charges from ₹180 per quintal with full cake recovery.</p>
                 </div>
               </div>

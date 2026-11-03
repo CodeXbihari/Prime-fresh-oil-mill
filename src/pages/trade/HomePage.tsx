@@ -14,7 +14,8 @@ import {
   CheckCircle2,
   ArrowRight,
   TrendingUp,
-  PackageCheck
+  PackageCheck,
+  PhoneCall
 } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
@@ -46,50 +47,50 @@ export const HomePage: React.FC = () => {
   const featuredProducts = products.filter(p => p.isFeatured).slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-cream-50/50">
+    <div className="min-h-screen bg-[#FAF8F5]">
       <SEOHead
         title="Premium Kachi Ghani Mustard Oil B2B Supply & Mandi Rates"
         description="Direct agro-mill manufacturer of cold pressed Kachi Ghani mustard oil, expeller pressed cooking oil, and wholesale B2B distributor supply. Real-time mandi rates, FSSAI certified, Matsya Industrial Area, Alwar, Rajasthan."
         keywords="kachi ghani mustard oil, mustard oil manufacturer, wholesale mustard oil, cold pressed mustard oil Alwar, mustard oil mill Rajasthan, B2B cooking oil supplier, sarson ka tel wholesale"
         canonicalPath="/"
       />
-      {/* 3D Animated Hero Section with Scroll Parallax & Particle Depth */}
+
+      {/* Cinematic Hero Section */}
       <Hero3DElements />
 
-      {/* Primary Highlights Metrics Bar */}
-      <section className="relative bg-gradient-to-r from-mustard-500 via-amber-400 to-mustard-500 text-forest-950 py-10 border-y border-mustard-600/50 shadow-md w-full overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent pointer-events-none" />
+      {/* Primary Highlights Metrics Bar — Dignified Heritage Grade */}
+      <section className="relative bg-[#0E2419] text-[#FFF8E8] py-8 sm:py-10 border-y border-[#C49A32]/25 shadow-sm w-full overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full box-border relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-            <div className="border-r border-forest-950/15 px-2 min-w-0 group">
-              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight break-words group-hover:scale-105 transition-transform">
-                120 MT
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-[#C49A32]/15">
+            <div className="px-3 pt-3 md:pt-0 min-w-0">
+              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#FAF7EF] tabular-nums">
+                120 <span className="text-xl sm:text-2xl text-[#E5A000] font-sans font-bold">MT</span>
               </div>
-              <p className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-forest-950/80 mt-1.5 break-words">
+              <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#FAF7EF]/75 mt-1.5">
                 Daily Seed Crushing Capacity
               </p>
             </div>
-            <div className="md:border-r border-forest-950/15 px-2 min-w-0 group">
-              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight break-words group-hover:scale-105 transition-transform">
-                &gt;0.32%
+            <div className="px-3 pt-3 md:pt-0 min-w-0">
+              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#FAF7EF] tabular-nums">
+                &gt;0.32<span className="text-xl sm:text-2xl text-[#E5A000] font-sans font-bold">%</span>
               </div>
-              <p className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-forest-950/80 mt-1.5 break-words">
+              <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#FAF7EF]/75 mt-1.5">
                 Allyl Isothiocyanate (High Pungency)
               </p>
             </div>
-            <div className="border-r border-forest-950/15 px-2 min-w-0 group">
-              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight break-words group-hover:scale-105 transition-transform">
-                18+
+            <div className="px-3 pt-3 md:pt-0 min-w-0">
+              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#FAF7EF] tabular-nums">
+                18<span className="text-xl sm:text-2xl text-[#E5A000] font-sans font-bold">+</span>
               </div>
-              <p className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-forest-950/80 mt-1.5 break-words">
+              <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#FAF7EF]/75 mt-1.5">
                 States Direct Mandi Dispatch
               </p>
             </div>
-            <div className="px-2 min-w-0 group">
-              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight break-words group-hover:scale-105 transition-transform">
-                100%
+            <div className="px-3 pt-3 md:pt-0 min-w-0">
+              <div className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#FAF7EF] tabular-nums">
+                100<span className="text-xl sm:text-2xl text-[#E5A000] font-sans font-bold">%</span>
               </div>
-              <p className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-forest-950/80 mt-1.5 break-words">
+              <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#FAF7EF]/75 mt-1.5">
                 Agmark Grade-1 Certified Pure
               </p>
             </div>
@@ -98,45 +99,45 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Live Mandi Rate & Quotation Estimator Section */}
-      <section className="bg-white py-14 sm:py-20 border-b border-cream-200">
+      <section className="bg-white py-16 sm:py-20 border-b border-[#EBE7DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-mustard-100 text-mustard-900 text-xs font-bold tracking-wider uppercase">
-                <TrendingUp className="w-3.5 h-3.5 text-mustard-700" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#102B20]/10 text-[#102B20] text-xs font-bold tracking-wider uppercase">
+                <TrendingUp className="w-3.5 h-3.5 text-[#C49A32]" />
                 <span>Transparent Mill-Gate Pricing</span>
               </div>
-              <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-forest-950 leading-tight">
-                Instant Trade Calculator & Wholesale Rate Estimator
+              <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-[#102B20] leading-tight">
+                Instant Trade Calculator &amp; Wholesale Rate Estimator
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Estimate ex-mill packaging rates, applicable GST, and required Minimum Order Quantities (MOQ) before requesting your official signed proforma quotation.
               </p>
-              <div className="p-4 rounded-2xl bg-cream-50 border border-cream-200 text-xs space-y-2 text-slate-700">
+              <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#EBE7DD] text-xs space-y-2.5 text-slate-700">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                   <span>Real-time calculations based on daily Rajasthan mandi seed rates</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                   <span>Volume tier discounts automatically applied for 100+ units</span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="bg-white text-forest-950 rounded-3xl p-6 sm:p-8 shadow-xl border border-cream-200">
-                <div className="flex items-center justify-between border-b border-cream-200 pb-4 mb-5 gap-3">
+              <div className="bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-sm border border-[#EBE7DD]">
+                <div className="flex items-center justify-between border-b border-[#EBE7DD] pb-4 mb-5 gap-3">
                   <div>
-                    <span className="text-[11px] font-bold text-mustard-600 uppercase tracking-wider block">
+                    <span className="text-[11px] font-bold text-[#C49A32] uppercase tracking-wider block">
                       Trade Desk Calculator
                     </span>
-                    <h3 className="font-serif font-bold text-xl text-forest-950">
+                    <h3 className="font-serif font-bold text-xl text-[#102B20]">
                       Estimate Wholesale Cost
                     </h3>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-mustard-100 text-mustard-800 flex items-center justify-center font-bold shrink-0">
-                    <TrendingUp className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-[#102B20]/5 text-[#102B20] flex items-center justify-center font-bold shrink-0 border border-[#102B20]/10">
+                    <TrendingUp className="w-5 h-5 text-[#C49A32]" />
                   </div>
                 </div>
 
@@ -152,7 +153,7 @@ export const HomePage: React.FC = () => {
                         const prod = products.find(p => p.id === e.target.value);
                         if (prod) setCalcQty(prod.moq);
                       }}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs sm:text-sm font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-[#FAF8F5] text-xs sm:text-sm font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-[#C49A32]"
                     >
                       {products.map(p => (
                         <option key={p.id} value={p.id}>
@@ -177,20 +178,20 @@ export const HomePage: React.FC = () => {
                         min={selectedProduct.moq}
                         value={calcQty}
                         onChange={e => setCalcQty(Math.max(1, parseInt(e.target.value) || selectedProduct.moq))}
-                        className="flex-1 px-3.5 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-base font-bold text-forest-950 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+                        className="flex-1 px-3.5 py-2.5 rounded-xl border border-slate-300 bg-[#FAF8F5] text-base font-bold text-slate-900 focus:outline-hidden focus:ring-2 focus:ring-[#C49A32]"
                       />
                       <div className="flex gap-1.5 shrink-0">
                         <button
                           type="button"
                           onClick={() => setCalcQty(prev => prev + 50)}
-                          className="px-3 py-2.5 rounded-xl bg-cream-200 hover:bg-cream-300 text-xs font-bold text-slate-800 transition shrink-0"
+                          className="px-3 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-800 transition shrink-0 cursor-pointer"
                         >
                           +50
                         </button>
                         <button
                           type="button"
                           onClick={() => setCalcQty(prev => prev + 100)}
-                          className="px-3 py-2.5 rounded-xl bg-cream-200 hover:bg-cream-300 text-xs font-bold text-slate-800 transition shrink-0"
+                          className="px-3 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-800 transition shrink-0 cursor-pointer"
                         >
                           +100
                         </button>
@@ -199,16 +200,16 @@ export const HomePage: React.FC = () => {
                   </div>
 
                   {/* Calculation Breakdown Preview */}
-                  <div className="bg-cream-100/80 rounded-2xl p-4 space-y-2 border border-cream-300/70 text-xs">
+                  <div className="bg-[#FAF8F5] rounded-xl p-4 space-y-2 border border-[#EBE7DD] text-xs">
                     <div className="flex justify-between items-baseline gap-2 text-slate-600">
                       <span>Base Ex-Mill Rate:</span>
-                      <span className="font-semibold text-forest-950">
+                      <span className="font-semibold text-slate-900">
                         ₹{unitRate.toLocaleString('en-IN')} per {selectedProduct.unitLabel.replace(/s$/, '')}
                       </span>
                     </div>
                     <div className="flex justify-between items-baseline gap-2 text-slate-600">
                       <span>Subtotal ({calcQty} units):</span>
-                      <span className="font-semibold text-forest-950">
+                      <span className="font-semibold text-slate-900">
                         ₹{estimatedSubtotal.toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -218,9 +219,9 @@ export const HomePage: React.FC = () => {
                         ₹{estimatedGst.toLocaleString('en-IN')}
                       </span>
                     </div>
-                    <div className="border-t border-cream-300 pt-2 flex justify-between items-baseline gap-2 font-bold">
-                      <span className="text-forest-950 text-sm">Est. Total (Excl. Freight):</span>
-                      <span className="text-xl font-serif text-mustard-700">
+                    <div className="border-t border-[#EBE7DD] pt-2 flex justify-between items-baseline gap-2 font-bold">
+                      <span className="text-[#102B20] text-sm">Est. Total (Excl. Freight):</span>
+                      <span className="text-xl font-serif text-[#C49A32]">
                         ₹{estimatedTotal.toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -229,25 +230,16 @@ export const HomePage: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleStartQuote}
-                    className="w-full py-3.5 px-4 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-4 rounded-xl bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8] font-bold text-sm tracking-wide shadow-sm hover:shadow transition flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Proceed to Official Quotation</span>
-                    <ArrowRight className="w-4 h-4 text-mustard-400" />
+                    <ArrowRight className="w-4 h-4 text-[#E5A000]" />
                   </button>
 
-                  <button
-                    type="button"
-                    onClick={() =>
-                      window.dispatchEvent(
-                        new CustomEvent('open-trade-chatbot', {
-                          detail: { query: 'How does the wholesale order and quotation process work for new customers?' }
-                        })
-                      )
-                    }
-                    className="w-full text-center text-xs font-semibold text-forest-900 hover:text-mustard-700 flex items-center justify-center gap-1.5 pt-1 transition cursor-pointer"
-                  >
-                    <span>💬 New customer? Ask SarsonSaathi AI for help</span>
-                  </button>
+                  <div className="flex items-center justify-center gap-2 pt-1 text-xs text-slate-500">
+                    <PhoneCall className="w-3.5 h-3.5 text-[#C49A32]" />
+                    <span>Need direct mandi dispatch assistance? Call <strong>+91 90572 92529</strong></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -262,18 +254,18 @@ export const HomePage: React.FC = () => {
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <span className="text-xs font-bold text-mustard-600 uppercase tracking-widest block mb-1">
+            <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               Commercial Packaging Selection
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-forest-950">
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-[#102B20]">
               Featured Wholesale SKUs
             </h2>
           </div>
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 text-forest-900 hover:text-mustard-600 font-bold text-sm group"
+            className="inline-flex items-center gap-2 text-[#102B20] hover:text-[#C49A32] font-bold text-sm group"
           >
-            <span>View All Pack Sizes & Drums</span>
+            <span>View All Pack Sizes &amp; Drums</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -286,13 +278,13 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Production Process: Traditional Cold Ghani to Modern Hygiene */}
-      <section className="bg-white py-16 sm:py-24 border-y border-cream-200">
+      <section className="bg-white py-16 sm:py-24 border-y border-[#EBE7DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-mustard-600 uppercase tracking-widest block mb-1">
+            <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               Authentic Milling Craftsmanship
             </span>
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-forest-950 mb-4">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#102B20] mb-4">
               How We Extract Pure Kachi Ghani Oil
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -300,24 +292,24 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-cream-50 p-6 rounded-2xl border border-cream-200 relative">
-              <div className="w-12 h-12 rounded-xl bg-forest-900 text-mustard-400 flex items-center justify-center font-serif font-bold text-lg mb-4 shadow">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#EBE7DD] relative hover:border-[#C49A32]/40 transition-colors">
+              <div className="w-11 h-11 rounded-xl bg-[#102B20] text-[#E5A000] flex items-center justify-center font-serif font-bold text-base mb-4 shadow-sm">
                 01
               </div>
-              <h3 className="font-serif font-bold text-lg text-forest-950 mb-2">
-                Seed Selection & Cleaning
+              <h3 className="font-serif font-bold text-lg text-[#102B20] mb-2">
+                Seed Selection &amp; Cleaning
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Procured from Alwar and Bharatpur agro-mandis. Triple-deck aspirators and magnetic separators remove all foreign matter, dust, and immature seeds.
               </p>
             </div>
 
-            <div className="bg-cream-50 p-6 rounded-2xl border border-cream-200 relative">
-              <div className="w-12 h-12 rounded-xl bg-forest-900 text-mustard-400 flex items-center justify-center font-serif font-bold text-lg mb-4 shadow">
+            <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#EBE7DD] relative hover:border-[#C49A32]/40 transition-colors">
+              <div className="w-11 h-11 rounded-xl bg-[#102B20] text-[#E5A000] flex items-center justify-center font-serif font-bold text-base mb-4 shadow-sm">
                 02
               </div>
-              <h3 className="font-serif font-bold text-lg text-forest-950 mb-2">
+              <h3 className="font-serif font-bold text-lg text-[#102B20] mb-2">
                 Slow Ghani Cold Pressing
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -325,11 +317,11 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-cream-50 p-6 rounded-2xl border border-cream-200 relative">
-              <div className="w-12 h-12 rounded-xl bg-forest-900 text-mustard-400 flex items-center justify-center font-serif font-bold text-lg mb-4 shadow">
+            <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#EBE7DD] relative hover:border-[#C49A32]/40 transition-colors">
+              <div className="w-11 h-11 rounded-xl bg-[#102B20] text-[#E5A000] flex items-center justify-center font-serif font-bold text-base mb-4 shadow-sm">
                 03
               </div>
-              <h3 className="font-serif font-bold text-lg text-forest-950 mb-2">
+              <h3 className="font-serif font-bold text-lg text-[#102B20] mb-2">
                 Multi-Stage Micro-Filtration
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -337,11 +329,11 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
 
-            <div className="bg-cream-50 p-6 rounded-2xl border border-cream-200 relative">
-              <div className="w-12 h-12 rounded-xl bg-forest-900 text-mustard-400 flex items-center justify-center font-serif font-bold text-lg mb-4 shadow">
+            <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#EBE7DD] relative hover:border-[#C49A32]/40 transition-colors">
+              <div className="w-11 h-11 rounded-xl bg-[#102B20] text-[#E5A000] flex items-center justify-center font-serif font-bold text-base mb-4 shadow-sm">
                 04
               </div>
-              <h3 className="font-serif font-bold text-lg text-forest-950 mb-2">
+              <h3 className="font-serif font-bold text-lg text-[#102B20] mb-2">
                 Automated Sealed Packaging
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -362,20 +354,20 @@ export const HomePage: React.FC = () => {
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-xs font-bold text-mustard-600 uppercase tracking-widest block mb-1">
+            <span className="text-xs font-bold text-[#C49A32] uppercase tracking-widest block mb-1">
               B2B Manufacturer Advantage
             </span>
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-forest-950 mb-6 leading-tight">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#102B20] mb-6 leading-tight">
               Why Wholesalers Across India Trust Prime Fresh Oil Mills
             </h2>
 
             <div className="space-y-4">
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center shrink-0">
-                  <Factory className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-[#102B20]/5 text-[#102B20] flex items-center justify-center shrink-0 border border-[#102B20]/10">
+                  <Factory className="w-5 h-5 text-[#C49A32]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-forest-950 text-base mb-1">
+                  <h4 className="font-bold text-[#102B20] text-base mb-1">
                     Direct Mill-Gate Commercial Pricing
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -385,11 +377,11 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-[#102B20]/5 text-[#102B20] flex items-center justify-center shrink-0 border border-[#102B20]/10">
+                  <CheckCircle2 className="w-5 h-5 text-[#C49A32]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-forest-950 text-base mb-1">
+                  <h4 className="font-bold text-[#102B20] text-base mb-1">
                     Consistent Batch-to-Batch Pungency
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -399,12 +391,12 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center shrink-0">
-                  <Truck className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-[#102B20]/5 text-[#102B20] flex items-center justify-center shrink-0 border border-[#102B20]/10">
+                  <Truck className="w-5 h-5 text-[#C49A32]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-forest-950 text-base mb-1">
-                    Dedicated Transport & Lorry Receipt (LR) Tracking
+                  <h4 className="font-bold text-[#102B20] text-base mb-1">
+                    Dedicated Transport &amp; Lorry Receipt (LR) Tracking
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed">
                     We coordinate directly with reputed transporters (VRL, TCI, ARC) or facilitate seamless ex-mill truck loading with certified weighbridge tare slips.
@@ -413,11 +405,11 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-xl bg-forest-100 text-forest-800 flex items-center justify-center shrink-0">
-                  <PackageCheck className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-[#102B20]/5 text-[#102B20] flex items-center justify-center shrink-0 border border-[#102B20]/10">
+                  <PackageCheck className="w-5 h-5 text-[#C49A32]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-forest-950 text-base mb-1">
+                  <h4 className="font-bold text-[#102B20] text-base mb-1">
                     Heavy-Gauge Leak-Proof Packing
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -429,31 +421,31 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Right Visual Image Card: Interstate Mandi Supply Network */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <div className="relative rounded-2xl overflow-hidden shadow-md border border-[#EBE7DD]">
             <img
               src="/images/black-mustard-seeds.jpg"
               alt="Authentic Rajasthan Black Mustard Seeds and Interstate Supply"
               className="w-full h-[450px] object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent flex flex-col justify-end p-8 text-white">
-              <span className="text-xs font-bold text-mustard-400 uppercase tracking-wider mb-1">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#102B20]/95 via-[#102B20]/45 to-transparent flex flex-col justify-end p-8 text-white">
+              <span className="text-xs font-bold text-[#E5A000] uppercase tracking-wider mb-1">
                 Interstate Logistics Network
               </span>
-              <h3 className="font-serif font-bold text-2xl text-cream-50 mb-2">
-                Supplying Eastern UP, Bihar, Bengal & Assam Mandis
+              <h3 className="font-serif font-bold text-2xl text-[#FAF7EF] mb-2">
+                Supplying Eastern UP, Bihar, Bengal &amp; Assam Mandis
               </h3>
               <p className="text-xs text-slate-200 leading-relaxed mb-4">
                 High-frequency daily dispatches to Kanpur, Patna, Kolkata, Lucknow, Varanasi, and Siliguri wholesale trading hubs with computerized weighbridge tare slips and transit insurance.
               </p>
-              <div className="flex items-center gap-3 text-xs text-mustard-300 font-semibold">
+              <div className="flex items-center gap-3 text-xs text-[#FAF7EF]/90 font-semibold">
                 <span className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-mustard-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#E5A000]" />
                   <span>Insured Transporters</span>
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-mustard-400" />
-                  <span>Door & Ex-Mill Delivery</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#E5A000]" />
+                  <span>Door &amp; Ex-Mill Delivery</span>
                 </span>
               </div>
             </div>
@@ -462,14 +454,14 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Distributor Onboarding CTA Card */}
-      <section className="bg-forest-900 text-cream-50 py-16">
+      <section className="bg-[#102B20] text-[#FFF8E8] py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-forest-950 to-forest-800 rounded-3xl p-8 sm:p-12 border border-forest-700 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="bg-[#163628] rounded-2xl p-8 sm:p-12 border border-[#C49A32]/25 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">
-              <span className="text-xs font-bold text-mustard-400 uppercase tracking-widest block">
+              <span className="text-xs font-bold text-[#E5A000] uppercase tracking-widest block">
                 Exclusive Territorial Dealerships
               </span>
-              <h2 className="font-serif font-black text-2xl sm:text-4xl text-cream-50">
+              <h2 className="font-serif font-black text-2xl sm:text-4xl text-[#FAF7EF]">
                 Apply to Become an Authorized Distributor in Your District
               </h2>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
@@ -480,13 +472,13 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
               <Link
                 to="/portal/register"
-                className="px-6 py-3.5 rounded-xl bg-mustard-500 hover:bg-mustard-400 text-forest-950 font-bold text-sm tracking-wide text-center transition shadow-lg shadow-mustard-500/20"
+                className="px-6 py-3.5 rounded-xl bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-sm tracking-wide text-center transition shadow-sm cursor-pointer"
               >
                 Submit Distributor KYC
               </Link>
               <Link
                 to="/quotation-request"
-                className="px-6 py-3.5 rounded-xl bg-forest-800 hover:bg-forest-700 text-cream-100 font-bold text-sm tracking-wide text-center transition border border-forest-600"
+                className="px-6 py-3.5 rounded-xl bg-[#102B20] hover:bg-[#0A1D15] text-[#FAF7EF] font-bold text-sm tracking-wide text-center transition border border-[#C49A32]/40 cursor-pointer"
               >
                 Request Custom Quotation
               </Link>

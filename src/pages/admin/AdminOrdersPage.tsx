@@ -101,10 +101,10 @@ export const AdminOrdersPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-3xl p-6 border border-cream-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="font-serif font-bold text-xl text-forest-950">
+            <h2 className="font-serif font-bold text-xl text-slate-900">
               Orders Fulfillment & Dispatch Management
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -113,7 +113,7 @@ export const AdminOrdersPage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-forest-950 bg-forest-50 px-3 py-1.5 rounded-xl border border-forest-200">
+            <span className="text-xs font-bold text-slate-900 bg-forest-50 px-3 py-1.5 rounded-xl border border-forest-200">
               Total Orders in Pipeline: {quotations.length}
             </span>
           </div>
@@ -128,7 +128,7 @@ export const AdminOrdersPage: React.FC = () => {
               placeholder="Search by Order #, Quote #, Company Name, or Mandi City..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 bg-cream-50"
+              className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-slate-50"
             />
           </div>
 
@@ -139,8 +139,8 @@ export const AdminOrdersPage: React.FC = () => {
                 onClick={() => setSelectedStatus(st)}
                 className={`px-3 py-1.5 rounded-xl font-bold transition whitespace-nowrap ${
                   selectedStatus === st
-                    ? 'bg-forest-900 text-cream-50'
-                    : 'bg-cream-100 hover:bg-cream-200 text-slate-700'
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                 }`}
               >
                 {st}
@@ -151,10 +151,10 @@ export const AdminOrdersPage: React.FC = () => {
       </div>
 
       {/* Orders Table */}
-      <div className="bg-white rounded-3xl border border-cream-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-cream-100 text-forest-950 uppercase font-bold text-[10px]">
+            <thead className="bg-slate-100 text-slate-900 uppercase font-bold text-[10px]">
               <tr>
                 <th className="p-4">Order / Quote #</th>
                 <th className="p-4">Wholesaler Entity</th>
@@ -166,10 +166,10 @@ export const AdminOrdersPage: React.FC = () => {
                 <th className="p-4 text-right">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-cream-100">
+            <tbody className="divide-y divide-slate-100">
               {filteredOrders.map(order => (
-                <tr key={order.id} className="hover:bg-cream-50/70 transition">
-                  <td className="p-4 font-bold text-forest-950 font-serif">
+                <tr key={order.id} className="hover:bg-slate-50/70 transition">
+                  <td className="p-4 font-bold text-slate-900 font-serif">
                     <div>{order.orderNumber || order.quoteNumber}</div>
                     <span className="text-[10px] text-slate-400 font-sans font-normal">
                       {new Date(order.createdAt).toLocaleDateString('en-IN')}
@@ -216,14 +216,14 @@ export const AdminOrdersPage: React.FC = () => {
                     )}
                   </td>
 
-                  <td className="p-4 text-right font-bold text-forest-950">
+                  <td className="p-4 text-right font-bold text-slate-900">
                     ₹{order.totalAmount.toLocaleString('en-IN')}
                   </td>
 
                   <td className="p-4 text-right">
                     <button
                       onClick={() => handleOpenDispatchModal(order)}
-                      className="px-3 py-1.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs transition shadow-xs inline-flex items-center gap-1"
+                      className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition shadow-xs inline-flex items-center gap-1"
                     >
                       <Truck className="w-3.5 h-3.5" />
                       <span>Update Status / LR</span>
@@ -239,13 +239,13 @@ export const AdminOrdersPage: React.FC = () => {
       {/* Dispatch Status Update Modal */}
       {activeOrder && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-cream-200 shadow-2xl space-y-6">
-            <div className="flex justify-between items-start border-b border-cream-200 pb-4">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6">
+            <div className="flex justify-between items-start border-b border-slate-200 pb-4">
               <div>
-                <span className="text-[10px] font-bold text-mustard-600 uppercase tracking-widest block">
+                <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">
                   Consignment Dispatch Control
                 </span>
-                <h3 className="font-serif font-black text-2xl text-forest-950">
+                <h3 className="font-serif font-black text-2xl text-slate-900">
                   Update Status: {activeOrder.orderNumber || activeOrder.quoteNumber}
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
@@ -269,7 +269,7 @@ export const AdminOrdersPage: React.FC = () => {
                 <select
                   value={targetStatus}
                   onChange={e => setTargetStatus(e.target.value as OrderStatus)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 font-bold text-sm bg-cream-50 text-forest-950"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 font-bold text-sm bg-slate-50 text-slate-900"
                 >
                   <option value="Requested">Requested (Awaiting Quotation)</option>
                   <option value="Quotation Sent">Quotation Sent (Waiting Wholesaler Confirmation)</option>
@@ -298,7 +298,7 @@ export const AdminOrdersPage: React.FC = () => {
                         value={transporterName}
                         onChange={e => setTransporterName(e.target.value)}
                         placeholder="e.g. VRL Logistics, TCI Express, ARC Freight"
-                        className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-white font-semibold"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white font-semibold"
                       />
                     </div>
 
@@ -310,7 +310,7 @@ export const AdminOrdersPage: React.FC = () => {
                         value={lrNumber}
                         onChange={e => setLrNumber(e.target.value)}
                         placeholder="e.g. VRL-ALW-992140"
-                        className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-white font-mono font-bold"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white font-mono font-bold"
                       />
                     </div>
 
@@ -322,7 +322,7 @@ export const AdminOrdersPage: React.FC = () => {
                         value={vehicleNumber}
                         onChange={e => setVehicleNumber(e.target.value)}
                         placeholder="e.g. RJ-02-GB-8841"
-                        className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-white font-mono font-bold uppercase"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white font-mono font-bold uppercase"
                       />
                     </div>
 
@@ -332,7 +332,7 @@ export const AdminOrdersPage: React.FC = () => {
                         type="date"
                         value={dispatchDate}
                         onChange={e => setDispatchDate(e.target.value)}
-                        className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-white font-semibold"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white font-semibold"
                       />
                     </div>
 
@@ -342,7 +342,7 @@ export const AdminOrdersPage: React.FC = () => {
                         type="date"
                         value={estimatedArrival}
                         onChange={e => setEstimatedArrival(e.target.value)}
-                        className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-white font-semibold"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white font-semibold"
                       />
                     </div>
 
@@ -353,7 +353,7 @@ export const AdminOrdersPage: React.FC = () => {
                         value={dispatchRemarks}
                         onChange={e => setDispatchRemarks(e.target.value)}
                         placeholder="Driver mobile number, tare weighbridge certificate, seal numbers..."
-                        className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-white"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white"
                       />
                     </div>
                   </div>
@@ -370,24 +370,24 @@ export const AdminOrdersPage: React.FC = () => {
                   value={millNotes}
                   onChange={e => setMillNotes(e.target.value)}
                   placeholder="e.g. Loaded from Alwar Mill Unit 1. Batch Certificate #KG-2026-OCT-18 verified."
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs"
+                  className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-xs"
                 />
               </div>
 
               {/* Action buttons */}
-              <div className="pt-4 border-t border-cream-200 flex justify-end gap-3">
+              <div className="pt-4 border-t border-slate-200 flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setActiveOrder(null)}
-                  className="px-4 py-2.5 rounded-xl bg-cream-200 hover:bg-cream-300 text-forest-950 font-bold"
+                  className="px-4 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-900 font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold shadow flex items-center gap-1.5"
+                  className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold shadow flex items-center gap-1.5"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-mustard-400" />
+                  <CheckCircle2 className="w-4 h-4 text-amber-400" />
                   <span>Update Order Pipeline</span>
                 </button>
               </div>

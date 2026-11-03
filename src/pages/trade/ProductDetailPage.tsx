@@ -29,10 +29,10 @@ export const ProductDetailPage: React.FC = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-8">
+      <div className="min-h-screen flex items-center justify-center p-8 bg-[#FAF8F5]">
         <div className="text-center">
-          <h2 className="text-2xl font-bold font-serif mb-2">Product Not Found</h2>
-          <Link to="/products" className="text-mustard-600 hover:underline">
+          <h2 className="text-2xl font-bold font-serif mb-2 text-[#102B20]">Product Not Found</h2>
+          <Link to="/products" className="text-[#C49A32] hover:underline text-sm font-semibold">
             Back to Products Catalog
           </Link>
         </div>
@@ -68,7 +68,7 @@ export const ProductDetailPage: React.FC = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-cream-50/50 py-10">
+    <div className="min-h-screen bg-[#FAF8F5] py-10">
       <SEOHead
         title={`${product.name} (${product.packaging}) Wholesale`}
         description={`Buy wholesale ${product.name} direct from mill. ${product.tagline}. Packaging: ${product.packaging}. Minimum Order Quantity: ${product.moq} ${product.unitLabel}. FSSAI certified.`}
@@ -105,7 +105,7 @@ export const ProductDetailPage: React.FC = () => {
         <div className="mb-6">
           <Link
             to="/products"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-forest-900 hover:text-mustard-700 transition"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#102B20] transition"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Wholesale Catalog</span>
@@ -113,33 +113,33 @@ export const ProductDetailPage: React.FC = () => {
         </div>
 
         {/* Product Main Showcase */}
-        <div className="bg-white rounded-3xl border border-cream-200 shadow-sm overflow-hidden mb-12">
+        <div className="bg-white rounded-2xl border border-[#EBE7DD] shadow-xs overflow-hidden mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10">
             {/* Left Col: Image & Badges */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative rounded-2xl overflow-hidden bg-cream-100 aspect-4/3 sm:aspect-square border border-cream-200">
+              <div className="relative rounded-xl overflow-hidden bg-[#FAF8F5] aspect-4/3 sm:aspect-square border border-[#EBE7DD]">
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-forest-900/90 text-mustard-300 shadow">
+                <div className="absolute top-3 left-3">
+                  <span className="text-xs font-bold px-3 py-1 rounded-md bg-[#102B20]/90 text-[#F5C542] shadow-xs">
                     {product.grade}
                   </span>
                 </div>
-                <div className="absolute top-4 right-4">
-                  <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300 shadow">
+                <div className="absolute top-3 right-3">
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs">
                     {product.stockStatus}
                   </span>
                 </div>
               </div>
 
               {/* Lab Certification Banner */}
-              <div className="bg-cream-100/80 rounded-2xl p-4 border border-cream-300 flex items-start gap-3 text-xs">
-                <ShieldCheck className="w-5 h-5 text-forest-800 shrink-0 mt-0.5" />
+              <div className="bg-[#FAF8F5] rounded-xl p-4 border border-[#EBE7DD] flex items-start gap-3 text-xs">
+                <ShieldCheck className="w-5 h-5 text-[#102B20] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-forest-950 block font-serif">
+                  <strong className="text-[#102B20] block font-serif">
                     Certified Cold Pressed Batch Quality
                   </strong>
                   <p className="text-slate-600 mt-0.5">
@@ -152,10 +152,10 @@ export const ProductDetailPage: React.FC = () => {
             {/* Right Col: Title, Description, Tiers, Quantity & Action Box */}
             <div className="lg:col-span-7 flex flex-col justify-between">
               <div>
-                <div className="text-xs font-bold text-forest-700 uppercase tracking-widest mb-1.5">
+                <div className="text-xs font-bold text-[#C49A32] uppercase tracking-widest mb-1.5">
                   SKU: {product.sku} • {product.packaging}
                 </div>
-                <h1 className="font-serif font-black text-2xl sm:text-3xl text-forest-950 mb-3 leading-snug">
+                <h1 className="font-serif font-black text-2xl sm:text-3xl text-[#102B20] mb-3 leading-snug">
                   {product.name}
                 </h1>
                 <p className="text-sm text-slate-600 leading-relaxed mb-6 font-sans">
@@ -165,8 +165,8 @@ export const ProductDetailPage: React.FC = () => {
                 {/* Bulk Volume Pricing Tier Table */}
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold text-forest-950 uppercase tracking-wider flex items-center gap-1.5">
-                      <Layers className="w-4 h-4 text-mustard-600" />
+                    <span className="text-xs font-bold text-[#102B20] uppercase tracking-wider flex items-center gap-1.5">
+                      <Layers className="w-4 h-4 text-[#C49A32]" />
                       <span>Wholesale Volume Discount Tiers</span>
                     </span>
                     <span className="text-[11px] text-slate-500">Ex-Mill Base (Exclusive of 5% GST)</span>
@@ -182,14 +182,14 @@ export const ProductDetailPage: React.FC = () => {
                           key={idx}
                           className={`p-3 rounded-xl border transition ${
                             isCurrentTier
-                              ? 'bg-mustard-50 border-mustard-500 shadow-xs ring-1 ring-mustard-400'
-                              : 'bg-cream-50 border-cream-200'
+                              ? 'bg-[#FAF8F5] border-[#C49A32] ring-1 ring-[#C49A32]'
+                              : 'bg-white border-[#EBE7DD]'
                           }`}
                         >
                           <span className="text-[11px] text-slate-500 block">
                             {tier.maxQty ? `${tier.minQty} - ${tier.maxQty} units` : `${tier.minQty}+ units`}
                           </span>
-                          <span className="font-serif font-bold text-base text-forest-950 block mt-1">
+                          <span className="font-serif font-bold text-base text-[#102B20] block mt-1">
                             ₹{tier.pricePerUnit.toLocaleString('en-IN')}
                           </span>
                           <span className="text-[10px] text-slate-400">per {product.unitLabel.replace(/s$/, '')}</span>
@@ -200,10 +200,10 @@ export const ProductDetailPage: React.FC = () => {
                 </div>
 
                 {/* Order Quantity Box & Subtotal Preview */}
-                <div className="bg-cream-100/60 rounded-2xl p-5 border border-cream-300 mb-6 space-y-4">
+                <div className="bg-[#FAF8F5] rounded-xl p-5 border border-[#EBE7DD] mb-6 space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
-                      <span className="text-xs font-bold text-forest-950 block uppercase">
+                      <span className="text-xs font-bold text-[#102B20] block uppercase">
                         Order Quantity ({product.unitLabel})
                       </span>
                       <span className="text-[11px] text-slate-500">
@@ -212,11 +212,11 @@ export const ProductDetailPage: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <div className="flex items-center border border-cream-300 rounded-xl bg-white overflow-hidden text-sm">
+                      <div className="flex items-center border border-slate-300 rounded-lg bg-white overflow-hidden text-sm">
                         <button
                           type="button"
                           onClick={() => setQuantity(prev => Math.max(product.moq, prev - 10))}
-                          className="px-3 py-2 hover:bg-cream-200 font-bold text-slate-700 transition"
+                          className="px-3 py-1.5 hover:bg-slate-100 font-bold text-slate-700 transition cursor-pointer"
                         >
                           -
                         </button>
@@ -225,12 +225,12 @@ export const ProductDetailPage: React.FC = () => {
                           min={product.moq}
                           value={quantity}
                           onChange={e => setQuantity(Math.max(product.moq, parseInt(e.target.value) || product.moq))}
-                          className="w-20 text-center font-bold text-forest-950 bg-transparent focus:outline-hidden py-1.5"
+                          className="w-20 text-center font-bold text-slate-900 bg-transparent focus:outline-hidden py-1 text-xs"
                         />
                         <button
                           type="button"
                           onClick={() => setQuantity(prev => prev + 10)}
-                          className="px-3 py-2 hover:bg-cream-200 font-bold text-slate-700 transition"
+                          className="px-3 py-1.5 hover:bg-slate-100 font-bold text-slate-700 transition cursor-pointer"
                         >
                           +
                         </button>
@@ -238,7 +238,7 @@ export const ProductDetailPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setQuantity(prev => prev + 50)}
-                        className="px-2.5 py-2 rounded-xl bg-cream-200 hover:bg-cream-300 text-xs font-bold text-slate-700"
+                        className="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 cursor-pointer"
                       >
                         +50
                       </button>
@@ -246,10 +246,10 @@ export const ProductDetailPage: React.FC = () => {
                   </div>
 
                   {/* Real-time Subtotal Breakdown */}
-                  <div className="pt-3 border-t border-cream-200/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                  <div className="pt-3 border-t border-[#EBE7DD] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                     <div>
                       <span className="text-slate-500 block">Applied Unit Rate:</span>
-                      <span className="font-bold text-forest-950 text-sm">
+                      <span className="font-bold text-slate-900 text-sm">
                         ₹{applicablePrice.toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -261,7 +261,7 @@ export const ProductDetailPage: React.FC = () => {
                     </div>
                     <div>
                       <span className="text-slate-500 block">Indicative Order Total:</span>
-                      <span className="font-serif font-black text-mustard-700 text-base">
+                      <span className="font-serif font-black text-[#C49A32] text-base">
                         ₹{Math.round(total).toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -273,20 +273,20 @@ export const ProductDetailPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleAddToCart}
-                    className={`flex-1 py-3.5 px-5 rounded-xl font-bold text-sm transition shadow-md flex items-center justify-center gap-2 ${
+                    className={`flex-1 py-3.5 px-5 rounded-xl font-bold text-sm transition shadow-xs flex items-center justify-center gap-2 cursor-pointer ${
                       added
-                        ? 'bg-emerald-600 text-white'
-                        : 'bg-forest-900 hover:bg-forest-800 text-cream-50'
+                        ? 'bg-emerald-700 text-white'
+                        : 'bg-[#102B20] hover:bg-[#1A3D2E] text-[#FFF8E8]'
                     }`}
                   >
                     {added ? (
                       <>
-                        <Check className="w-5 h-5" />
+                        <Check className="w-5 h-5 text-white" />
                         <span>Added to Bulk Order Cart</span>
                       </>
                     ) : (
                       <>
-                        <ShoppingCart className="w-5 h-5 text-mustard-400" />
+                        <ShoppingCart className="w-5 h-5 text-[#E5A000]" />
                         <span>Add to Bulk Cart ({quantity} {product.unitLabel})</span>
                       </>
                     )}
@@ -295,7 +295,7 @@ export const ProductDetailPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleRequestQuote}
-                    className="py-3.5 px-5 rounded-xl font-bold text-sm bg-mustard-500 hover:bg-mustard-400 text-forest-950 transition shadow-md flex items-center justify-center gap-2"
+                    className="py-3.5 px-5 rounded-xl font-bold text-sm bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] transition shadow-xs flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <FileText className="w-5 h-5" />
                     <span>Request Quotation with Freight</span>
@@ -306,21 +306,21 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsSampleModalOpen(true)}
-                  className="w-full mt-3 py-2.5 px-4 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950 font-bold text-xs flex items-center justify-center gap-2 transition"
+                  className="w-full mt-3 py-2.5 px-4 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-950 font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer"
                 >
-                  <PackageCheck className="w-4 h-4 text-amber-700" />
+                  <PackageCheck className="w-4 h-4 text-amber-800" />
                   <span>Verified Buyer? Request Free 500ml Sample Bottle for Lab Testing</span>
                 </button>
               </div>
 
               {/* Transit & Dispatch Info */}
-              <div className="pt-6 border-t border-cream-200 mt-6 grid grid-cols-2 gap-4 text-xs text-slate-600">
+              <div className="pt-6 border-t border-[#EBE7DD] mt-6 grid grid-cols-2 gap-4 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
-                  <Truck className="w-4 h-4 text-forest-800 shrink-0" />
+                  <Truck className="w-4 h-4 text-[#102B20] shrink-0" />
                   <span>Ex-Mill Gate loading or Transporter LR dispatch</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-forest-800 shrink-0" />
+                  <Clock className="w-4 h-4 text-[#102B20] shrink-0" />
                   <span>Dispatch within 24-48 hrs of RTGS realization</span>
                 </div>
               </div>
@@ -329,48 +329,48 @@ export const ProductDetailPage: React.FC = () => {
         </div>
 
         {/* Technical Specifications Table */}
-        <div className="bg-white rounded-3xl border border-cream-200 p-6 sm:p-10 shadow-sm mb-12">
-          <h2 className="font-serif font-black text-2xl text-forest-950 mb-6 pb-3 border-b border-cream-200 flex items-center gap-2">
-            <Scale className="w-6 h-6 text-mustard-600" />
+        <div className="bg-white rounded-2xl border border-[#EBE7DD] p-6 sm:p-10 shadow-xs mb-12">
+          <h2 className="font-serif font-black text-2xl text-[#102B20] mb-6 pb-3 border-b border-[#EBE7DD] flex items-center gap-2">
+            <Scale className="w-5 h-5 text-[#C49A32]" />
             <span>Laboratory Technical Specifications</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-3">
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
                 <span className="text-slate-500 font-medium">Commodity / Grade:</span>
-                <span className="font-bold text-forest-950">{product.grade}</span>
+                <span className="font-bold text-[#102B20]">{product.grade}</span>
               </div>
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
-                <span className="text-slate-500 font-medium">Quality & Characteristics:</span>
-                <span className="font-bold text-forest-950">{product.specs.pungencyIndex}</span>
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
+                <span className="text-slate-500 font-medium">Quality &amp; Characteristics:</span>
+                <span className="font-bold text-[#102B20]">{product.specs.pungencyIndex}</span>
               </div>
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
                 <span className="text-slate-500 font-medium">Acid Value / Grading:</span>
-                <span className="font-bold text-forest-950">{product.specs.acidValue}</span>
+                <span className="font-bold text-[#102B20]">{product.specs.acidValue}</span>
               </div>
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
-                <span className="text-slate-500 font-medium">Moisture & Purity Limit:</span>
-                <span className="font-bold text-forest-950">{product.specs.moistureContent}</span>
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
+                <span className="text-slate-500 font-medium">Moisture &amp; Purity Limit:</span>
+                <span className="font-bold text-[#102B20]">{product.specs.moistureContent}</span>
               </div>
             </div>
 
             <div className="space-y-3">
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
                 <span className="text-slate-500 font-medium">Standard / Machine Cleaning:</span>
-                <span className="font-bold text-forest-950">{product.specs.refractiveIndex}</span>
+                <span className="font-bold text-[#102B20]">{product.specs.refractiveIndex}</span>
               </div>
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
-                <span className="text-slate-500 font-medium">Color & Appearance:</span>
-                <span className="font-bold text-forest-950">{product.specs.colorValue}</span>
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
+                <span className="text-slate-500 font-medium">Color &amp; Appearance:</span>
+                <span className="font-bold text-[#102B20]">{product.specs.colorValue}</span>
               </div>
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
                 <span className="text-slate-500 font-medium">Packaging Material:</span>
-                <span className="font-bold text-forest-950">{product.packaging}</span>
+                <span className="font-bold text-[#102B20]">{product.packaging}</span>
               </div>
-              <div className="flex justify-between py-2 border-b border-cream-100 text-sm">
+              <div className="flex justify-between py-2 border-b border-[#EBE7DD] text-sm">
                 <span className="text-slate-500 font-medium">Shelf Life:</span>
-                <span className="font-bold text-forest-950">{product.specs.shelfLife}</span>
+                <span className="font-bold text-[#102B20]">{product.specs.shelfLife}</span>
               </div>
             </div>
           </div>
@@ -378,7 +378,7 @@ export const ProductDetailPage: React.FC = () => {
 
         {/* Related Products */}
         <div>
-          <h3 className="font-serif font-black text-xl text-forest-950 mb-6">
+          <h3 className="font-serif font-black text-xl text-[#102B20] mb-6">
             Complementary Wholesale SKUs
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -155,11 +155,11 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Privacy Notice Banner for Works Console */}
-      <div className="p-4 rounded-2xl bg-forest-950 text-cream-50 border border-forest-800 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="p-4 rounded-2xl bg-forest-950 text-white border border-forest-800 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
-          <Shield className="w-6 h-6 text-mustard-400 shrink-0 mt-0.5" />
+          <Shield className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
           <div>
-            <h3 className="font-serif font-bold text-base text-cream-50">
+            <h3 className="font-serif font-bold text-base text-white">
               Privacy-Compliant Wholesale Visitor Tracking &amp; Lead Scoring
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed mt-0.5">
@@ -167,7 +167,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2 shrink-0 text-xs font-bold bg-forest-900 px-3.5 py-2 rounded-xl border border-forest-700 text-mustard-300">
+        <div className="flex items-center gap-2 shrink-0 text-xs font-bold bg-slate-900 px-3.5 py-2 rounded-xl border border-forest-700 text-amber-300">
           <Activity className="w-4 h-4 text-emerald-400" />
           <span>Active Pipeline: {metrics.hotLeads} Hot Leads</span>
         </div>
@@ -175,7 +175,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
 
       {/* KPI Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-xs">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
               Total Visitors
@@ -184,7 +184,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
               <Users className="w-5 h-5" />
             </div>
           </div>
-          <div className="font-serif font-black text-3xl text-forest-950">
+          <div className="font-serif font-black text-3xl text-slate-900">
             {metrics.total}
           </div>
           <p className="text-[11px] text-slate-500 mt-1">
@@ -192,7 +192,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-xs">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-bold text-rose-700 uppercase tracking-wider">
               Hot Buying Leads
@@ -212,7 +212,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-xs">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">
               Warm Prospects
@@ -232,7 +232,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-xs">
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
               Identified Wholesalers
@@ -242,7 +242,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
             </div>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="font-serif font-black text-3xl text-forest-950">
+            <span className="font-serif font-black text-3xl text-slate-900">
               {metrics.identified}
             </span>
             <span className="text-xs text-emerald-700 font-semibold">
@@ -256,7 +256,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white rounded-3xl p-6 border border-cream-200 shadow-xs space-y-4">
+      <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 items-center">
           {/* Search Input */}
           <div className="lg:col-span-2 relative">
@@ -266,7 +266,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
               placeholder="Search by Masked IP, Hash, or Company..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs sm:text-sm font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-xs sm:text-sm font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
             />
           </div>
 
@@ -275,7 +275,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
             <select
               value={categoryFilter}
               onChange={e => setCategoryFilter(e.target.value as any)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
             >
               <option value="All">All Lead Categories</option>
               <option value="Hot">🔥 Hot Leads (70-100)</option>
@@ -289,7 +289,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
             <select
               value={associationFilter}
               onChange={e => setAssociationFilter(e.target.value as any)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
             >
               <option value="All">All Identities</option>
               <option value="Identified">Identified Wholesalers</option>
@@ -302,7 +302,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
             <select
               value={dateRangeFilter}
               onChange={e => setDateRangeFilter(e.target.value as any)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 bg-cream-50 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-mustard-500"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-xs font-semibold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
             >
               <option value="all">All-Time Visitors</option>
               <option value="7d">Active Last 7 Days</option>
@@ -312,9 +312,9 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
         </div>
 
         {/* Visit Frequency Pill Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-cream-100 text-xs">
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-100 text-xs">
           <div className="flex items-center gap-2 text-slate-600 font-semibold">
-            <Filter className="w-3.5 h-3.5 text-mustard-600" />
+            <Filter className="w-3.5 h-3.5 text-amber-600" />
             <span>Min. Repeat Visits:</span>
             {[1, 2, 5, 10].map(cnt => (
               <button
@@ -323,8 +323,8 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                 onClick={() => setMinVisits(cnt)}
                 className={`px-2.5 py-1 rounded-lg font-bold transition cursor-pointer ${
                   minVisits === cnt
-                    ? 'bg-forest-900 text-cream-50'
-                    : 'bg-cream-100 text-slate-700 hover:bg-cream-200'
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
                 {cnt}+
@@ -338,10 +338,10 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
       </div>
 
       {/* Visitors List Table */}
-      <div className="bg-white rounded-3xl border border-cream-200 overflow-hidden shadow-xs">
+      <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse">
-            <thead className="bg-cream-100/80 text-forest-950 font-bold uppercase text-[10px] tracking-wider border-b border-cream-200">
+            <thead className="bg-slate-100/80 text-slate-900 font-bold uppercase text-[10px] tracking-wider border-b border-slate-200">
               <tr>
                 <th className="py-3.5 px-4">Visitor / Masked IP</th>
                 <th className="py-3.5 px-4">Lead Status &amp; Score</th>
@@ -352,7 +352,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                 <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-cream-100 text-slate-700">
+            <tbody className="divide-y divide-slate-100 text-slate-700">
               {filteredVisitors.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="py-12 text-center text-slate-400">
@@ -361,10 +361,10 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                 </tr>
               ) : (
                 filteredVisitors.map(v => (
-                  <tr key={v.id} className="hover:bg-cream-50/60 transition">
+                  <tr key={v.id} className="hover:bg-slate-50/60 transition">
                     {/* Visitor ID & Masked IP */}
                     <td className="py-3.5 px-4">
-                      <div className="font-mono font-bold text-forest-950 text-xs">
+                      <div className="font-mono font-bold text-slate-900 text-xs">
                         {v.maskedIp}
                       </div>
                       <div className="text-[10px] text-slate-400 font-mono mt-0.5 truncate max-w-[140px]" title={v.visitorHash}>
@@ -377,7 +377,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                       <div className="space-y-1">
                         {getLeadCategoryBadge(v.leadCategory, v.leadScore)}
                         {/* Visual Progress Bar */}
-                        <div className="w-24 bg-cream-200 h-1.5 rounded-full overflow-hidden">
+                        <div className="w-24 bg-slate-200 h-1.5 rounded-full overflow-hidden">
                           <div
                             className={`h-full rounded-full ${
                               v.leadCategory === 'Hot'
@@ -396,7 +396,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                     <td className="py-3.5 px-4">
                       {v.associatedCustomer ? (
                         <div className="space-y-0.5">
-                          <div className="font-bold text-forest-950 text-xs flex items-center gap-1">
+                          <div className="font-bold text-slate-900 text-xs flex items-center gap-1">
                             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                             <span className="truncate max-w-[160px]">{v.associatedCustomer.companyName}</span>
                           </div>
@@ -417,7 +417,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
 
                     {/* Visit Counts */}
                     <td className="py-3.5 px-4 text-center">
-                      <div className="font-bold text-sm text-forest-950">
+                      <div className="font-bold text-sm text-slate-900">
                         {v.totalVisits} visits
                       </div>
                       <div className="text-[10px] text-slate-400">
@@ -433,7 +433,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                             <span className="truncate mr-2 font-medium" title={p.path}>
                               {p.title || p.path}
                             </span>
-                            <span className="px-1.5 py-0.5 rounded bg-cream-100 text-[10px] font-bold text-forest-900 shrink-0">
+                            <span className="px-1.5 py-0.5 rounded bg-slate-100 text-[10px] font-bold text-slate-800 shrink-0">
                               {p.count}x
                             </span>
                           </div>
@@ -454,9 +454,9 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setSelectedVisitor(v)}
-                        className="px-3 py-1.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs transition shadow-xs inline-flex items-center gap-1 cursor-pointer active:scale-95"
+                        className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition shadow-xs inline-flex items-center gap-1 cursor-pointer active:scale-95"
                       >
-                        <Eye className="w-3.5 h-3.5 text-mustard-400" />
+                        <Eye className="w-3.5 h-3.5 text-amber-400" />
                         <span>Inspect</span>
                       </button>
                     </td>
@@ -471,18 +471,18 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
       {/* Visitor Detail Modal with Chronological History */}
       {selectedVisitor && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs no-print">
-          <div className="bg-white text-forest-950 rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-cream-300">
+          <div className="bg-white text-slate-900 rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-300">
             {/* Modal Header */}
-            <div className="sticky top-0 bg-forest-950 text-cream-50 p-5 flex items-center justify-between rounded-t-3xl border-b border-forest-800 z-10">
+            <div className="sticky top-0 bg-forest-950 text-white p-5 flex items-center justify-between rounded-t-3xl border-b border-forest-800 z-10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-forest-800 flex items-center justify-center font-bold">
-                  <Activity className="w-5 h-5 text-mustard-400" />
+                  <Activity className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-black text-lg text-cream-50 flex items-center gap-2">
+                  <h3 className="font-serif font-black text-lg text-white flex items-center gap-2">
                     <span>Visitor Journey &amp; Lead Scorecard</span>
                   </h3>
-                  <p className="text-xs text-mustard-300 font-mono">
+                  <p className="text-xs text-amber-300 font-mono">
                     Masked IP: {selectedVisitor.maskedIp} · Hash: {selectedVisitor.visitorHash.substring(0, 16)}...
                   </p>
                 </div>
@@ -490,7 +490,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSelectedVisitor(null)}
-                className="p-1.5 rounded-xl hover:bg-forest-800 text-slate-300 hover:text-white transition"
+                className="p-1.5 rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -499,7 +499,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
             {/* Modal Body */}
             <div className="p-6 sm:p-8 space-y-6">
               {/* Scorecard Hero Banner */}
-              <div className="bg-cream-50 rounded-2xl p-5 border border-cream-200 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+              <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
                 <div>
                   <span className="text-slate-400 text-[10px] uppercase font-bold block">Lead Classification</span>
                   <div className="mt-1">
@@ -508,20 +508,20 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-slate-400 text-[10px] uppercase font-bold block">Total Frequency</span>
-                  <div className="font-black text-forest-950 text-base mt-0.5">
+                  <div className="font-black text-slate-900 text-base mt-0.5">
                     {selectedVisitor.totalVisits} sessions
                   </div>
                   <span className="text-[10px] text-slate-500">{selectedVisitor.visitsLast7Days} in last 7 days</span>
                 </div>
                 <div>
                   <span className="text-slate-400 text-[10px] uppercase font-bold block">First Seen</span>
-                  <div className="font-bold text-forest-950 mt-0.5">
+                  <div className="font-bold text-slate-900 mt-0.5">
                     {new Date(selectedVisitor.firstSeen).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                   </div>
                 </div>
                 <div>
                   <span className="text-slate-400 text-[10px] uppercase font-bold block">Last Active</span>
-                  <div className="font-bold text-forest-950 mt-0.5">
+                  <div className="font-bold text-slate-900 mt-0.5">
                     {new Date(selectedVisitor.lastSeen).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}
                   </div>
                 </div>
@@ -530,12 +530,12 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
               {/* Customer Association Status */}
               <div className="bg-forest-50 p-5 rounded-2xl border border-forest-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
-                  <span className="text-[10px] font-bold text-forest-700 uppercase tracking-wider block">
+                  <span className="text-[10px] font-bold text-slate-700 uppercase tracking-wider block">
                     Confirmed Business Entity
                   </span>
                   {selectedVisitor.associatedCustomer ? (
                     <div className="mt-1">
-                      <h4 className="font-serif font-black text-base text-forest-950">
+                      <h4 className="font-serif font-black text-base text-slate-900">
                         {selectedVisitor.associatedCustomer.companyName}
                       </h4>
                       <p className="text-xs text-slate-600">
@@ -558,9 +558,9 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setManualAssocOpen(true)}
-                    className="px-4 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs flex items-center gap-1.5 transition shadow-xs cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs flex items-center gap-1.5 transition shadow-xs cursor-pointer"
                   >
-                    <Building2 className="w-3.5 h-3.5 text-mustard-400" />
+                    <Building2 className="w-3.5 h-3.5 text-amber-400" />
                     <span>Associate Business</span>
                   </button>
                 )}
@@ -626,7 +626,7 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-1.5 rounded-lg bg-forest-900 text-cream-50 font-bold text-xs shadow-xs"
+                      className="px-4 py-1.5 rounded-lg bg-slate-900 text-white font-bold text-xs shadow-xs"
                     >
                       Save Association
                     </button>
@@ -636,12 +636,12 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
 
               {/* Chronological Activity Timeline */}
               <div>
-                <h4 className="font-serif font-bold text-sm text-forest-950 uppercase tracking-wider mb-4">
+                <h4 className="font-serif font-bold text-sm text-slate-900 uppercase tracking-wider mb-4">
                   Chronological Visitor Activity &amp; Intent Journey
                 </h4>
-                <div className="border border-cream-200 rounded-2xl overflow-hidden divide-y divide-cream-100">
+                <div className="border border-slate-200 rounded-2xl overflow-hidden divide-y divide-slate-100">
                   {selectedVisitor.events.map((evt, idx) => (
-                    <div key={evt.id || idx} className="p-4 flex items-start justify-between gap-4 hover:bg-cream-50/50">
+                    <div key={evt.id || idx} className="p-4 flex items-start justify-between gap-4 hover:bg-slate-50/50">
                       <div className="flex items-start gap-3">
                         <div
                           className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold ${
@@ -651,13 +651,13 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
                               ? 'bg-forest-100 text-forest-800'
                               : evt.eventType === 'add_to_cart'
                               ? 'bg-amber-100 text-amber-800'
-                              : 'bg-cream-200 text-slate-700'
+                              : 'bg-slate-200 text-slate-700'
                           }`}
                         >
                           +{evt.weight}
                         </div>
                         <div>
-                          <div className="font-bold text-xs text-forest-950 flex items-center gap-2">
+                          <div className="font-bold text-xs text-slate-900 flex items-center gap-2">
                             <span>{evt.pageTitle}</span>
                             <span className="text-[10px] font-mono text-slate-400 font-normal">
                               ({evt.pagePath})
@@ -687,11 +687,11 @@ export const AdminVisitorAnalyticsPage: React.FC = () => {
               </div>
 
               {/* Modal Footer */}
-              <div className="flex items-center justify-end pt-2 border-t border-cream-200">
+              <div className="flex items-center justify-end pt-2 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setSelectedVisitor(null)}
-                  className="px-5 py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs transition"
+                  className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition"
                 >
                   Close Scorecard
                 </button>

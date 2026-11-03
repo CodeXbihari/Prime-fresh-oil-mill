@@ -28,33 +28,30 @@ export const DemoBar: React.FC = () => {
   };
 
   return (
-    <div className="bg-forest-950 text-cream-100 text-xs py-2 px-3 sm:px-4 border-b border-forest-800 flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 shadow-md no-print z-50 w-full overflow-hidden box-border">
-      <div className="flex items-center gap-2 sm:gap-2.5 min-w-0 flex-wrap">
-        <span className="flex h-2 w-2 relative shrink-0">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-mustard-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-mustard-400"></span>
+    <div className="bg-[#091811] text-slate-300 text-[11px] py-1.5 px-3 sm:px-5 border-b border-[#183627] flex flex-wrap items-center justify-between gap-2.5 no-print z-50 w-full overflow-hidden">
+      <div className="flex items-center gap-2 min-w-0">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"></span>
+        <span className="font-semibold text-slate-200 tracking-wide uppercase text-[10px]">
+          Demo Environment
         </span>
-        <span className="font-bold tracking-wide uppercase text-mustard-300 break-words text-[11px] sm:text-xs">
-          Prime Fresh Oil Mills Demo Mode
-        </span>
-        <span className="hidden md:inline text-forest-300">|</span>
-        <span className="hidden md:inline text-slate-300">
-          Client-side prototype with instant live-sync between Wholesaler & Owner interfaces
+        <span className="text-slate-600 hidden md:inline">•</span>
+        <span className="hidden md:inline text-slate-400">
+          Client-side prototype with live-sync between Wholesaler Portal &amp; Works Admin
         </span>
       </div>
 
       <div className="flex items-center gap-2 flex-wrap">
         {/* Active Persona indicator */}
-        <div className="flex items-center gap-1.5 bg-forest-900/80 px-2.5 py-1 rounded-md border border-forest-700 text-slate-200">
+        <div className="flex items-center gap-1.5 bg-[#122A1E] px-2 py-0.5 rounded text-[11px] border border-[#1E4431] text-slate-300">
           {user.role === 'admin' ? (
             <>
-              <ShieldCheck className="w-3.5 h-3.5 text-mustard-400" />
-              <span>Role: <strong className="text-white">Mill Works Admin</strong></span>
+              <ShieldCheck className="w-3 h-3 text-[#E5A000]" />
+              <span>Role: <strong className="text-white font-medium">Works Admin</strong></span>
             </>
           ) : (
             <>
-              <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Distributor: <strong className="text-white">{user.distributorInfo?.companyName || 'Guest Wholesaler'}</strong></span>
+              <UserCheck className="w-3 h-3 text-emerald-400" />
+              <span>Partner: <strong className="text-white font-medium">{user.distributorInfo?.companyName || 'Guest Wholesaler'}</strong></span>
             </>
           )}
         </div>
@@ -63,31 +60,30 @@ export const DemoBar: React.FC = () => {
         {isAdminRoute ? (
           <button
             onClick={handleSwitchToTrade}
-            className="flex items-center gap-1.5 px-3 py-1 bg-mustard-500 hover:bg-mustard-400 text-forest-950 font-semibold rounded transition shadow-sm"
+            className="flex items-center gap-1 px-2.5 py-0.5 bg-[#E5A000] hover:bg-[#F5C542] text-[#102B20] font-bold text-[11px] rounded transition cursor-pointer"
           >
-            <Store className="w-3.5 h-3.5" />
-            <span>Open Trade Portal</span>
+            <Store className="w-3 h-3" />
+            <span>Trade Portal</span>
           </button>
         ) : (
           <button
             onClick={handleSwitchToAdmin}
-            className="flex items-center gap-1.5 px-3 py-1 bg-amber-500 hover:bg-amber-400 text-forest-950 font-semibold rounded transition shadow-sm"
+            className="flex items-center gap-1 px-2.5 py-0.5 bg-[#122A1E] hover:bg-[#1A3D2E] text-[#FFF8E8] font-semibold text-[11px] rounded border border-[#1E4431] transition cursor-pointer"
           >
-            <LayoutDashboard className="w-3.5 h-3.5" />
-            <span>Open Owner Admin</span>
+            <LayoutDashboard className="w-3 h-3 text-[#E5A000]" />
+            <span>Owner Admin</span>
           </button>
         )}
 
         <button
           onClick={handleReset}
           title="Reset to default mock data"
-          className="flex items-center gap-1 text-slate-300 hover:text-white px-2 py-1 rounded hover:bg-forest-800 transition"
+          className="flex items-center gap-1 text-slate-400 hover:text-white px-1.5 py-0.5 rounded hover:bg-[#122A1E] transition cursor-pointer text-[10px]"
         >
-          <RefreshCw className="w-3 h-3" />
-          <span className="hidden sm:inline">Reset Mock Data</span>
+          <RefreshCw className="w-2.5 h-2.5" />
+          <span className="hidden sm:inline">Reset</span>
         </button>
       </div>
     </div>
   );
 };
-

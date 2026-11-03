@@ -17,92 +17,54 @@
   body {
     min-width: 320px;
     color: #1e293b;
-    background-color: #FCFBF7;
+    background-color: #FAF8F5;
     overflow-x: hidden;
   }
 
   /* Refined Editorial Serif for Titles */
   h1, h2, h3, h4, .font-serif {
     font-feature-settings: "kern" 1, "liga" 1;
+    letter-spacing: -0.015em;
   }
 
   /* Crisp tabular figures for currency and quantities */
   .tabular-nums, .price-tabular {
     font-variant-numeric: tabular-nums;
   }
+
+  ::selection {
+    background-color: #C49A32;
+    color: #102B20;
+  }
 }
 
 /* Custom Refined Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F5ED;
+  background: #F5F2EB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C2DFD0;
+  background: #D8D2C4;
   border-radius: 9999px;
-  border: 2px solid #F8F5ED;
+  border: 1px solid #F5F2EB;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #27684F;
+  background: #102B20;
 }
 
-/* Glassmorphism & luxury aesthetics */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(230, 220, 200, 0.6);
+/* Subtle architectural borders & clean surfaces */
+.surface-card {
+  background-color: #FFFFFF;
+  border: 1px solid #EBE7DD;
+  box-shadow: 0 1px 3px 0 rgba(16, 43, 32, 0.04), 0 1px 2px -1px rgba(16, 43, 32, 0.02);
 }
 
-.glass-dark {
-  background: rgba(10, 25, 18, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* Golden liquid shimmer keyframes */
-@keyframes goldShimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #FACC15 0%, #EAB308 40%, #CA8A04 70%, #FEF08A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.shimmer-card {
-  position: relative;
-  overflow: hidden;
-}
-.shimmer-card::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.15) 50%,
-    transparent 60%
-  );
-  transform: translateX(-100%);
-  transition: transform 0.8s ease;
-  pointer-events: none;
-}
-.shimmer-card:hover::after {
-  transform: translateX(100%);
+.surface-card:hover {
+  border-color: #D4AF37;
+  box-shadow: 0 8px 24px -4px rgba(16, 43, 32, 0.08), 0 2px 6px -1px rgba(16, 43, 32, 0.04);
 }
 
 /* Custom styling for print/proforma views */
@@ -111,5 +73,3 @@
     display: none !important;
   }
 }
-
-

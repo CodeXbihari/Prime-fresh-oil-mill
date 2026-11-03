@@ -111,10 +111,10 @@ export const AdminProductsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Top Action & Filter Header */}
-      <div className="bg-white rounded-3xl p-6 border border-cream-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="font-serif font-bold text-xl text-forest-950">
+            <h2 className="font-serif font-bold text-xl text-slate-900">
               Wholesale SKU & Rate Management
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -124,9 +124,9 @@ export const AdminProductsPage: React.FC = () => {
 
           <button
             onClick={() => setIsNewProductModal(true)}
-            className="px-4 py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold text-xs shadow flex items-center gap-1.5 transition self-start sm:self-auto"
+            className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow flex items-center gap-1.5 transition self-start sm:self-auto"
           >
-            <Plus className="w-4 h-4 text-mustard-400" />
+            <Plus className="w-4 h-4 text-amber-400" />
             <span>Add New Wholesale SKU</span>
           </button>
         </div>
@@ -140,14 +140,14 @@ export const AdminProductsPage: React.FC = () => {
               placeholder="Search by SKU, pack size, title..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-cream-300 text-xs text-slate-800 bg-cream-50"
+              className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-slate-50"
             />
           </div>
 
           <select
             value={selectedGrade}
             onChange={e => setSelectedGrade(e.target.value)}
-            className="px-3 py-2 rounded-xl border border-cream-300 text-xs font-semibold text-slate-800 bg-cream-50"
+            className="px-3 py-2 rounded-xl border border-slate-300 text-xs font-semibold text-slate-800 bg-slate-50"
           >
             <option value="All">All Grades</option>
             <option value="Kachi Ghani (Cold Pressed)">Kachi Ghani (Cold Pressed)</option>
@@ -158,10 +158,10 @@ export const AdminProductsPage: React.FC = () => {
       </div>
 
       {/* Products Table */}
-      <div className="bg-white rounded-3xl border border-cream-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-cream-100 text-forest-950 uppercase font-bold text-[10px]">
+            <thead className="bg-slate-100 text-slate-900 uppercase font-bold text-[10px]">
               <tr>
                 <th className="p-4">SKU & Pack Details</th>
                 <th className="p-4">Grade</th>
@@ -172,23 +172,23 @@ export const AdminProductsPage: React.FC = () => {
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-cream-100">
+            <tbody className="divide-y divide-slate-100">
               {filteredProducts.map(product => (
-                <tr key={product.id} className="hover:bg-cream-50/70 transition">
+                <tr key={product.id} className="hover:bg-slate-50/70 transition">
                   {/* SKU & Pack details */}
                   <td className="p-4">
                     <div className="flex items-center gap-3">
                       <img
                         src={product.image}
                         alt=""
-                        className="w-12 h-12 rounded-xl object-cover bg-cream-100 shrink-0 border border-cream-200"
+                        className="w-12 h-12 rounded-xl object-cover bg-slate-100 shrink-0 border border-slate-200"
                       />
                       <div>
-                        <span className="font-bold text-forest-950 block text-xs">
+                        <span className="font-bold text-slate-900 block text-xs">
                           {product.name}
                         </span>
                         <div className="text-[10px] text-slate-500 flex items-center gap-2 mt-0.5">
-                          <span className="font-mono font-bold text-forest-700">{product.sku}</span>
+                          <span className="font-mono font-bold text-slate-700">{product.sku}</span>
                           <span>•</span>
                           <span>{product.packaging}</span>
                         </div>
@@ -198,7 +198,7 @@ export const AdminProductsPage: React.FC = () => {
 
                   {/* Grade */}
                   <td className="p-4">
-                    <span className="text-[11px] font-semibold text-forest-900 bg-forest-50 px-2.5 py-1 rounded-full border border-forest-200 whitespace-nowrap">
+                    <span className="text-[11px] font-semibold text-slate-800 bg-forest-50 px-2.5 py-1 rounded-full border border-forest-200 whitespace-nowrap">
                       {product.grade.split('(')[0]}
                     </span>
                   </td>
@@ -211,7 +211,7 @@ export const AdminProductsPage: React.FC = () => {
                         type="number"
                         value={product.indicativePrice}
                         onChange={e => handleInlinePriceChange(product.id, parseInt(e.target.value) || product.indicativePrice)}
-                        className="w-24 px-2 py-1 rounded-lg border border-cream-300 font-bold text-forest-950 text-xs bg-white focus:ring-1 focus:ring-mustard-500"
+                        className="w-24 px-2 py-1 rounded-lg border border-slate-300 font-bold text-slate-900 text-xs bg-white focus:ring-1 focus:ring-amber-500"
                       />
                       <span className="text-[10px] text-slate-400">/{product.unitLabel.replace(/s$/, '')}</span>
                     </div>
@@ -224,7 +224,7 @@ export const AdminProductsPage: React.FC = () => {
                         type="number"
                         value={product.moq}
                         onChange={e => updateProduct(product.id, { moq: Math.max(1, parseInt(e.target.value) || 1) })}
-                        className="w-16 px-2 py-1 rounded-lg border border-cream-300 font-bold text-forest-950 text-xs bg-white focus:ring-1 focus:ring-mustard-500"
+                        className="w-16 px-2 py-1 rounded-lg border border-slate-300 font-bold text-slate-900 text-xs bg-white focus:ring-1 focus:ring-amber-500"
                       />
                       <span className="text-[10px] text-slate-400">{product.unitLabel}</span>
                     </div>
@@ -237,7 +237,7 @@ export const AdminProductsPage: React.FC = () => {
                         type="number"
                         value={product.availableStock}
                         onChange={e => handleInlineStockChange(product.id, parseInt(e.target.value) || 0)}
-                        className="w-20 px-2 py-1 rounded-lg border border-cream-300 font-bold text-forest-950 text-xs bg-white focus:ring-1 focus:ring-mustard-500"
+                        className="w-20 px-2 py-1 rounded-lg border border-slate-300 font-bold text-slate-900 text-xs bg-white focus:ring-1 focus:ring-amber-500"
                       />
                       <span className="text-[10px] text-slate-400">{product.unitLabel}</span>
                     </div>
@@ -263,7 +263,7 @@ export const AdminProductsPage: React.FC = () => {
                     <div className="flex items-center justify-end gap-2">
                       <button
                         onClick={() => setEditingProduct(product)}
-                        className="p-1.5 rounded-lg bg-cream-100 hover:bg-cream-200 text-forest-950 transition"
+                        className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-900 transition"
                         title="Edit Full Specifications"
                       >
                         <Edit2 className="w-3.5 h-3.5" />
@@ -291,9 +291,9 @@ export const AdminProductsPage: React.FC = () => {
       {/* Edit Full Product Modal */}
       {editingProduct && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-cream-200 shadow-2xl space-y-6">
-            <div className="flex justify-between items-center border-b border-cream-200 pb-3">
-              <h3 className="font-serif font-bold text-lg text-forest-950">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6">
+            <div className="flex justify-between items-center border-b border-slate-200 pb-3">
+              <h3 className="font-serif font-bold text-lg text-slate-900">
                 Edit SKU: {editingProduct.sku}
               </h3>
               <button
@@ -312,7 +312,7 @@ export const AdminProductsPage: React.FC = () => {
                   required
                   value={editingProduct.name}
                   onChange={e => setEditingProduct({ ...editingProduct, name: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300"
+                  className="w-full px-3.5 py-2 rounded-xl border border-slate-300"
                 />
               </div>
 
@@ -322,7 +322,7 @@ export const AdminProductsPage: React.FC = () => {
                   type="text"
                   value={editingProduct.tagline}
                   onChange={e => setEditingProduct({ ...editingProduct, tagline: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300"
+                  className="w-full px-3.5 py-2 rounded-xl border border-slate-300"
                 />
               </div>
 
@@ -333,7 +333,7 @@ export const AdminProductsPage: React.FC = () => {
                     type="number"
                     value={editingProduct.indicativePrice}
                     onChange={e => setEditingProduct({ ...editingProduct, indicativePrice: parseInt(e.target.value) || 0 })}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold"
                   />
                 </div>
                 <div>
@@ -342,7 +342,7 @@ export const AdminProductsPage: React.FC = () => {
                     type="number"
                     value={editingProduct.moq}
                     onChange={e => setEditingProduct({ ...editingProduct, moq: parseInt(e.target.value) || 1 })}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold"
                   />
                 </div>
               </div>
@@ -354,7 +354,7 @@ export const AdminProductsPage: React.FC = () => {
                     type="number"
                     value={editingProduct.availableStock}
                     onChange={e => setEditingProduct({ ...editingProduct, availableStock: parseInt(e.target.value) || 0 })}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold"
                   />
                 </div>
                 <div>
@@ -362,7 +362,7 @@ export const AdminProductsPage: React.FC = () => {
                   <select
                     value={editingProduct.stockStatus}
                     onChange={e => setEditingProduct({ ...editingProduct, stockStatus: e.target.value as any })}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-cream-50 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-slate-50 font-bold"
                   >
                     <option value="In Stock">In Stock</option>
                     <option value="Low Stock">Low Stock</option>
@@ -377,21 +377,21 @@ export const AdminProductsPage: React.FC = () => {
                   type="text"
                   value={editingProduct.image}
                   onChange={e => setEditingProduct({ ...editingProduct, image: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-mono text-[11px]"
+                  className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-mono text-[11px]"
                 />
               </div>
 
-              <div className="pt-4 flex justify-end gap-3 border-t border-cream-200">
+              <div className="pt-4 flex justify-end gap-3 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setEditingProduct(null)}
-                  className="px-4 py-2 rounded-xl bg-cream-200 hover:bg-cream-300 text-forest-950 font-bold"
+                  className="px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-900 font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold shadow"
+                  className="px-6 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold shadow"
                 >
                   Save Changes
                 </button>
@@ -404,9 +404,9 @@ export const AdminProductsPage: React.FC = () => {
       {/* Add New Product Modal */}
       {isNewProductModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-cream-200 shadow-2xl space-y-6">
-            <div className="flex justify-between items-center border-b border-cream-200 pb-3">
-              <h3 className="font-serif font-bold text-lg text-forest-950">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6">
+            <div className="flex justify-between items-center border-b border-slate-200 pb-3">
+              <h3 className="font-serif font-bold text-lg text-slate-900">
                 Create New Wholesale Mustard Oil SKU
               </h3>
               <button
@@ -426,7 +426,7 @@ export const AdminProductsPage: React.FC = () => {
                     required
                     value={newSku}
                     onChange={e => setNewSku(e.target.value.toUpperCase())}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 uppercase font-mono font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 uppercase font-mono font-bold"
                   />
                 </div>
                 <div>
@@ -434,7 +434,7 @@ export const AdminProductsPage: React.FC = () => {
                   <select
                     value={newGrade}
                     onChange={e => setNewGrade(e.target.value as any)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 bg-cream-50 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-slate-50 font-bold"
                   >
                     <option value="Kachi Ghani (Cold Pressed)">Kachi Ghani (Cold Pressed)</option>
                     <option value="Expeller Pressed Pure">Expeller Pressed Pure</option>
@@ -452,7 +452,7 @@ export const AdminProductsPage: React.FC = () => {
                   value={newName}
                   onChange={e => setNewName(e.target.value)}
                   placeholder="e.g. Prime Pure Kachi Ghani Mustard Oil - 2 Litre Jar"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300"
+                  className="w-full px-3.5 py-2 rounded-xl border border-slate-300"
                 />
               </div>
 
@@ -463,7 +463,7 @@ export const AdminProductsPage: React.FC = () => {
                   value={newTagline}
                   onChange={e => setNewTagline(e.target.value)}
                   placeholder="e.g. High Pungency Cold Pressed First Extractions"
-                  className="w-full px-3.5 py-2 rounded-xl border border-cream-300"
+                  className="w-full px-3.5 py-2 rounded-xl border border-slate-300"
                 />
               </div>
 
@@ -475,7 +475,7 @@ export const AdminProductsPage: React.FC = () => {
                     required
                     value={newPackaging}
                     onChange={e => setNewPackaging(e.target.value as any)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300"
                   />
                 </div>
                 <div>
@@ -484,7 +484,7 @@ export const AdminProductsPage: React.FC = () => {
                     type="text"
                     value={newVolume}
                     onChange={e => setNewVolume(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300"
                   />
                 </div>
               </div>
@@ -497,7 +497,7 @@ export const AdminProductsPage: React.FC = () => {
                     required
                     value={newPrice}
                     onChange={e => setNewPrice(parseInt(e.target.value) || 0)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold"
                   />
                 </div>
                 <div>
@@ -507,7 +507,7 @@ export const AdminProductsPage: React.FC = () => {
                     required
                     value={newMoq}
                     onChange={e => setNewMoq(parseInt(e.target.value) || 1)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold"
                   />
                 </div>
                 <div>
@@ -517,7 +517,7 @@ export const AdminProductsPage: React.FC = () => {
                     value={newUnitLabel}
                     onChange={e => setNewUnitLabel(e.target.value)}
                     placeholder="Tins, Boxes, Drums"
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300"
                   />
                 </div>
               </div>
@@ -529,7 +529,7 @@ export const AdminProductsPage: React.FC = () => {
                     type="number"
                     value={newStock}
                     onChange={e => setNewStock(parseInt(e.target.value) || 0)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-bold"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-bold"
                   />
                 </div>
                 <div>
@@ -538,22 +538,22 @@ export const AdminProductsPage: React.FC = () => {
                     type="text"
                     value={newImage}
                     onChange={e => setNewImage(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border border-cream-300 font-mono text-[11px]"
+                    className="w-full px-3.5 py-2 rounded-xl border border-slate-300 font-mono text-[11px]"
                   />
                 </div>
               </div>
 
-              <div className="pt-4 flex justify-end gap-3 border-t border-cream-200">
+              <div className="pt-4 flex justify-end gap-3 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setIsNewProductModal(false)}
-                  className="px-4 py-2 rounded-xl bg-cream-200 hover:bg-cream-300 text-forest-950 font-bold"
+                  className="px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-900 font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-cream-50 font-bold shadow"
+                  className="px-6 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold shadow"
                 >
                   Create Product SKU
                 </button>
